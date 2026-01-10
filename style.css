@@ -31,7 +31,15 @@ a:hover{text-decoration:underline}
   display:flex; align-items:center; gap:12px;
 }
 .brand img{
-  width:70px; height:auto; border-radius:12px; border:1px solid var(--line); background:#fff;
+ brand img{
+  height: 44px;
+  width: auto;
+  max-width: 160px;
+  border-radius: 10px;
+  border: 1px solid var(--line);
+  background: #fff;
+  object-fit: contain;
+  display: block;
 }
 .brand .t{line-height:1.15}
 .brand .t .h{font-weight:800; color:var(--brand); font-size:14px}
