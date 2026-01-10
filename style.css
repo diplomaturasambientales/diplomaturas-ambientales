@@ -27,17 +27,16 @@ body{
     linear-gradient(180deg, var(--bg1), var(--bg2));
 }
 
-/* Layout general */
 .app{min-height:100%; display:flex; flex-direction:column}
+
 .stage{
   position:relative;
-  padding: 18px 22px 88px; /* deja espacio para controles */
+  padding: 18px 22px 88px;
   max-width: 1220px;
   margin: 0 auto;
   width: 100%;
 }
 
-/* HEADER: más institucional (jerarquía real) */
 .topbar{
   border-bottom: 1px solid var(--stroke);
   background: linear-gradient(180deg, rgba(0,0,0,.15), rgba(0,0,0,0));
@@ -59,7 +58,6 @@ body{
   min-width: 360px;
 }
 
-/* LOGOS: agrandados y proporcionados dentro del “recuadro” */
 .brand__logos{
   display:flex;
   align-items:center;
@@ -70,46 +68,35 @@ body{
   background: rgba(255,255,255,.06);
 }
 
-/* Ajuste clave: más grandes sin deformar */
+/* LOGOS más grandes y proporcionados */
 .brand__logo{
-  height: 46px;          /* <-- acá está el cambio importante */
+  height: 52px; /* subido para que “llene” el recuadro */
   width: auto;
   display:block;
   object-fit: contain;
   filter: drop-shadow(0 6px 14px rgba(0,0,0,.35));
 }
 
+/* Si el logo no carga, que NO arruine el header */
+.brand__logo[hidden]{display:none !important}
+
 .brand__text{line-height:1.05}
 .brand__uni{
-  font-weight: 800;
-  font-size: 16.5px;     /* <-- más grande, jerarquía institucional */
+  font-weight: 900;
+  font-size: 18px;   /* universidad más visible */
   letter-spacing: .2px;
 }
 .brand__fac{
-  font-weight: 650;
-  font-size: 13.5px;
+  font-weight: 700;
+  font-size: 14px;
   opacity:.92;
-  letter-spacing:.15px;
   margin-top: 3px;
 }
 
-.dochead{
-  text-align:right;
-  line-height:1.05;
-}
-.dochead__title{
-  font-weight: 850;
-  font-size: 18px;
-  letter-spacing: .2px;
-}
-.dochead__subtitle{
-  font-weight: 650;
-  font-size: 13px;
-  opacity:.92;
-  margin-top: 4px;
-}
+.dochead{text-align:right; line-height:1.05}
+.dochead__title{font-weight: 850; font-size: 18px}
+.dochead__subtitle{font-weight: 650; font-size: 13px; opacity:.92; margin-top:4px}
 
-/* Tarjeta */
 .card{
   position:relative;
   margin-top: 14px;
@@ -130,7 +117,6 @@ body{
   overflow:hidden;
 }
 
-/* Tipografía interna */
 .h1{
   font-size: 46px;
   line-height: 1.05;
@@ -138,40 +124,16 @@ body{
   color: var(--accent);
   font-weight: 900;
 }
-.h2{
-  font-size: 20px;
-  margin: 0 0 16px;
-  font-weight: 800;
-}
-.p{
-  margin: 0 0 12px;
-  color: #202841;
-  font-size: 15.5px;
-  line-height: 1.55;
-}
+.h2{font-size: 20px; margin: 0 0 16px; font-weight: 800}
+.p{margin: 0 0 12px; color: #202841; font-size: 15.5px; line-height: 1.55}
 .muted{color: var(--muted)}
-.hr{
-  border:0;
-  height:1px;
-  background: #e7e9ef;
-  margin: 18px 0;
-}
-.kicker{
-  font-weight: 800;
-  letter-spacing: .2px;
-  color:#1b2440;
-}
-.list{
-  margin: 10px 0 0;
-  padding-left: 18px;
-  color:#202841;
-  line-height:1.55;
-}
+.hr{border:0; height:1px; background:#e7e9ef; margin: 18px 0}
+.kicker{font-weight: 800; color:#1b2440}
+.list{margin:10px 0 0; padding-left:18px; color:#202841; line-height:1.55}
 
-/* Controles: mover “un poco a la izquierda” para que no parezca fuera */
 .controls{
   position:absolute;
-  right: 34px;           /* <-- antes suele estar demasiado al borde; esto lo mete “adentro” */
+  right: 44px;  /* “más a la izquierda” que antes (entra bien en el contenedor) */
   bottom: 18px;
   display:flex;
   align-items:center;
@@ -191,21 +153,12 @@ body{
   cursor: pointer;
   color: #fff;
   background: rgba(255,255,255,.08);
-  transition: transform .12s ease, background .12s ease, border-color .12s ease;
+  transition: transform .12s ease, background .12s ease;
 }
 .btn:hover{transform: translateY(-1px); background: rgba(255,255,255,.12)}
-.btn:active{transform: translateY(0px)}
-.btn:disabled{
-  opacity:.45;
-  cursor:not-allowed;
-  transform:none;
-}
+.btn:disabled{opacity:.45; cursor:not-allowed; transform:none}
 
-.btn--primary{
-  background: linear-gradient(180deg, var(--accent), var(--accent2));
-  border-color: rgba(255,255,255,.18);
-}
-.btn--primary:hover{background: linear-gradient(180deg, #8a2740, #611827)}
+.btn--primary{background: linear-gradient(180deg, var(--accent), var(--accent2))}
 .btn--ghost{background: rgba(255,255,255,.06)}
 
 .counter{
@@ -214,32 +167,18 @@ body{
   opacity: .92;
   padding-left: 8px;
   border-left: 1px solid rgba(255,255,255,.14);
-  margin-left: 2px;
 }
 
-/* “Paso de hojas” sobrio: slide + fade (universitario, no show) */
-.page-anim{
-  will-change: transform, opacity;
-}
-.enter-right{
-  opacity: 0;
-  transform: translateX(26px);
-}
-.enter-left{
-  opacity: 0;
-  transform: translateX(-26px);
-}
+/* Animación sobria */
+.page-anim{will-change: transform, opacity}
+.enter-right{opacity:0; transform: translateX(26px)}
+.enter-left{opacity:0; transform: translateX(-26px)}
 .enter-active{
-  opacity: 1;
-  transform: translateX(0);
+  opacity:1; transform: translateX(0);
   transition: transform 220ms ease, opacity 220ms ease;
 }
-.exit-active{
-  opacity: 0;
-  transition: opacity 140ms ease;
-}
+.exit-active{opacity:0; transition: opacity 140ms ease}
 
-/* Responsive */
 @media (max-width: 980px){
   .topbar__inner{flex-direction:column; align-items:flex-start}
   .dochead{text-align:left}
@@ -247,15 +186,13 @@ body{
   .h1{font-size: 38px}
   .controls{right: 18px}
   .brand{min-width: unset}
-  .brand__logo{height: 42px}
+  .brand__logo{height: 46px}
 }
-
 @media (max-width: 520px){
-  .page{min-height: 62vh}
   .controls{
     left: 18px;
-    right: 18px; /* ocupa ancho, se evita “salirse” en móviles */
+    right: 18px;
     justify-content: space-between;
   }
-  .counter{border-left:0; margin-left:0; padding-left:0}
+  .counter{border-left:0; padding-left:0}
 }
