@@ -1,315 +1,352 @@
-/* =========================================================
-   Diplomaturas Ambientales · Guía del Estudiante · Edición 2026
-   Estilo institucional + ajuste para “una pantalla”
-   ========================================================= */
+/* ===========================
+   UDE · Diplomaturas Ambientales
+   style.css (REEMPLAZO TOTAL)
+   =========================== */
 
 :root{
-  --bg1:#0c1326;
-  --bg2:#121a31;
-  --ink:#0f172a;
-  --muted:#56627a;
-  --paper:#ffffff;
+  --bg1:#2a0f1d;
+  --bg2:#081a3a;
 
-  --line:#e6eaf2;
+  --card:#ffffff;
+  --ink:#14213d;
+  --muted:#5a6a85;
 
-  --ude-blue:#1f3a73;       /* institucional (aprox.) */
-  --ude-blue-2:#16305f;
-  --ude-burg:#7a1f2e;       /* borgoña */
-  --ude-burg-2:#5f1823;
+  --brand-blue:#1f3b73;     /* institucional */
+  --brand-blue-2:#0f2b5b;
+  --brand-bordeaux:#7a1d2a; /* borgoña */
+  --brand-bordeaux-2:#5f1620;
 
-  --chip:#0f2144;          /* FONDO CHIP (Página X de X) */
-  --chipText:#ffffff;
+  --line:#dfe6f2;
+  --soft:#f5f7fb;
 
-  --radius:18px;
+  --radius-xl:22px;
+  --radius-lg:16px;
+  --shadow: 0 18px 45px rgba(0,0,0,.35);
 
-  --fs-base:15px;          /* bajar un punto para que “entre” */
-  --fs-h1:44px;            /* títulos grandes pero controlados */
-  --fs-h2:18px;
-
-  --lh:1.42;
-
-  --pad-card:22px;
-  --pad-page:20px;
-
-  --controls-h:62px;       /* altura del bloque inferior */
+  --header-h: 150px; /* altura del header */
+  --nav-h: 70px;     /* altura “real” reservada para navegación */
 }
 
-/* Reset mínimo */
-*{box-sizing:border-box}
-html,body{height:100%}
+*{ box-sizing:border-box; }
+html,body{ height:100%; }
 body{
   margin:0;
-  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  color:var(--paper);
-  background: radial-gradient(1200px 700px at 20% 0%, rgba(122,31,46,.35), transparent 60%),
-              radial-gradient(1100px 800px at 90% 40%, rgba(31,58,115,.45), transparent 60%),
-              linear-gradient(180deg, var(--bg1), var(--bg2));
-}
-
-/* Header superior (logo + títulos) — asumimos que ya existe en tu HTML */
-header{
-  width:min(1220px, calc(100vw - 56px));
-  margin:22px auto 14px;
-  padding:14px 18px;
-  border-radius:22px;
-  background: rgba(255,255,255,.06);
-  border:1px solid rgba(255,255,255,.10);
-  backdrop-filter: blur(10px);
-}
-
-.header__row{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:18px;
-}
-
-.header__left{
-  display:flex;
-  align-items:center;
-  gap:14px;
-}
-
-.header__logo{
-  height:54px;
-  width:auto;
-  display:block;
-  border-radius:12px;
-}
-
-.header__title{
-  line-height:1.15;
-}
-
-.header__title b{
-  display:block;
-  font-size:22px;
-}
-
-.header__title span{
-  display:block;
-  opacity:.9;
-  font-size:13px;
-}
-
-.header__right{
-  text-align:right;
-  line-height:1.15;
-}
-
-.header__right b{
-  display:block;
-  font-size:20px;
-}
-
-.header__right span{
-  display:block;
-  opacity:.9;
-  font-size:13px;
-}
-
-/* “Papel” */
-.shell{
-  width:min(1220px, calc(100vw - 56px));
-  margin:0 auto 22px;
-  padding:16px;
-  border-radius:26px;
-  background: rgba(255,255,255,.05);
-  border:1px solid rgba(255,255,255,.10);
-  backdrop-filter: blur(10px);
-}
-
-/* Tarjeta blanca principal */
-.card{
-  background: var(--paper);
-  border-radius:26px;
-  box-shadow: 0 18px 40px rgba(0,0,0,.28);
-  overflow:hidden;
-}
-
-/* Área de página: IMPORTANTÍSIMO para que entre en pantalla */
-#page{
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, "Helvetica Neue", sans-serif;
   color:var(--ink);
-  padding: var(--pad-page) var(--pad-card);
-  font-size: var(--fs-base);
-  line-height: var(--lh);
-
-  /* Reservar espacio para los controles flotantes */
-  padding-bottom: calc(var(--pad-page) + var(--controls-h) + 14px);
-
-  /* Evitar scroll de toda la página: si algo excede, lo comprimimos visualmente */
-  max-height: calc(100vh - 210px);
-  overflow: hidden;
+  background:
+    radial-gradient(1200px 800px at 12% 10%, rgba(122,29,42,.45), transparent 55%),
+    radial-gradient(1100px 900px at 88% 30%, rgba(31,59,115,.55), transparent 55%),
+    linear-gradient(135deg, var(--bg1), var(--bg2));
 }
 
-.page__meta{
-  font-size: 12px;
-  color: #64748b;
-  margin-bottom: 6px;
+/* ==========
+   Layout base
+   ========== */
+
+.app{
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 16px 18px 24px;
 }
 
-.h1{
-  font-size: var(--fs-h1);
-  line-height: 1.05;
-  margin: 6px 0 10px;
-  letter-spacing: -.4px;
-  color: var(--ude-burg);
-  font-weight: 800;
+.header{
+  height: var(--header-h);
+  border-radius: var(--radius-xl);
+  overflow:hidden;
+  box-shadow: var(--shadow);
+  border: 1px solid rgba(255,255,255,.08);
+  background:
+    linear-gradient(90deg, rgba(0,0,0,.35), rgba(0,0,0,.10)),
+    radial-gradient(900px 420px at 20% 30%, rgba(122,29,42,.35), transparent 60%),
+    radial-gradient(900px 520px at 80% 30%, rgba(31,59,115,.40), transparent 60%);
+  position: relative;
+  display:flex;
+  align-items: center;
+  padding: 14px 18px;
+  gap: 16px;
 }
 
-.h2{
-  font-size: var(--fs-h2);
-  margin: 0 0 10px;
-  color: #334155;
+.brand-left{
+  display:flex;
+  align-items:center;
+  gap: 12px;
+  min-width: 340px;
+}
+
+.brand-logos{
+  display:flex;
+  gap:10px;
+  align-items:center;
+}
+
+.brand-logos img{
+  height: 72px;          /* LOGO MÁS CHICO */
+  width: auto;
+  display:block;
+  border-radius: 12px;
+  box-shadow: 0 10px 26px rgba(0,0,0,.25);
+}
+
+.brand-text{
+  color:#fff;
+  line-height:1.15;
+}
+
+.brand-text .u{
   font-weight: 700;
-}
-
-.kicker{
-  font-size: 13px;
-  font-weight: 800;
+  font-size: 18px;
   letter-spacing: .2px;
-  text-transform: none;
-  color: #1f2937;
+}
+.brand-text .f{
+  font-weight: 600;
+  font-size: 13px;
+  opacity:.92;
+  margin-top: 2px;
 }
 
-.muted{ color:#64748b; }
-
-.p{
-  margin: 8px 0;
+.header-right{
+  margin-left:auto;
+  text-align:right;
+  color:#fff;
+}
+.header-right .t1{
+  font-weight: 800;
+  font-size: 22px; /* más institucional */
+}
+.header-right .t2{
+  font-weight: 600;
+  font-size: 13px;
+  opacity:.9;
 }
 
-.p.tight{ margin: 6px 0; }
+/* ==========
+   “Hoja” / Card principal
+   ========== */
 
-.hr{
-  height:1px;
-  background: var(--line);
+.stage{
+  margin-top: 14px;
+  position: relative;
+}
+
+.page-shell{
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow);
+  border: 1px solid rgba(255,255,255,.10);
+  overflow:hidden;
+  background: rgba(255,255,255,.05);
+  padding: 14px;
+}
+
+/* Card blanca (hoja) */
+.page{
+  border-radius: 18px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  overflow:hidden;
+  position: relative;
+}
+
+/* Área de contenido con altura controlada
+   - Reservamos espacio inferior para que los botones NO tapen texto.
+*/
+.page-inner{
+  height: calc(100vh - var(--header-h) - 16px - 14px - 14px - 24px); 
+  /* explicación:
+     100vh menos header, paddings y márgenes generales.
+     Si tu pantalla es baja, sigue funcionando.
+  */
+  max-height: 680px;      /* evita “hojas” absurdamente altas en pantallas grandes */
+  min-height: 420px;      /* no se achica de más */
+  padding: 18px 22px;
+  padding-bottom: calc(18px + var(--nav-h)); /* reserva para navegación */
+  overflow: auto;
+  scroll-behavior: smooth;
+}
+
+/* scrollbar discreto */
+.page-inner::-webkit-scrollbar{ width: 10px; }
+.page-inner::-webkit-scrollbar-thumb{
+  background: rgba(31,59,115,.22);
+  border-radius: 999px;
+}
+.page-inner::-webkit-scrollbar-track{
+  background: rgba(0,0,0,.04);
+}
+
+/* Encabezadito superior de cada página */
+.kicker{
+  font-size: 12px;
+  color: #6d7c95;
+  font-weight: 600;
+  letter-spacing: .2px;
+}
+
+/* Títulos (más chicos, más prolijos) */
+h1{
+  margin: 10px 0 10px;
+  font-size: clamp(26px, 2.6vw, 40px);
+  line-height: 1.06;
+  color: var(--brand-bordeaux);
+  letter-spacing: -.3px;
+}
+h2{
+  margin: 14px 0 8px;
+  font-size: clamp(18px, 1.8vw, 24px);
+  color: var(--ink);
+}
+p{
   margin: 10px 0;
+  font-size: 15px;
+  line-height: 1.45;
+  color: #22324f;
+}
+.small{
+  font-size: 13px;
+  color: var(--muted);
 }
 
-/* Listas */
-.list{
-  margin: 8px 0 0;
-  padding-left: 18px;
+hr{
+  border: 0;
+  border-top: 1px solid var(--line);
+  margin: 12px 0 14px;
 }
-.list li{
-  margin: 6px 0;
+
+ul{
+  margin: 10px 0 0 18px;
+  padding:0;
 }
-.ol{
-  padding-left: 20px;
-}
-.ol li{
+li{
   margin: 7px 0;
+  font-size: 15px;
+  line-height: 1.38;
+  color: #22324f;
 }
 
-/* Bloques tipo “caja” para canales */
+/* Bloques / cajas internas */
 .box{
-  border:1px solid var(--line);
-  background:#f6f8fc;
+  background: var(--soft);
+  border: 1px solid var(--line);
   border-radius: 14px;
-  padding: 12px 14px;
-  margin: 10px 0;
+  padding: 14px 14px;
+  margin-top: 12px;
 }
+.box strong{ color:#0d1c3b; }
 
-/* Nota institucional */
-.note{
-  border:1px solid var(--line);
-  background:#f6f8fc;
-  border-radius: 14px;
-  padding: 12px 14px;
-  margin-top: 10px;
-}
+/* ==========
+   Navegación (abajo derecha)
+   ========== */
 
-/* =========================
-   Controles inferiores
-   ========================= */
-.controls{
-  position: fixed;
-  right: 26px;
+.nav{
+  position: absolute;
+  right: 22px;
   bottom: 22px;
   display:flex;
+  gap: 10px;
   align-items:center;
-  gap:12px;
-  padding: 12px;
-  border-radius: 18px;
-  background: rgba(15,23,42,.18);
+  background: rgba(16,24,39,.15);
   border: 1px solid rgba(255,255,255,.16);
-  backdrop-filter: blur(14px);
-  box-shadow: 0 12px 28px rgba(0,0,0,.28);
+  padding: 10px;
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
 }
 
+/* Botones */
 .btn{
-  appearance:none;
-  border:0;
-  cursor:pointer;
+  border: 0;
   padding: 11px 16px;
   border-radius: 14px;
   font-weight: 800;
   font-size: 14px;
-  color: #fff;
-  transition: transform .08s ease, filter .18s ease, opacity .18s ease;
+  cursor: pointer;
+  box-shadow: 0 10px 20px rgba(0,0,0,.18);
+  transition: transform .12s ease, filter .12s ease, opacity .12s ease;
+  color:#fff;
 }
 
-.btn:active{ transform: translateY(1px); }
-.btn:disabled{ opacity:.45; cursor:not-allowed; }
+.btn:hover{ transform: translateY(-1px); filter: brightness(1.03); }
+.btn:active{ transform: translateY(0px); filter: brightness(.98); }
 
-.btnPrev{ background: var(--ude-blue); }
-.btnPrev:hover{ filter: brightness(1.06); }
+.btn-prev{ background: linear-gradient(180deg, var(--brand-blue), var(--brand-blue-2)); }
+.btn-next{ background: linear-gradient(180deg, var(--brand-bordeaux), var(--brand-bordeaux-2)); }
 
-.btnNext{ background: var(--ude-burg); }
-.btnNext:hover{ filter: brightness(1.06); }
+/* Disabled: NO gris lavado que desaparece, sino “apagado” pero visible */
+.btn[disabled]{
+  opacity: .38;
+  cursor: not-allowed;
+  transform:none;
+  box-shadow:none;
+}
 
-/* CHIP “Página X de X” — SOLUCIÓN: contraste alto, no gris */
-.counter{
-  padding: 10px 14px;
+/* Pill contador: SIEMPRE visible */
+.pill{
+  padding: 11px 14px;
   border-radius: 14px;
   font-weight: 900;
   font-size: 13px;
-  background: var(--chip);
-  color: var(--chipText);
-  border: 1px solid rgba(255,255,255,.12);
-  box-shadow: 0 10px 22px rgba(0,0,0,.18);
+  letter-spacing: .2px;
+  color: #fff;
+  background: linear-gradient(180deg, #102a5a, #0b224b); /* azul oscuro */
+  border: 1px solid rgba(255,255,255,.18);
+  box-shadow: 0 10px 20px rgba(0,0,0,.18);
+  white-space: nowrap;
 }
 
-/* =========================
-   Animación “pasar página” (sobria)
-   ========================= */
+/* ==========
+   Animación “pasar hoja” (institucional)
+   ========== */
+
 .page-anim{
-  will-change: transform, opacity, filter;
+  position: relative;
 }
 
-.exit-active{
-  opacity: 0;
-  transform: translateX(-10px);
-  filter: blur(.4px);
-  transition: opacity .16s ease, transform .16s ease, filter .16s ease;
+.page-anim.enter-right{
+  animation: pageInRight .30s ease-out both;
+}
+.page-anim.enter-left{
+  animation: pageInLeft .30s ease-out both;
 }
 
-.enter-left{
-  opacity: 0;
-  transform: translateX(-14px);
+@keyframes pageInRight{
+  from{
+    opacity: .0;
+    transform: translateX(18px) rotate(.25deg);
+    filter: drop-shadow(0 22px 24px rgba(0,0,0,.20));
+  }
+  to{
+    opacity: 1;
+    transform: translateX(0) rotate(0deg);
+    filter: none;
+  }
 }
 
-.enter-right{
-  opacity: 0;
-  transform: translateX(14px);
+@keyframes pageInLeft{
+  from{
+    opacity: .0;
+    transform: translateX(-18px) rotate(-.25deg);
+    filter: drop-shadow(0 22px 24px rgba(0,0,0,.20));
+  }
+  to{
+    opacity: 1;
+    transform: translateX(0) rotate(0deg);
+    filter: none;
+  }
 }
 
-.enter-active{
-  opacity: 1;
-  transform: translateX(0);
-  filter: blur(0);
-  transition: opacity .26s ease, transform .26s ease, filter .26s ease;
-}
+/* ==========
+   Responsive
+   ========== */
 
-/* Responsive */
 @media (max-width: 980px){
-  :root{ --fs-h1:38px; --pad-card:18px; --pad-page:18px; }
-  .header__right b{ font-size:18px; }
-  .header__title b{ font-size:20px; }
+  :root{ --header-h: 170px; }
+  .brand-left{ min-width: 0; }
+  .header{ flex-direction: column; align-items:flex-start; gap: 10px; }
+  .header-right{ margin-left:0; text-align:left; }
+  .brand-logos img{ height: 62px; }
+  .nav{ right: 14px; bottom: 14px; }
 }
 
-@media (max-width: 720px){
-  :root{ --fs-base:14px; --fs-h1:34px; --controls-h:66px; }
-  header, .shell{ width: calc(100vw - 24px); }
-  .controls{ right: 12px; bottom: 12px; }
+@media (max-width: 520px){
+  .page-inner{ padding: 16px; padding-bottom: calc(16px + var(--nav-h)); }
+  .btn{ padding: 10px 12px; font-size: 13px; }
+  .pill{ padding: 10px 12px; }
 }
