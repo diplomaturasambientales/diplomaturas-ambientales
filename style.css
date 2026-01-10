@@ -1,324 +1,315 @@
 /* =========================================================
    Diplomaturas Ambientales · Guía del Estudiante · Edición 2026
-   style.css — FINAL (sin scroll en páginas críticas + botones azul/borgoña + flip)
+   Estilo institucional + ajuste para “una pantalla”
    ========================================================= */
 
 :root{
-  --bg-1:#070a14;
-  --bg-2:#111b3a;
+  --bg1:#0c1326;
+  --bg2:#121a31;
+  --ink:#0f172a;
+  --muted:#56627a;
+  --paper:#ffffff;
 
-  --card:#ffffff;
-  --ink:#18213a;
-  --muted:#6f7a93;
+  --line:#e6eaf2;
 
-  --brand:#7a1e2c;         /* borgoña UDE */
-  --btn-primary:#7a1e2c;   /* Siguiente */
-  --btn-prev:#203b78;      /* Azul institucional (Anterior) */
-  --btn-disabled:#cfd5e2;
+  --ude-blue:#1f3a73;       /* institucional (aprox.) */
+  --ude-blue-2:#16305f;
+  --ude-burg:#7a1f2e;       /* borgoña */
+  --ude-burg-2:#5f1823;
 
-  --line:#e6e9f2;
-  --soft:#f6f7fb;
+  --chip:#0f2144;          /* FONDO CHIP (Página X de X) */
+  --chipText:#ffffff;
 
-  --shadow: 0 22px 60px rgba(0,0,0,.45);
-  --radius-2: 26px;
+  --radius:18px;
+
+  --fs-base:15px;          /* bajar un punto para que “entre” */
+  --fs-h1:44px;            /* títulos grandes pero controlados */
+  --fs-h2:18px;
+
+  --lh:1.42;
+
+  --pad-card:22px;
+  --pad-page:20px;
+
+  --controls-h:62px;       /* altura del bloque inferior */
 }
 
-*{ box-sizing:border-box; }
-html, body{ height:100%; }
-
+/* Reset mínimo */
+*{box-sizing:border-box}
+html,body{height:100%}
 body{
   margin:0;
-  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", sans-serif;
-  color:#fff;
-  background:
-    radial-gradient(900px 520px at 16% 0%, rgba(122,30,44,.50), rgba(0,0,0,0) 65%),
-    radial-gradient(900px 520px at 84% 18%, rgba(17,27,58,.72), rgba(0,0,0,0) 62%),
-    linear-gradient(135deg, var(--bg-1) 0%, var(--bg-2) 58%, var(--bg-1) 100%);
-  overflow:hidden; /* no scroll del navegador */
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  color:var(--paper);
+  background: radial-gradient(1200px 700px at 20% 0%, rgba(122,31,46,.35), transparent 60%),
+              radial-gradient(1100px 800px at 90% 40%, rgba(31,58,115,.45), transparent 60%),
+              linear-gradient(180deg, var(--bg1), var(--bg2));
 }
 
-/* =========================
-   LAYOUT
-   ========================= */
-.app{
-  height:100vh;
-  padding: 18px 18px 14px;
-  display:flex;
-  flex-direction:column;
+/* Header superior (logo + títulos) — asumimos que ya existe en tu HTML */
+header{
+  width:min(1220px, calc(100vw - 56px));
+  margin:22px auto 14px;
+  padding:14px 18px;
+  border-radius:22px;
+  background: rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.10);
+  backdrop-filter: blur(10px);
 }
 
-.shell{
-  max-width: 1180px;
-  margin: 0 auto;
-  width:100%;
-  height:100%;
-  display:flex;
-  flex-direction:column;
-}
-
-/* =========================
-   TOPBAR
-   ========================= */
-.topbar{ flex:0 0 auto; margin-bottom: 14px; }
-
-.topbar__inner{
+.header__row{
   display:flex;
   align-items:center;
   justify-content:space-between;
-  gap: 16px;
-  padding: 12px 14px;
-  border-radius: var(--radius-2);
-  background: rgba(255,255,255,.06);
-  border: 1px solid rgba(255,255,255,.10);
+  gap:18px;
+}
+
+.header__left{
+  display:flex;
+  align-items:center;
+  gap:14px;
+}
+
+.header__logo{
+  height:54px;
+  width:auto;
+  display:block;
+  border-radius:12px;
+}
+
+.header__title{
+  line-height:1.15;
+}
+
+.header__title b{
+  display:block;
+  font-size:22px;
+}
+
+.header__title span{
+  display:block;
+  opacity:.9;
+  font-size:13px;
+}
+
+.header__right{
+  text-align:right;
+  line-height:1.15;
+}
+
+.header__right b{
+  display:block;
+  font-size:20px;
+}
+
+.header__right span{
+  display:block;
+  opacity:.9;
+  font-size:13px;
+}
+
+/* “Papel” */
+.shell{
+  width:min(1220px, calc(100vw - 56px));
+  margin:0 auto 22px;
+  padding:16px;
+  border-radius:26px;
+  background: rgba(255,255,255,.05);
+  border:1px solid rgba(255,255,255,.10);
   backdrop-filter: blur(10px);
 }
 
-.brand{
-  display:flex; align-items:center; gap: 12px; min-width: 360px;
-}
-
-.brand__logos{ display:flex; gap: 10px; align-items:center; }
-
-.brand__logo{
-  height: 52px; width:auto;
-  border-radius: 12px;
-  box-shadow: 0 10px 26px rgba(0,0,0,.28);
-  background: rgba(255,255,255,.10);
-}
-
-.brand__text{ display:flex; flex-direction:column; gap:3px; line-height:1.1; }
-.brand__uni{ font-weight: 900; font-size: 18px; }
-.brand__fac{ font-weight: 700; font-size: 13px; opacity:.9; }
-
-.dochead{ text-align:right; min-width: 320px; }
-.dochead__title{ font-weight: 900; font-size: 20px; }
-.dochead__subtitle{ margin-top: 3px; font-weight: 700; font-size: 13px; opacity:.9; }
-
-/* =========================
-   CARD CONTENEDOR
-   ========================= */
+/* Tarjeta blanca principal */
 .card{
-  flex: 1 1 auto;
-  border-radius: var(--radius-2);
-  background: rgba(255,255,255,.06);
-  border: 1px solid rgba(255,255,255,.10);
-  box-shadow: var(--shadow);
-  padding: 14px;
-  min-height: 0;
+  background: var(--paper);
+  border-radius:26px;
+  box-shadow: 0 18px 40px rgba(0,0,0,.28);
+  overflow:hidden;
 }
 
-.pagewrap{
-  height:100%;
-  border-radius: var(--radius-2);
-  background: rgba(255,255,255,.08);
-  padding: 12px;
-  border: 1px solid rgba(255,255,255,.10);
-  min-height: 0;
-  perspective: 1200px; /* clave para efecto hoja */
+/* Área de página: IMPORTANTÍSIMO para que entre en pantalla */
+#page{
+  color:var(--ink);
+  padding: var(--pad-page) var(--pad-card);
+  font-size: var(--fs-base);
+  line-height: var(--lh);
+
+  /* Reservar espacio para los controles flotantes */
+  padding-bottom: calc(var(--pad-page) + var(--controls-h) + 14px);
+
+  /* Evitar scroll de toda la página: si algo excede, lo comprimimos visualmente */
+  max-height: calc(100vh - 210px);
+  overflow: hidden;
 }
 
-/* =========================
-   PAGE: por defecto, sin scroll
-   ========================= */
-.page{
-  height:100%;
-  background: var(--card);
-  color: var(--ink);
-  border-radius: 20px;
-  padding: 22px 28px;   /* más compacto */
-  overflow:hidden;      /* NO scroll general */
-  position:relative;
-
-  transform-style: preserve-3d;
-  backface-visibility: hidden;
-  will-change: transform, opacity, filter;
-}
-
-/* =========================
-   TIPOGRAFÍA / ESPACIADO COMPACTO
-   ========================= */
 .page__meta{
   font-size: 12px;
-  color: var(--muted);
-  font-weight: 750;
-  letter-spacing: .2px;
-  margin-bottom: 8px;
+  color: #64748b;
+  margin-bottom: 6px;
 }
 
 .h1{
-  margin: 0 0 10px;
-  font-size: 34px;
-  line-height: 1.06;
-  color: var(--brand);
-  font-weight: 950;
-  letter-spacing: -.3px;
+  font-size: var(--fs-h1);
+  line-height: 1.05;
+  margin: 6px 0 10px;
+  letter-spacing: -.4px;
+  color: var(--ude-burg);
+  font-weight: 800;
 }
 
-.h2{ margin: 6px 0 10px; font-size: 18px; color: var(--ink); font-weight: 850; }
+.h2{
+  font-size: var(--fs-h2);
+  margin: 0 0 10px;
+  color: #334155;
+  font-weight: 700;
+}
+
+.kicker{
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: .2px;
+  text-transform: none;
+  color: #1f2937;
+}
+
+.muted{ color:#64748b; }
 
 .p{
   margin: 8px 0;
-  font-size: 14.5px;     /* leve reducción */
-  line-height: 1.45;     /* compacto */
-  color: #273256;
 }
 
-.hr{ height:1px; background: var(--line); margin: 10px 0; border:0; }
+.p.tight{ margin: 6px 0; }
 
-.list{ margin: 8px 0 0; padding-left: 18px; color:#273256; }
-.list li{ margin: 0 0 6px; line-height: 1.45; font-size: 14.5px; }
+.hr{
+  height:1px;
+  background: var(--line);
+  margin: 10px 0;
+}
 
-.note{
-  margin-top: 10px;
-  border: 1px solid var(--line);
-  background: var(--soft);
+/* Listas */
+.list{
+  margin: 8px 0 0;
+  padding-left: 18px;
+}
+.list li{
+  margin: 6px 0;
+}
+.ol{
+  padding-left: 20px;
+}
+.ol li{
+  margin: 7px 0;
+}
+
+/* Bloques tipo “caja” para canales */
+.box{
+  border:1px solid var(--line);
+  background:#f6f8fc;
   border-radius: 14px;
-  padding: 10px 12px;     /* compacto */
-  color: #1f2b4f;
-}
-.note b{ font-weight: 900; }
-
-/* =========================
-   AJUSTE QUIRÚRGICO: páginas que hoy desbordan
-   - p=6  (Canales II)
-   - p=9  (TP)
-   ========================= */
-body[data-page="6"] .page .p,
-body[data-page="9"] .page .p,
-body[data-page="6"] .page .list li,
-body[data-page="9"] .page .list li{
-  font-size: 14px;
-  line-height: 1.38;
+  padding: 12px 14px;
+  margin: 10px 0;
 }
 
-body[data-page="6"] .page .hr,
-body[data-page="9"] .page .hr{
-  margin: 8px 0;
-}
-
-body[data-page="6"] .page{
-  padding: 20px 26px; /* un poco más compacto */
-}
-
-body[data-page="9"] .page{
-  padding: 20px 26px;
-}
-
-body[data-page="6"] .note,
-body[data-page="9"] .note{
-  padding: 9px 11px;
+/* Nota institucional */
+.note{
+  border:1px solid var(--line);
+  background:#f6f8fc;
+  border-radius: 14px;
+  padding: 12px 14px;
+  margin-top: 10px;
 }
 
 /* =========================
-   CONTROLES FIJOS
+   Controles inferiores
    ========================= */
-.controls--fixed{
+.controls{
   position: fixed;
-  right: 20px;
-  bottom: 16px;
+  right: 26px;
+  bottom: 22px;
   display:flex;
   align-items:center;
-  gap: 10px;
-  z-index: 999;
-
-  background: rgba(255,255,255,.16);
-  border: 1px solid rgba(255,255,255,.16);
+  gap:12px;
+  padding: 12px;
   border-radius: 18px;
-  padding: 10px 12px;
-  backdrop-filter: blur(10px);
-  box-shadow: 0 18px 40px rgba(0,0,0,.35);
+  background: rgba(15,23,42,.18);
+  border: 1px solid rgba(255,255,255,.16);
+  backdrop-filter: blur(14px);
+  box-shadow: 0 12px 28px rgba(0,0,0,.28);
 }
 
 .btn{
   appearance:none;
   border:0;
-  border-radius: 14px;
-  padding: 10px 14px;
-  font-weight: 900;
-  color:#fff;
   cursor:pointer;
-  transition: transform .12s ease, filter .12s ease, opacity .12s ease;
+  padding: 11px 16px;
+  border-radius: 14px;
+  font-weight: 800;
+  font-size: 14px;
+  color: #fff;
+  transition: transform .08s ease, filter .18s ease, opacity .18s ease;
 }
 
 .btn:active{ transform: translateY(1px); }
-.btn:hover{ filter: brightness(1.03); }
+.btn:disabled{ opacity:.45; cursor:not-allowed; }
 
-#btnPrev{ background: var(--btn-prev); }
-#btnNext{ background: var(--btn-primary); }
+.btnPrev{ background: var(--ude-blue); }
+.btnPrev:hover{ filter: brightness(1.06); }
 
-.btn:disabled{
-  background: var(--btn-disabled) !important;
-  color: rgba(255,255,255,.75);
-  cursor: default;
-  opacity: .92;
-}
+.btnNext{ background: var(--ude-burg); }
+.btnNext:hover{ filter: brightness(1.06); }
 
+/* CHIP “Página X de X” — SOLUCIÓN: contraste alto, no gris */
 .counter{
-  font-weight: 850;
-  font-size: 13px;
-  padding: 10px 12px;
-  border-radius: 14px;
-  background: rgba(255,255,255,.22);
-  color:#fff;
-}
-
-/* =========================
-   EFECTO “PASAR HOJA” (real, institucional)
-   ========================= */
-.page-anim{
-  transform-origin: left center;
-  transition: transform 260ms ease, opacity 260ms ease, filter 260ms ease;
-}
-
-.page-anim.exit-active{
-  opacity: .0;
-  filter: blur(.6px);
-}
-
-.page-anim.enter-left{
-  transform: rotateY(-18deg) translateX(-10px);
-  opacity: .0;
-  filter: blur(.6px);
-}
-
-.page-anim.enter-right{
-  transform: rotateY(18deg) translateX(10px);
-  opacity: .0;
-  filter: blur(.6px);
-}
-
-.page-anim.enter-active{
-  transform: rotateY(0deg) translateX(0);
-  opacity: 1;
-  filter: blur(0);
-}
-
-/* =========================
-   RESPONSIVE
-   ========================= */
-@media (max-width: 980px){
-  .topbar__inner{ flex-direction:column; align-items:flex-start; }
-  .dochead{ text-align:left; }
-  .page{ padding: 18px 18px; }
-  .h1{ font-size: 30px; }
-  .controls--fixed{ right: 12px; bottom: 12px; }
-}
-
-@media (max-width: 520px){
-  .brand{ min-width: unset; }
-  .brand__logo{ height: 46px; }
-  .btn{ padding: 10px 12px; }
-  .counter{ display:none; }
-}
-
-/* ====== FIX: chip "Página X de Y" visible e institucional ====== */
-#counter{
-  background: #1f3a5f;          /* azul institucional */
-  color: #ffffff;
   padding: 10px 14px;
   border-radius: 14px;
+  font-weight: 900;
   font-size: 13px;
-  font-weight: 700;
-  box-shadow: 0 6px 16px rgba(0,0,0,0.18);
-  white-space: nowrap;
+  background: var(--chip);
+  color: var(--chipText);
+  border: 1px solid rgba(255,255,255,.12);
+  box-shadow: 0 10px 22px rgba(0,0,0,.18);
+}
+
+/* =========================
+   Animación “pasar página” (sobria)
+   ========================= */
+.page-anim{
+  will-change: transform, opacity, filter;
+}
+
+.exit-active{
+  opacity: 0;
+  transform: translateX(-10px);
+  filter: blur(.4px);
+  transition: opacity .16s ease, transform .16s ease, filter .16s ease;
+}
+
+.enter-left{
+  opacity: 0;
+  transform: translateX(-14px);
+}
+
+.enter-right{
+  opacity: 0;
+  transform: translateX(14px);
+}
+
+.enter-active{
+  opacity: 1;
+  transform: translateX(0);
+  filter: blur(0);
+  transition: opacity .26s ease, transform .26s ease, filter .26s ease;
+}
+
+/* Responsive */
+@media (max-width: 980px){
+  :root{ --fs-h1:38px; --pad-card:18px; --pad-page:18px; }
+  .header__right b{ font-size:18px; }
+  .header__title b{ font-size:20px; }
+}
+
+@media (max-width: 720px){
+  :root{ --fs-base:14px; --fs-h1:34px; --controls-h:66px; }
+  header, .shell{ width: calc(100vw - 24px); }
+  .controls{ right: 12px; bottom: 12px; }
 }
