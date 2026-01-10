@@ -1,226 +1,136 @@
 :root{
-  --bg:#f4f2f3;
-  --paper:#ffffff;
-  --ink:#1b1b1b;
-  --muted:#5e5e5e;
-  --brand:#5A0B2E;
-  --line:#e6e1e4;
-  --shadow: 0 18px 40px rgba(0,0,0,.18);
+  --brand:#7a1e2c;
+  --line:#e0e0e0;
+  --muted:#666;
+  --book-max:960px;
+  --side-pad:24px;
 }
-*{box-sizing:border-box}
-html,body{height:100%}
+
+*{
+  box-sizing:border-box;
+}
+
 body{
   margin:0;
-  font-family: system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,"Apple Color Emoji","Segoe UI Emoji";
-  background: radial-gradient(1200px 600px at 40% 10%, #ffffff 0%, var(--bg) 55%, #ece8ea 100%);
-  color:var(--ink);
+  font-family:system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  background:#f2f0f0;
+  color:#222;
+  overflow-x:hidden;
 }
-a{color:var(--brand); text-decoration:none}
-a:hover{text-decoration:underline}
 
+/* HEADER */
 .header{
-  max-width:1100px;
-  margin:18px auto 10px;
-  padding:0 16px;
+  max-width:var(--book-max);
+  margin:20px auto;
+  padding:16px;
   display:flex;
   align-items:center;
   justify-content:space-between;
   gap:16px;
 }
+
 .brand{
-  display:flex; align-items:center; gap:12px;
+  display:flex;
+  align-items:center;
+  gap:14px;
 }
+
 .brand img{
- brand img{
-  height: 44px;
-  width: auto;
-  max-width: 160px;
-  border-radius: 10px;
-  border: 1px solid var(--line);
-  background: #fff;
-  object-fit: contain;
-  display: block;
-}
-.brand .t{line-height:1.15}
-.brand .t .h{font-weight:800; color:var(--brand); font-size:14px}
-.brand .t .s{color:var(--muted); font-size:12px; margin-top:3px}
-.controls{
-  display:flex; gap:10px; align-items:center; flex-wrap:wrap; justify-content:flex-end;
-}
-.btn{
+  width:72px;
+  height:auto;
+  border-radius:10px;
   border:1px solid var(--line);
   background:#fff;
-  border-radius:12px;
-  padding:10px 12px;
-  font-weight:650;
-  color:var(--brand);
-  cursor:pointer;
 }
-.btn:disabled{opacity:.45; cursor:not-allowed}
-.hint{color:var(--muted); font-size:12px}
 
-.stage{
-  max-width:1100px;
-  margin:12px auto 26px;
-  padding:0 16px;
+.brand h1{
+  margin:0;
+  font-size:18px;
+  color:var(--brand);
 }
-.book-shell{
+
+.brand p{
+  margin:2px 0 0;
+  font-size:13px;
+  color:var(--muted);
+}
+
+.controls{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.controls button{
+  padding:8px 14px;
+  border-radius:20px;
+  border:1px solid var(--line);
+  background:#fff;
+  cursor:pointer;
+  font-weight:600;
+}
+
+.controls span{
+  font-size:13px;
+  color:var(--muted);
+}
+
+/* BOOK */
+main{
   display:flex;
   justify-content:center;
 }
+
 .book{
-  width: min(820px, calc(100vw - 32px));
-  height: min(640px, calc(100vh - 160px));
-  margin: 24px auto;
-  position: relative;
-  perspective: 1800px;
-  box-sizing: border-box;
+  width:100%;
+  max-width:var(--book-max);
+  height:640px;
+  margin:20px auto 40px;
+  position:relative;
+  perspective:1800px;
 }
 
+/* PAGE */
 .page{
   position:absolute;
-  top:0; left:0;
-  width:100%;
-  height:100%;
-  transform-style: preserve-3d;
-  transform-origin: left center;
-  transition: transform 700ms cubic-bezier(.2,.7,.2,1);
-  border-radius:16px;
+  inset:0;
+  background:#fff;
+  border-radius:18px;
+  box-shadow:0 20px 40px rgba(0,0,0,.12);
+  transform-origin:left center;
+  transform:rotateY(0deg);
+  transition:transform .8s ease, opacity .4s ease;
+  opacity:0;
+  pointer-events:none;
 }
-.page .front,
-.page .back{
-  position:absolute;
-  width:100%;
-  height:100%;
-  background:var(--paper);
-  border:1px solid var(--line);
-  border-radius:16px;
-  backface-visibility:hidden;
-  overflow:hidden;
+
+.page.active{
+  opacity:1;
+  pointer-events:auto;
+  z-index:2;
 }
-.page .back{
-  transform: rotateY(180deg);
-}
+
 .page.flipped{
-  transform: rotateY(-180deg);
+  transform:rotateY(-180deg);
+  z-index:1;
 }
 
+/* CONTENT */
 .pad{
-  padding:28px 32px 22px;
-  height:100%;
-  display:flex;
-  flex-direction:column;
+  padding:32px;
 }
-.topline{
-  display:flex; align-items:center; justify-content:space-between; gap:10px;
-  border-bottom:1px solid var(--line);
-  padding-bottom:10px;
-  margin-bottom:16px;
-}
-.kicker{
-  font-size:12px;
-  letter-spacing:.08em;
-  text-transform:uppercase;
-  color:var(--muted);
-}
-.pageno{
-  font-size:12px; color:var(--muted);
-}
-h1{margin:10px 0 0; font-size:34px; color:var(--brand)}
-h2{margin:0; font-size:22px; color:var(--brand)}
-p{margin:10px 0; line-height:1.62}
-ul{margin:8px 0 0; padding-left:18px}
-li{margin:7px 0; line-height:1.55}
-.hr{height:1px; background:var(--line); margin:12px 0}
-.toc a{
-  display:block;
-  padding:10px 12px;
-  border:1px solid var(--line);
-  border-radius:12px;
-  margin:8px 0;
-  background:#fff;
-}
-.toc a:hover{background:#faf6f8}
-.note{
-  margin-top:auto;
-  padding-top:12px;
-  border-top:1px solid var(--line);
-  color:var(--muted);
-  font-size:12px;
-  line-height:1.5;
-}
-.footerbar{
-  display:flex; justify-content:space-between; align-items:center;
-  gap:10px;
-  margin-top:auto;
-  padding-top:12px;
-}
-.pill{
-  display:inline-flex; align-items:center; gap:8px;
-  padding:8px 12px;
-  border-radius:999px;
-  border:1px solid var(--line);
-  background:#fff;
+
+h2{
+  margin-top:0;
   color:var(--brand);
-  font-weight:650;
-  font-size:12px;
-}
-.small{
-  color:var(--muted); font-size:12px;
 }
 
-@media (max-width:720px){
-  .book{height:min(620px, 74vh)}
-  .pad{padding:22px 18px 18px}
-  h1{font-size:28px}
-  h2{font-size:20px}
-  .header{margin-top:12px}
-}
-/* ====== FIX ANCHO / CENTRADO (anti “corte a mitad”) ====== */
-:root{
-  --book-max: 1100px;
-  --side-pad: 18px;
-}
-
-body{
-  margin: 0;
-  overflow-x: hidden;
-}
-
-main{
-  width: 100%;
-  max-width: var(--book-max);
-  margin: 0 auto;
-  padding: 0 var(--side-pad);
-  box-sizing: border-box;
-}
-
-/* el libro (tu proyecto usa .book) */
-.book{
-  width: 100%;
-  max-width: var(--book-max);
-  margin: 0 auto;
-  box-sizing: border-box;
-}
-
-@media (max-width: 980px){
-  :root{ --book-max: 820px; }
-}
-
-@media (max-width: 740px){
-  :root{ --book-max: 560px; --side-pad: 12px; }
-}
-
-/* ====== LOGO: prolijo, proporcional, sin “cachivache” ====== */
-.header .brand { align-items: center; gap: 12px; }
-
-.logo{
-  height: 42px;          /* tamaño institucional */
-  width: auto;           /* mantiene proporción */
-  display: block;
-  object-fit: contain;
-}
-
-@media (max-width: 740px){
-  .logo{ height: 34px; }
+/* RESPONSIVE */
+@media (max-width:900px){
+  :root{
+    --book-max:90vw;
+  }
+  .book{
+    height:74vh;
+  }
 }
