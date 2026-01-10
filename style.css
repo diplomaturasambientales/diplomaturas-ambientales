@@ -114,7 +114,7 @@ body{
   border-radius: var(--radius2);
   background: var(--card);
   color: var(--ink);
-  min-height: min(66vh, 560px);
+  min-height: min(62vh, 520px);
   padding: 48px 62px;
   overflow:hidden;
 }
@@ -215,7 +215,7 @@ body{
 @media (max-width: 980px){
   .topbar__inner{flex-direction:column; align-items:flex-start}
   .dochead{text-align:left}
-  .page{padding: 40px 26px}
+  .page{padding: 34px 24px}
   .h1{font-size: 36px}
   .brand{min-width: unset}
   .brand__logo{height: 48px}
