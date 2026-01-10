@@ -230,3 +230,158 @@ body{
   }
   .counter{border-left:0; padding-left:0}
 }
+/* ===============================
+   AJUSTES DE DENSIDAD (NO SCROLL)
+   =============================== */
+
+/* Un poco más compacto en el “papel” */
+.page{
+  padding: 34px 34px;         /* antes estaba más grande */
+}
+
+/* Títulos: un poco menos altos */
+.h1{
+  font-size: 44px;            /* bajamos de “gigante” */
+  line-height: 1.06;
+  margin: 10px 0 10px;
+}
+
+.h2{
+  font-size: 20px;
+  line-height: 1.25;
+  margin: 8px 0 10px;
+}
+
+/* Texto: levemente más chico y más “cerrado” */
+.p{
+  font-size: 15px;
+  line-height: 1.45;
+  margin: 10px 0;
+}
+
+/* Listas: menos aire */
+.list{
+  margin: 10px 0 0;
+  padding-left: 18px;
+}
+.list li{
+  margin: 6px 0;
+}
+
+/* Separadores */
+.hr{
+  margin: 14px 0;
+}
+
+/* Notas/cajas: menos padding */
+.note{
+  padding: 14px 16px;
+  margin-top: 12px;
+}
+
+/* Meta superior más discreta */
+.page__meta{
+  font-size: 12px;
+  opacity: .70;
+  margin-bottom: 10px;
+}
+
+/* ===============================
+   CONTROLES: color institucional
+   =============================== */
+
+.controls-fixed{
+  right: 22px;               /* queda “adentro”, sin cortarse */
+  bottom: 18px;
+}
+
+.btn{
+  color: #ffffff;
+}
+
+/* Botón “Página anterior” y estado general: AZUL institucional */
+.btn--ghost{
+  background: rgba(16, 42, 86, 0.78);  /* azul */
+  border: 1px solid rgba(255,255,255,0.18);
+}
+
+/* Hover */
+.btn--ghost:hover{
+  background: rgba(16, 42, 86, 0.92);
+}
+
+/* Botón principal “Siguiente”: mantiene bordó, pero un poco más “premium” */
+.btn--primary{
+  border: 1px solid rgba(255,255,255,0.18);
+}
+
+/* Counter más legible */
+.counter{
+  color: rgba(255,255,255,0.92);
+}
+
+/* En mobile/ventanas chicas: controles más a la izquierda */
+@media (max-width: 980px){
+  .controls-fixed{
+    right: 18px;
+    bottom: 16px;
+  }
+  .page{
+    padding: 30px 26px;
+  }
+  .h1{ font-size: 38px; }
+}
+
+@media (max-width: 520px){
+  .controls-fixed{
+    left: 16px;
+    right: 16px;
+  }
+}
+
+/* ===============================
+   LOGO: que se vea grande y parejo
+   =============================== */
+
+.brand_logos{
+  height: 64px;              /* subimos alto del contenedor */
+  padding: 8px 10px;
+  border-radius: 14px;
+}
+
+.brand_logo{
+  height: 56px;              /* subimos logo */
+  width: auto;
+  object-fit: contain;
+  display: block;
+}
+
+/* ===============================
+   EFECTO “PASO DE HOJA” SOBRIO
+   (sin cambiar estructura)
+   =============================== */
+
+.page-anim{
+  transition: transform 220ms ease, opacity 220ms ease;
+  will-change: transform, opacity;
+}
+
+.page-anim.exit-active{
+  opacity: 0;
+  transform: translateX(-10px);
+}
+
+.page-anim.enter-left{
+  opacity: 0;
+  transform: translateX(-12px);
+}
+
+.page-anim.enter-right{
+  opacity: 0;
+  transform: translateX(12px);
+}
+
+.page-anim.enter-active{
+  opacity: 1;
+  transform: translateX(0);
+}
