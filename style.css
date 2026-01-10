@@ -61,7 +61,7 @@ a:hover{text-decoration:underline}
   justify-content:center;
 }
 .book{
-  width: min(980px, calc(100vw - 48px));
+  width: min(820px, calc(100vw - 32px));
   height: min(640px, calc(100vh - 160px));
   margin: 24px auto;
   position: relative;
