@@ -1,55 +1,31 @@
-(function(){
-  const pages = Array.from(document.querySelectorAll('.page'));
-  let current = 0; // number of flipped leaves
-  const total = pages.length;
+const pages = document.querySelectorAll(".page");
+const nextBtn = document.getElementById("next");
+const prevBtn = document.getElementById("prev");
+const indicator = document.getElementById("page-indicator");
 
-  function sync(){
-    pages.forEach((p, i)=>{
-      if(i < current) p.classList.add('flipped');
-      else p.classList.remove('flipped');
-      p.style.zIndex = (total - i);
-    });
-    document.getElementById('pageCounter').textContent =
-      (current===0 ? 'Portada' : `Página ${current} de ${total}`);
+let current = 0;
 
-    document.getElementById('btnPrev').disabled = (current===0);
-    document.getElementById('btnNext').disabled = (current===total);
+function update(){
+  pages.forEach((p,i)=>{
+    p.classList.remove("active","flipped");
+    if(i < current) p.classList.add("flipped");
+    if(i === current) p.classList.add("active");
+  });
+  indicator.textContent = `Página ${current+1} de ${pages.length}`;
+}
+
+nextBtn.onclick = ()=>{
+  if(current < pages.length-1){
+    current++;
+    update();
   }
+};
 
-  function go(n){
-    current = Math.max(0, Math.min(total, n));
-    sync();
+prevBtn.onclick = ()=>{
+  if(current > 0){
+    current--;
+    update();
   }
+};
 
-  function next(){ go(current+1); }
-  function prev(){ go(current-1); }
-
-  document.getElementById('btnNext').addEventListener('click', next);
-  document.getElementById('btnPrev').addEventListener('click', prev);
-
-  document.querySelector('.book').addEventListener('click', (e)=>{
-    const rect = e.currentTarget.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    if(e.target.closest('a') || e.target.closest('button')) return;
-    if(x > rect.width*0.55) next();
-    else if(x < rect.width*0.45) prev();
-  });
-
-  window.addEventListener('keydown', (e)=>{
-    if(e.key==='ArrowRight' || e.key==='PageDown') next();
-    if(e.key==='ArrowLeft' || e.key==='PageUp') prev();
-    if(e.key==='Home') go(0);
-    if(e.key==='End') go(total);
-  });
-
-  document.querySelectorAll('[data-goto]').forEach(a=>{
-    a.addEventListener('click', (e)=>{
-      e.preventDefault();
-      const n = parseInt(a.getAttribute('data-goto'), 10);
-      go(n);
-    });
-  });
-
-  pages.forEach((p,i)=> p.style.zIndex = (total - i));
-  sync();
-})();
+update();
