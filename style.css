@@ -99,7 +99,7 @@ main{
   box-shadow:0 20px 40px rgba(0,0,0,.12);
   transform-origin:left center;
   transform:rotateY(0deg);
-  transition:transform .8s ease, opacity .4s ease;
+  transition:transform .1.25s ease, opacity .4s ease;
   opacity:0;
   pointer-events:none;
 }
