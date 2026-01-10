@@ -2,490 +2,57 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <title>Diplomaturas Ambientales · Guía del Estudiante · UDE · 2026</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <!-- Tipografía sobria (opcional, si no carga igual funciona con system fonts) -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-
+  <title>Diplomaturas Ambientales · Guía del Estudiante · UDE · 2026</title>
   <link rel="stylesheet" href="./style.css" />
 </head>
 
 <body>
   <header class="topbar">
     <div class="brand">
-      <img class="brandLogo" src="./logo_ude_fdcs.jpg" alt="Universidad del Este · FDCS" />
+      <img class="logo" src="./logo_ude_fdcs.jpg" alt="Universidad del Este · FDCS" />
       <div class="brandText">
-        <div class="kicker">Universidad del Este · Facultad de Derecho y Ciencias Sociales</div>
+        <div class="org">Universidad del Este · Facultad de Derecho y Ciencias Sociales</div>
         <div class="title">Diplomaturas Ambientales</div>
         <div class="subtitle">Guía del Estudiante · Edición 2026</div>
       </div>
     </div>
-
-    <div class="nav">
-      <button id="prev" class="btn" type="button">Anterior</button>
-      <button id="next" class="btn primary" type="button">Siguiente</button>
-      <div class="counter" id="page-indicator">Página 1 de 13</div>
-    </div>
   </header>
 
   <main class="wrap">
-    <div class="bookShell">
-      <div class="book" id="book" aria-label="Flipbook Guía del Estudiante">
-
-        <!-- PÁGINA 1 -->
-        <section class="page active">
-          <div class="paper">
-            <div class="pageHeader">
-              <div class="smallCaps">Diplomaturas Ambientales · Guía del Estudiante</div>
-              <div class="pageNo">Hoja 1 de 13</div>
-            </div>
-
-            <h1 class="h1">Presentación</h1>
-            <p>
-              Esta guía fue elaborada para acompañar a las y los estudiantes de las Diplomaturas Ambientales
-              de la Universidad del Este durante toda la cohorte.
-            </p>
-            <p>
-              Su objetivo es brindar instrucciones claras, operativas y accesibles sobre el uso del campus virtual,
-              la organización académica, los canales de comunicación y las instancias de evaluación.
-            </p>
-
-            <div class="callout">
-              <div class="calloutTitle">Uso recomendado</div>
-              <ul>
-                <li>Leé esta guía al inicio y volvé a consultarla cuando surjan dudas.</li>
-                <li>Conservá tus credenciales y revisá con regularidad el campus.</li>
-                <li>Ante incidencias, seguí el “Protocolo de soporte” (ver Hoja 9).</li>
-              </ul>
-            </div>
-
-            <div class="footer">
-              <span class="muted">Edición 2026</span>
-              <span class="muted">UDE · FDCS</span>
-            </div>
-          </div>
-        </section>
-
-        <!-- PÁGINA 2 -->
-        <section class="page">
-          <div class="paper">
-            <div class="pageHeader">
-              <div class="smallCaps">Campus virtual</div>
-              <div class="pageNo">Hoja 2 de 13</div>
-            </div>
-
-            <h2 class="h2">Acceso al campus Moodle</h2>
-            <ol>
-              <li>Ingresá al campus desde el enlace institucional provisto por la Universidad.</li>
-              <li>Seleccioná “Acceder / Iniciar sesión”.</li>
-              <li>Ingresá con tu usuario y contraseña.</li>
-              <li>Verificá que estés matriculado/a en “Diplomaturas Ambientales”.</li>
-            </ol>
-
-            <div class="grid2">
-              <div class="card">
-                <div class="cardTitle">Requisito técnico mínimo</div>
-                <ul>
-                  <li>Navegador actualizado (Chrome/Edge/Firefox).</li>
-                  <li>Conexión estable.</li>
-                  <li>Correo institucional o el informado al inscribirte.</li>
-                </ul>
-              </div>
-              <div class="card">
-                <div class="cardTitle">Buenas prácticas</div>
-                <ul>
-                  <li>Guardá el enlace en favoritos.</li>
-                  <li>No compartas credenciales.</li>
-                  <li>Usá un solo dispositivo por inicio de sesión.</li>
-                </ul>
-              </div>
-            </div>
-
-            <div class="footer">
-              <span class="muted">Campus Moodle</span>
-              <span class="muted">UDE · FDCS</span>
-            </div>
-          </div>
-        </section>
-
-        <!-- PÁGINA 3 -->
-        <section class="page">
-          <div class="paper">
-            <div class="pageHeader">
-              <div class="smallCaps">Navegación</div>
-              <div class="pageNo">Hoja 3 de 13</div>
-            </div>
-
-            <h2 class="h2">Cómo orientarte dentro del curso</h2>
-            <p>El campus se organiza por <strong>tópicos</strong> (Unidades y Seminarios). En cada tópico encontrarás:</p>
-            <ul>
-              <li><strong>Clase sincrónica:</strong> fecha, horario, enlace y recordatorios.</li>
-              <li><strong>Clases grabadas:</strong> publicación dentro de la semana posterior al dictado.</li>
-              <li><strong>Materiales:</strong> bibliografía, guías, normativa, recursos y actividades.</li>
-              <li><strong>Evaluaciones:</strong> consignas, rúbricas y fechas.</li>
-            </ul>
-
-            <div class="callout">
-              <div class="calloutTitle">Regla simple</div>
-              <p class="mb0">
-                Si buscás un contenido, entrá primero a la <strong>Unidad</strong> correspondiente.
-                Si buscás una actividad evaluativa, entrá a la sección <strong>Evaluaciones</strong>.
-              </p>
-            </div>
-
-            <div class="footer">
-              <span class="muted">Estructura del curso</span>
-              <span class="muted">UDE · FDCS</span>
-            </div>
-          </div>
-        </section>
-
-        <!-- PÁGINA 4 -->
-        <section class="page">
-          <div class="paper">
-            <div class="pageHeader">
-              <div class="smallCaps">Clases</div>
-              <div class="pageNo">Hoja 4 de 13</div>
-            </div>
-
-            <h2 class="h2">Clases sincrónicas y grabaciones</h2>
-            <ul>
-              <li>Las clases sincrónicas quedan grabadas.</li>
-              <li>Las grabaciones se publican durante la semana posterior al dictado.</li>
-              <li>Se encuentran dentro del tópico correspondiente a cada unidad.</li>
-            </ul>
-
-            <div class="grid2">
-              <div class="card">
-                <div class="cardTitle">Antes de la clase</div>
-                <ul>
-                  <li>Ingresá 5 minutos antes.</li>
-                  <li>Probá audio y micrófono.</li>
-                  <li>Tené a mano el material de la unidad.</li>
-                </ul>
-              </div>
-              <div class="card">
-                <div class="cardTitle">Durante la clase</div>
-                <ul>
-                  <li>Usá el chat con criterio.</li>
-                  <li>Registrá dudas para el foro/canal oficial.</li>
-                  <li>Respetá pautas de convivencia.</li>
-                </ul>
-              </div>
-            </div>
-
-            <div class="footer">
-              <span class="muted">Clases y grabaciones</span>
-              <span class="muted">UDE · FDCS</span>
-            </div>
-          </div>
-        </section>
-
-        <!-- PÁGINA 5 -->
-        <section class="page">
-          <div class="paper">
-            <div class="pageHeader">
-              <div class="smallCaps">Materiales</div>
-              <div class="pageNo">Hoja 5 de 13</div>
-            </div>
-
-            <h2 class="h2">Material bibliográfico y recursos</h2>
-            <p>En cada Unidad encontrarás:</p>
-            <ul>
-              <li>Material de lectura y normativa seleccionada.</li>
-              <li>Presentaciones, guías y recursos complementarios.</li>
-              <li>Enlaces a jurisprudencia, repositorios o materiales audiovisuales (si corresponde).</li>
-            </ul>
-
-            <div class="callout">
-              <div class="calloutTitle">Criterio académico</div>
-              <p class="mb0">
-                Priorizá siempre el material indicado en la Unidad. Los recursos complementarios amplían y profundizan,
-                pero no reemplazan la guía central.
-              </p>
-            </div>
-
-            <div class="footer">
-              <span class="muted">Recursos</span>
-              <span class="muted">UDE · FDCS</span>
-            </div>
-          </div>
-        </section>
-
-        <!-- PÁGINA 6 -->
-        <section class="page">
-          <div class="paper">
-            <div class="pageHeader">
-              <div class="smallCaps">Trabajos prácticos</div>
-              <div class="pageNo">Hoja 6 de 13</div>
-            </div>
-
-            <h2 class="h2">Cómo subir un Trabajo Práctico</h2>
-            <ol>
-              <li>Ingresá a la Unidad/Sección donde está la actividad.</li>
-              <li>Abrí la consigna y leé requisitos y formato.</li>
-              <li>Seleccioná <strong>“Agregar entrega”</strong> (o “Enviar tarea”).</li>
-              <li>Adjuntá el archivo (PDF o el formato indicado).</li>
-              <li>Guardá cambios y confirmá <strong>“Enviar”</strong>.</li>
-              <li>Verificá que figure como <strong>“Enviado para calificar”</strong>.</li>
-            </ol>
-
-            <div class="grid2">
-              <div class="card">
-                <div class="cardTitle">Formato sugerido</div>
-                <ul>
-                  <li>Nombre de archivo: Apellido_Nombre_Unidad_TP.pdf</li>
-                  <li>PDF, lectura clara, sin fotos borrosas.</li>
-                  <li>Evitar archivos pesados (cuando sea posible).</li>
-                </ul>
-              </div>
-              <div class="card">
-                <div class="cardTitle">Error típico</div>
-                <ul>
-                  <li>Adjuntar pero no presionar “Enviar”.</li>
-                  <li>No queda registrado si no confirmás el envío.</li>
-                </ul>
-              </div>
-            </div>
-
-            <div class="footer">
-              <span class="muted">Entrega de TPs</span>
-              <span class="muted">UDE · FDCS</span>
-            </div>
-          </div>
-        </section>
-
-        <!-- PÁGINA 7 -->
-        <section class="page">
-          <div class="paper">
-            <div class="pageHeader">
-              <div class="smallCaps">Evaluación</div>
-              <div class="pageNo">Hoja 7 de 13</div>
-            </div>
-
-            <h2 class="h2">Evaluaciones y devoluciones</h2>
-            <ul>
-              <li>Las actividades evaluativas se informan en el campus con su fecha de apertura y cierre.</li>
-              <li>Las devoluciones se publican por el mismo medio (comentarios/rúbrica/calificación).</li>
-              <li>Conservá comprobantes de entrega (captura o confirmación del campus).</li>
-            </ul>
-
-            <div class="callout">
-              <div class="calloutTitle">Transparencia</div>
-              <p class="mb0">
-                La calificación se realiza conforme rúbricas y criterios informados. Si detectás un error material,
-                canalizalo por la vía institucional (ver Hoja 9).
-              </p>
-            </div>
-
-            <div class="footer">
-              <span class="muted">Criterios</span>
-              <span class="muted">UDE · FDCS</span>
-            </div>
-          </div>
-        </section>
-
-        <!-- PÁGINA 8 -->
-        <section class="page">
-          <div class="paper">
-            <div class="pageHeader">
-              <div class="smallCaps">Comunicación</div>
-              <div class="pageNo">Hoja 8 de 13</div>
-            </div>
-
-            <h2 class="h2">Canales institucionales</h2>
-            <p>Utilizá únicamente los canales definidos por la organización académica:</p>
-            <ul>
-              <li>Mensajería / anuncios del campus.</li>
-              <li>Foro de consultas (si está habilitado).</li>
-              <li>Correo institucional o el canal informado por coordinación.</li>
-            </ul>
-
-            <div class="grid2">
-              <div class="card">
-                <div class="cardTitle">Para consultas académicas</div>
-                <ul>
-                  <li>Unidad + tema.</li>
-                  <li>Pregunta puntual.</li>
-                  <li>Adjuntar captura sólo si suma claridad.</li>
-                </ul>
-              </div>
-              <div class="card">
-                <div class="cardTitle">Para incidencias técnicas</div>
-                <ul>
-                  <li>Usuario / correo.</li>
-                  <li>Captura del error.</li>
-                  <li>Fecha y hora aproximada.</li>
-                </ul>
-              </div>
-            </div>
-
-            <div class="footer">
-              <span class="muted">Canales</span>
-              <span class="muted">UDE · FDCS</span>
-            </div>
-          </div>
-        </section>
-
-        <!-- PÁGINA 9 -->
-        <section class="page">
-          <div class="paper">
-            <div class="pageHeader">
-              <div class="smallCaps">Soporte</div>
-              <div class="pageNo">Hoja 9 de 13</div>
-            </div>
-
-            <h2 class="h2">Dificultades de ingreso: protocolo breve</h2>
-            <ol>
-              <li>Verificá usuario y contraseña (sin espacios extra).</li>
-              <li>Probá en ventana incógnita o borrá caché del navegador.</li>
-              <li>Probá otro navegador (Chrome/Edge).</li>
-              <li>Si persiste: registrá captura + mensaje exacto del error.</li>
-              <li>Contactá soporte/coordinación por el canal institucional.</li>
-            </ol>
-
-            <div class="callout warn">
-              <div class="calloutTitle">Importante</div>
-              <p class="mb0">
-                No envíes contraseñas por chat ni a terceros. El soporte institucional nunca debe pedir tu clave.
-              </p>
-            </div>
-
-            <div class="footer">
-              <span class="muted">Incidencias</span>
-              <span class="muted">UDE · FDCS</span>
-            </div>
-          </div>
-        </section>
-
-        <!-- PÁGINA 10 -->
-        <section class="page">
-          <div class="paper">
-            <div class="pageHeader">
-              <div class="smallCaps">Organización</div>
-              <div class="pageNo">Hoja 10 de 13</div>
-            </div>
-
-            <h2 class="h2">Organización de la cohorte</h2>
-            <ul>
-              <li>Las Unidades se publican conforme cronograma oficial.</li>
-              <li>Los Seminarios Temáticos se identifican como tales en el campus.</li>
-              <li>Los materiales se ordenan por unidad, con secuencia pedagógica.</li>
-            </ul>
-
-            <div class="card">
-              <div class="cardTitle">Recomendación de estudio</div>
-              <p class="mb0">
-                Revisá cada Unidad en este orden: (1) guía/objetivos, (2) clase sincrónica, (3) material, (4) actividad.
-              </p>
-            </div>
-
-            <div class="footer">
-              <span class="muted">Cronograma</span>
-              <span class="muted">UDE · FDCS</span>
-            </div>
-          </div>
-        </section>
-
-        <!-- PÁGINA 11 -->
-        <section class="page">
-          <div class="paper">
-            <div class="pageHeader">
-              <div class="smallCaps">Convivencia</div>
-              <div class="pageNo">Hoja 11 de 13</div>
-            </div>
-
-            <h2 class="h2">Normas de intercambio y convivencia</h2>
-            <ul>
-              <li>Respeto institucional en clases y foros.</li>
-              <li>Uso responsable de micrófono/cámara según indique el equipo docente.</li>
-              <li>No difundir grabaciones ni materiales por fuera del ámbito académico.</li>
-              <li>Citar fuentes y evitar plagio. La integridad académica es exigible.</li>
-            </ul>
-
-            <div class="callout">
-              <div class="calloutTitle">Estilo universitario</div>
-              <p class="mb0">
-                En las entregas se espera redacción clara, orden lógico, citas mínimas cuando corresponda y precisión conceptual.
-              </p>
-            </div>
-
-            <div class="footer">
-              <span class="muted">Integridad académica</span>
-              <span class="muted">UDE · FDCS</span>
-            </div>
-          </div>
-        </section>
-
-        <!-- PÁGINA 12 -->
-        <section class="page">
-          <div class="paper">
-            <div class="pageHeader">
-              <div class="smallCaps">Checklist</div>
-              <div class="pageNo">Hoja 12 de 13</div>
-            </div>
-
-            <h2 class="h2">Checklist del estudiante</h2>
-            <div class="grid2">
-              <div class="card">
-                <div class="cardTitle">Cada semana</div>
-                <ul>
-                  <li>Revisar anuncios del campus.</li>
-                  <li>Verificar nuevas grabaciones.</li>
-                  <li>Leer guía/material de la unidad.</li>
-                </ul>
-              </div>
-              <div class="card">
-                <div class="cardTitle">Antes de entregar</div>
-                <ul>
-                  <li>Verificar formato y consigna.</li>
-                  <li>Nombrar bien el archivo.</li>
-                  <li>Confirmar “Enviado para calificar”.</li>
-                </ul>
-              </div>
-            </div>
-
-            <div class="footer">
-              <span class="muted">Seguimiento</span>
-              <span class="muted">UDE · FDCS</span>
-            </div>
-          </div>
-        </section>
-
-        <!-- PÁGINA 13 -->
-        <section class="page">
-          <div class="paper">
-            <div class="pageHeader">
-              <div class="smallCaps">Cierre</div>
-              <div class="pageNo">Hoja 13 de 13</div>
-            </div>
-
-            <h2 class="h2">Cierre institucional</h2>
-            <p>
-              Esta guía busca sostener una cohorte organizada, autónoma y previsible.
-              El correcto uso del campus virtual y el respeto por los canales institucionales
-              contribuyen al buen desarrollo académico de las Diplomaturas Ambientales.
-            </p>
-
-            <div class="callout">
-              <div class="calloutTitle">Versión descargable</div>
-              <p class="mb0">
-                Si tu repositorio incluye un PDF, podés ofrecerlo con un botón de descarga en esta misma página.
-              </p>
-            </div>
-
-            <div class="footer">
-              <span class="muted">Fin de la guía</span>
-              <span class="muted">UDE · FDCS · 2026</span>
-            </div>
-          </div>
-        </section>
-
+    <!-- navegación lateral (se oculta en pantallas chicas) -->
+    <aside class="side" aria-label="Navegación">
+      <div class="sideCard">
+        <div class="sideLabel">Índice</div>
+        <nav class="sideNav" id="sideNav">
+          <!-- se completa por JS -->
+        </nav>
+        <div class="sideHint">
+          Atajos: <b>←</b>/<b>→</b> · Inicio: <b>Home</b> · Final: <b>End</b>
+        </div>
       </div>
-    </div>
+    </aside>
+
+    <!-- “libro” -->
+    <section class="stage" aria-label="Guía">
+      <article class="sheet">
+        <div class="sheetTop">
+          <div class="crumb" id="pageKicker">DIPLOMATURAS AMBIENTALES · GUÍA DEL ESTUDIANTE</div>
+          <div class="sheetMeta" id="pageMeta">Hoja 1 de 13</div>
+        </div>
+
+        <div class="sheetBody" id="pageBody">
+          <!-- contenido por JS -->
+        </div>
+
+        <!-- CONTROLES ABAJO (como pediste) -->
+        <div class="sheetFooter">
+          <button class="btn" id="btnPrev" type="button">Anterior</button>
+          <button class="btn primary" id="btnNext" type="button">Siguiente</button>
+          <div class="counter" id="pageIndicator">Página 1 de 13</div>
+        </div>
+      </article>
+    </section>
   </main>
 
   <script src="./app.js"></script>
