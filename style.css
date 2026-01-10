@@ -310,15 +310,3 @@ body[data-page="9"] .note{
   .btn{ padding: 10px 12px; }
   .counter{ display:none; }
 }
-
-/* ====== FIX: chip "Página X de Y" visible e institucional ====== */
-#counter{
-  background: #1f3a5f;          /* azul institucional */
-  color: #ffffff;
-  padding: 10px 14px;
-  border-radius: 14px;
-  font-size: 13px;
-  font-weight: 700;
-  box-shadow: 0 6px 16px rgba(0,0,0,0.18);
-  white-space: nowrap;
-}
