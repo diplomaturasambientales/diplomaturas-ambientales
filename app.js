@@ -77,7 +77,7 @@ const rawPages = [
     `
   },
 
-  // 2) Índice
+  // 2) Índice (coherente con 13 páginas y división de canales)
   {
     kind: "index",
     render: () => `
@@ -86,7 +86,8 @@ const rawPages = [
       <ol class="list">
         <li><span class="kicker">Estructura del curso (tópicos, unidades y seminarios)</span></li>
         <li><span class="kicker">Problemas frecuentes y solución rápida</span></li>
-        <li><span class="kicker">Canales oficiales de comunicación</span></li>
+        <li><span class="kicker">Canales oficiales de comunicación (I)</span></li>
+        <li><span class="kicker">Canales oficiales de comunicación (II)</span></li>
         <li><span class="kicker">Asistencia a clases sincrónicas y beneficios</span></li>
         <li><span class="kicker">Primeros pasos en el Campus</span></li>
         <li><span class="kicker">Trabajos prácticos (TP): entrega y reglas</span></li>
@@ -98,7 +99,7 @@ const rawPages = [
     `
   },
 
-  // 3) Estructura del curso (antes era pág. 7 aprox. — ahora va al principio)
+  // 3) Estructura del curso
   {
     kind: "content",
     ...pageText(
@@ -108,18 +109,18 @@ const rawPages = [
         "Regla práctica: buscá cada recurso dentro del tópico o unidad correspondiente. Esto reduce errores y evita consultas innecesarias."
       ],
       [
-  "Bienvenida y acción inicial (Ficha de cohorte).",
-  "Canales oficiales de comunicación.",
-  "Evaluación, TPs y TFI.",
-  "Cronograma de la cohorte, clases y grabaciones.",
-  "Reconocimientos académicos.",
-  "Unidades y seminarios temáticos (materiales, grabaciones y actividad asociada)."
-],
+        "Bienvenida y acción inicial (Ficha de cohorte).",
+        "Canales oficiales de comunicación.",
+        "Evaluación, TPs y TFI.",
+        "Cronograma de la cohorte, clases y grabaciones.",
+        "Reconocimientos académicos.",
+        "Unidades y seminarios temáticos (materiales, grabaciones y actividad asociada)."
+      ],
       "Consejo operativo: trabajá en el orden propuesto. La secuencia está pensada para que lo anterior sea la base de lo siguiente."
     )
   },
 
-  // 4) Problemas frecuentes (antes era pág. 8 aprox. — ahora va al principio)
+  // 4) Problemas frecuentes
   {
     kind: "content",
     ...pageText(
@@ -136,75 +137,73 @@ const rawPages = [
     )
   },
 
-  // 5) Canales oficiales 
+  // 5) Canales oficiales (I)
   {
     kind: "content",
     ...pageText(
-      {
-  kind: "content",
-  ...pageText(
-    "Canales Oficiales de Comunicación (I)",
-    [
-      "Además de la ficha online y el grupo de WhatsApp, la coordinación de la cohorte pone a disposición los siguientes canales."
-    ],
-    [],
-    `
-      <div class="kicker">📧 Contacto principal de la Diplomatura</div>
-      <div class="p" style="margin:8px 0 0;">Correo: <b>diplomaturaambientalude@gmail.com</b></div>
-      <div class="p" style="margin:8px 0 0;">Mensajería privada del Campus Virtual.</div>
+      "Canales Oficiales de Comunicación (I)",
+      [
+        "Además de la ficha online y el grupo de WhatsApp, la coordinación de la cohorte pone a disposición los siguientes canales."
+      ],
+      [],
+      `
+        <div class="kicker">📧 Contacto principal de la Diplomatura</div>
+        <div class="p" style="margin:8px 0 0;">Correo: <b>diplomaturaambientalude@gmail.com</b></div>
+        <div class="p" style="margin:8px 0 0;">Mensajería privada del Campus Virtual.</div>
 
-      <div class="hr"></div>
+        <div class="hr"></div>
 
-      <div class="kicker">🏛️ Facultad de Derecho – UDE</div>
-      <div class="p" style="margin:8px 0 0;">Decanato: <b>fderchoysociales@ude.edu.ar</b></div>
-      <div class="p" style="margin:8px 0 0;">Secretarías: <b>Agostina</b> o <b>Bárbara</b>.</div>
-      <div class="p" style="margin:8px 0 0;">Departamento de Alumnos: <b>departamentoalumnos@ude.edu.ar</b></div>
-      <div class="p" style="margin:8px 0 0;">Tel. <b>(+54 9) 221 424-9026</b></div>
-    `
-  )
-},
-       {
-  kind: "content",
-  ...pageText(
-    "Canales Oficiales de Comunicación (II)",
-    [
-      "Continuación de los canales disponibles, según el tipo de consulta."
-    ],
-    [],
-    `
-      <div class="kicker">💰 Área Aranceles</div>
-      <div class="p" style="margin:8px 0 0;">Correo: <b>aranceles@ude.edu.ar</b></div>
-      <div class="p" style="margin:8px 0 0;">Teléfonos: <b>(0221) 422-4636 / 423-1689 / 423-1692</b></div>
-      <div class="p" style="margin:8px 0 0;">WhatsApp: <b>(+54 9) 221 669-9990</b></div>
-      <div class="p" style="margin:8px 0 0;">Horario de atención: <b>9:00 a 19:00</b> (WhatsApp solo <b>10 a 14 hs</b>).</div>
-      <div class="p" style="margin:8px 0 0;">
-        Recordatorio: el link de pago se envía del <b>1 al 10</b> de cada mes, exclusivamente al correo declarado al momento de la inscripción.
-      </div>
-
-      <div class="hr"></div>
-
-      <div class="kicker">🌐 Campus Virtual</div>
-      <div class="p" style="margin:8px 0 0;">Soporte técnico: <b>dycsvirtual@ude.edu.ar</b> (Contacto: <b>Sr. Alejo</b>).</div>
-
-      <div class="hr"></div>
-
-      <div class="kicker">📝 Área de Ingreso / Inscripción</div>
-      <div class="p" style="margin:8px 0 0;">Tel: <b>(+54 9) 221 422-4636</b></div>
-      <div class="p" style="margin:8px 0 0;">Correo: <b>consultasingreso@ude.edu.ar</b></div>
-      <div class="p" style="margin:8px 0 0;">WhatsApp: <b>(+54 9) 221 477-7950</b></div>
-      <div class="p" style="margin:8px 0 0;">Horario: <b>lunes a viernes de 9:00 a 17:00</b>.</div>
-
-      <div class="hr"></div>
-
-      <div class="p">
-        👉 Se recomienda guardar estas vías de comunicación y utilizarlas según el tipo de consulta, para recibir respuestas ágiles y precisas.
-      </div>
-    `
-  )
-},
+        <div class="kicker">🏛️ Facultad de Derecho – UDE</div>
+        <div class="p" style="margin:8px 0 0;">Decanato: <b>fderchoysociales@ude.edu.ar</b></div>
+        <div class="p" style="margin:8px 0 0;">Secretarías: <b>Agostina</b> o <b>Bárbara</b>.</div>
+        <div class="p" style="margin:8px 0 0;">Departamento de Alumnos: <b>departamentoalumnos@ude.edu.ar</b></div>
+        <div class="p" style="margin:8px 0 0;">Tel. <b>(+54 9) 221 424-9026</b></div>
+      `
+    )
   },
 
-  // 6) NUEVA PÁGINA: asistencia a sincrónicas
+  // 6) Canales oficiales (II)
+  {
+    kind: "content",
+    ...pageText(
+      "Canales Oficiales de Comunicación (II)",
+      [
+        "Continuación de los canales disponibles, según el tipo de consulta."
+      ],
+      [],
+      `
+        <div class="kicker">💰 Área Aranceles</div>
+        <div class="p" style="margin:8px 0 0;">Correo: <b>aranceles@ude.edu.ar</b></div>
+        <div class="p" style="margin:8px 0 0;">Teléfonos: <b>(0221) 422-4636 / 423-1689 / 423-1692</b></div>
+        <div class="p" style="margin:8px 0 0;">WhatsApp: <b>(+54 9) 221 669-9990</b></div>
+        <div class="p" style="margin:8px 0 0;">Horario de atención: <b>9:00 a 19:00</b> (WhatsApp solo <b>10 a 14 hs</b>).</div>
+        <div class="p" style="margin:8px 0 0;">
+          Recordatorio: el link de pago se envía del <b>1 al 10</b> de cada mes, exclusivamente al correo declarado al momento de la inscripción.
+        </div>
+
+        <div class="hr"></div>
+
+        <div class="kicker">🌐 Campus Virtual</div>
+        <div class="p" style="margin:8px 0 0;">Soporte técnico: <b>dycsvirtual@ude.edu.ar</b> (Contacto: <b>Sr. Alejo</b>).</div>
+
+        <div class="hr"></div>
+
+        <div class="kicker">📝 Área de Ingreso / Inscripción</div>
+        <div class="p" style="margin:8px 0 0;">Tel: <b>(+54 9) 221 422-4636</b></div>
+        <div class="p" style="margin:8px 0 0;">Correo: <b>consultasingreso@ude.edu.ar</b></div>
+        <div class="p" style="margin:8px 0 0;">WhatsApp: <b>(+54 9) 221 477-7950</b></div>
+        <div class="p" style="margin:8px 0 0;">Horario: <b>lunes a viernes de 9:00 a 17:00</b>.</div>
+
+        <div class="hr"></div>
+
+        <div class="p">
+          👉 Se recomienda guardar estas vías de comunicación y utilizarlas según el tipo de consulta, para recibir respuestas ágiles y precisas.
+        </div>
+      `
+    )
+  },
+
+  // 7) NUEVA PÁGINA: asistencia a sincrónicas
   {
     kind: "content",
     ...pageText(
@@ -218,7 +217,7 @@ const rawPages = [
     )
   },
 
-  // 7) Primeros pasos
+  // 8) Primeros pasos
   {
     kind: "content",
     ...pageText(
@@ -235,7 +234,7 @@ const rawPages = [
     )
   },
 
-  // 8) TP (con el texto institucional exigido)
+  // 9) TP (con el texto institucional exigido)
   {
     kind: "content",
     ...pageText(
@@ -259,7 +258,7 @@ const rawPages = [
     )
   },
 
-  // 9) Devolución y nota
+  // 10) Devolución y nota
   {
     kind: "content",
     ...pageText(
@@ -276,7 +275,7 @@ const rawPages = [
     )
   },
 
-  // 10) Cronograma + grabaciones (contacto corregido)
+  // 11) Cronograma + grabaciones (contacto corregido)
   {
     kind: "content",
     ...pageText(
@@ -292,7 +291,7 @@ const rawPages = [
     )
   },
 
-  // 11) Defensa TFI
+  // 12) Defensa TFI
   {
     kind: "content",
     ...pageText(
@@ -310,7 +309,7 @@ const rawPages = [
     )
   },
 
-  // 12) Cierre
+  // 13) Cierre
   {
     kind: "content",
     ...pageText(
