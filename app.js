@@ -136,54 +136,72 @@ const rawPages = [
     )
   },
 
-  // 5) Canales oficiales (reemplazo total + texto que pasaste)
+  // 5) Canales oficiales 
   {
     kind: "content",
     ...pageText(
-      "Canales Oficiales de Comunicación",
-      [
-        "Además de la ficha online y el grupo de WhatsApp, la Universidad del Este pone a disposición los siguientes canales."
-      ],
-      [],
-      `
-        <div class="kicker">📧 Contacto principal de la Diplomatura</div>
-        <div class="p" style="margin:8px 0 0;">Correo: <b>diplomaturaambientalude@gmail.com</b></div>
-        <div class="p" style="margin:8px 0 0;">Mensajería privada del Campus Virtual.</div>
+      {
+  kind: "content",
+  ...pageText(
+    "Canales Oficiales de Comunicación (I)",
+    [
+      "Además de la ficha online y el grupo de WhatsApp, la coordinación de la cohorte pone a disposición los siguientes canales."
+    ],
+    [],
+    `
+      <div class="kicker">📧 Contacto principal de la Diplomatura</div>
+      <div class="p" style="margin:8px 0 0;">Correo: <b>diplomaturaambientalude@gmail.com</b></div>
+      <div class="p" style="margin:8px 0 0;">Mensajería privada del Campus Virtual.</div>
 
-        <div class="hr"></div>
-        <div class="kicker">🏛️ Facultad de Derecho – UDE</div>
-        <div class="p" style="margin:8px 0 0;">Decanato: <b>fderchoysociales@ude.edu.ar</b></div>
-        <div class="p" style="margin:8px 0 0;">Secretarías: <b>Agostina</b> o <b>Bárbara</b>.</div>
-        <div class="p" style="margin:8px 0 0;">Departamento de Alumnos: <b>departamentoalumnos@ude.edu.ar</b></div>
-        <div class="p" style="margin:8px 0 0;">Tel. <b>(+54 9) 221 424-9026</b></div>
+      <div class="hr"></div>
 
-        <div class="hr"></div>
-        <div class="kicker">💰 Área Aranceles</div>
-        <div class="p" style="margin:8px 0 0;">Correo: <b>aranceles@ude.edu.ar</b></div>
-        <div class="p" style="margin:8px 0 0;">Teléfonos: <b>(0221) 422-4636 / 423-1689 / 423-1692</b></div>
-        <div class="p" style="margin:8px 0 0;">WhatsApp: <b>(+54 9) 221 669-9990</b></div>
-        <div class="p" style="margin:8px 0 0;">Horario de atención: <b>9:00 a 19:00</b> (WhatsApp solo <b>10 a 14 hs</b>).</div>
-        <div class="p" style="margin:8px 0 0;">
-          Recordatorio: el link de pago se envía del <b>1 al 10</b> de cada mes, exclusivamente al correo declarado al momento de la inscripción.
-        </div>
+      <div class="kicker">🏛️ Facultad de Derecho – UDE</div>
+      <div class="p" style="margin:8px 0 0;">Decanato: <b>fderchoysociales@ude.edu.ar</b></div>
+      <div class="p" style="margin:8px 0 0;">Secretarías: <b>Agostina</b> o <b>Bárbara</b>.</div>
+      <div class="p" style="margin:8px 0 0;">Departamento de Alumnos: <b>departamentoalumnos@ude.edu.ar</b></div>
+      <div class="p" style="margin:8px 0 0;">Tel. <b>(+54 9) 221 424-9026</b></div>
+    `
+  )
+},
+       {
+  kind: "content",
+  ...pageText(
+    "Canales Oficiales de Comunicación (II)",
+    [
+      "Continuación de los canales disponibles, según el tipo de consulta."
+    ],
+    [],
+    `
+      <div class="kicker">💰 Área Aranceles</div>
+      <div class="p" style="margin:8px 0 0;">Correo: <b>aranceles@ude.edu.ar</b></div>
+      <div class="p" style="margin:8px 0 0;">Teléfonos: <b>(0221) 422-4636 / 423-1689 / 423-1692</b></div>
+      <div class="p" style="margin:8px 0 0;">WhatsApp: <b>(+54 9) 221 669-9990</b></div>
+      <div class="p" style="margin:8px 0 0;">Horario de atención: <b>9:00 a 19:00</b> (WhatsApp solo <b>10 a 14 hs</b>).</div>
+      <div class="p" style="margin:8px 0 0;">
+        Recordatorio: el link de pago se envía del <b>1 al 10</b> de cada mes, exclusivamente al correo declarado al momento de la inscripción.
+      </div>
 
-        <div class="hr"></div>
-        <div class="kicker">🌐 Campus Virtual</div>
-        <div class="p" style="margin:8px 0 0;">Soporte técnico: <b>dycsvirtual@ude.edu.ar</b> (Contacto: <b>Sr. Alejo</b>).</div>
+      <div class="hr"></div>
 
-        <div class="hr"></div>
-        <div class="kicker">📝 Área de Ingreso / Inscripción</div>
-        <div class="p" style="margin:8px 0 0;">Tel: <b>(+54 9) 221 422-4636</b></div>
-        <div class="p" style="margin:8px 0 0;">Correo: <b>consultasingreso@ude.edu.ar</b></div>
-        <div class="p" style="margin:8px 0 0;">WhatsApp: <b>(+54 9) 221 477-7950</b></div>
-        <div class="p" style="margin:8px 0 0;">Horario: <b>lunes a viernes de 9:00 a 17:00</b>.</div>
+      <div class="kicker">🌐 Campus Virtual</div>
+      <div class="p" style="margin:8px 0 0;">Soporte técnico: <b>dycsvirtual@ude.edu.ar</b> (Contacto: <b>Sr. Alejo</b>).</div>
 
-        <div class="hr"></div>
-        <div class="p">
-          👉 Se recomienda guardar estas vías de comunicación y utilizarlas según el tipo de consulta, para recibir respuestas ágiles y precisas.
-        </div>
-      `
-    )
+      <div class="hr"></div>
+
+      <div class="kicker">📝 Área de Ingreso / Inscripción</div>
+      <div class="p" style="margin:8px 0 0;">Tel: <b>(+54 9) 221 422-4636</b></div>
+      <div class="p" style="margin:8px 0 0;">Correo: <b>consultasingreso@ude.edu.ar</b></div>
+      <div class="p" style="margin:8px 0 0;">WhatsApp: <b>(+54 9) 221 477-7950</b></div>
+      <div class="p" style="margin:8px 0 0;">Horario: <b>lunes a viernes de 9:00 a 17:00</b>.</div>
+
+      <div class="hr"></div>
+
+      <div class="p">
+        👉 Se recomienda guardar estas vías de comunicación y utilizarlas según el tipo de consulta, para recibir respuestas ágiles y precisas.
+      </div>
+    `
+  )
+},
   },
 
   // 6) NUEVA PÁGINA: asistencia a sincrónicas
