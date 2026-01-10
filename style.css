@@ -61,11 +61,12 @@ a:hover{text-decoration:underline}
   justify-content:center;
 }
 .book{
-  position:relative;
-  width:min(980px, 96vw);
-  height:min(640px, 70vh);
-  perspective: 2400px;
-  filter: drop-shadow(var(--shadow));
+  width: min(980px, calc(100vw - 48px));
+  height: min(640px, calc(100vh - 160px));
+  margin: 24px auto;
+  position: relative;
+  perspective: 1800px;
+  box-sizing: border-box;
 }
 
 .page{
