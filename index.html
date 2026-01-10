@@ -2,351 +2,51 @@
 <html lang="es">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Diplomaturas Ambientales · Guía del Estudiante · Edición 2026</title>
-
-  <link rel="stylesheet" href="./style.css" />
+  <link rel="stylesheet" href="style.css?v=20260110-2" />
 </head>
 
 <body>
-  <header class="topbar">
-    <div class="brand">
-      <img class="brand__logo" src="./logo_ude_fdcs.jpg" alt="Universidad del Este · FDCS" />
-      <div class="brand__text">
-        <div class="brand__kicker">Universidad del Este · Facultad de Derecho y Ciencias Sociales</div>
-        <div class="brand__title">Diplomaturas Ambientales</div>
-        <div class="brand__sub">Guía del Estudiante · Edición 2026</div>
+  <div class="app">
+    <!-- HEADER INSTITUCIONAL -->
+    <header class="topbar" role="banner">
+      <div class="topbar__inner">
+        <div class="brand">
+          <!-- Ajustá rutas/nombres si tus archivos difieren -->
+          <div class="brand__logos">
+            <img class="brand__logo" src="assets/ude_logo.png" alt="Universidad del Este" />
+            <img class="brand__logo" src="assets/fdcs_logo.png" alt="Facultad de Derecho y Ciencias Sociales" />
+          </div>
+
+          <div class="brand__text">
+            <div class="brand__uni">Universidad del Este</div>
+            <div class="brand__fac">Facultad de Derecho y Ciencias Sociales</div>
+          </div>
+        </div>
+
+        <div class="dochead">
+          <div class="dochead__title">Diplomaturas Ambientales</div>
+          <div class="dochead__subtitle">Guía del Estudiante · Edición 2026</div>
+        </div>
       </div>
-    </div>
-  </header>
+    </header>
 
-  <main class="stage">
-    <article class="sheet" id="sheet" aria-live="polite">
-
-      <!-- PÁGINA 1/13 — PORTADA -->
-      <section class="page is-active" data-title="Portada">
-        <div class="page__pad">
-          <div class="cover">
-            <div class="cover__title">Diplomaturas Ambientales</div>
-            <div class="cover__subtitle">Instructivo para estudiantes de cohortes</div>
-            <div class="cover__meta">
-              Universidad del Este · La Plata, Bs. As., Argentina<br />
-              Edición: 2026
-            </div>
-
-            <div class="cover__note">
-              Documento de orientación operativa para el uso del campus virtual y el cumplimiento de instancias académicas.
-            </div>
-          </div>
-        </div>
+    <!-- CONTENEDOR -->
+    <main class="stage" role="main">
+      <section class="card" aria-label="E-book">
+        <div id="page" class="page" aria-live="polite"></div>
       </section>
 
-      <!-- PÁGINA 2/13 — ÍNDICE INSTITUCIONAL -->
-      <section class="page" data-title="Índice">
-        <div class="page__pad">
-          <div class="page__top">
-            <div class="page__kicker">ÍNDICE</div>
-            <div class="page__righttag" id="sheetTag2">Hoja 2 de 13</div>
-          </div>
+      <!-- CONTROLES (abajo-derecha, pero “más adentro” a la izquierda) -->
+      <div class="controls" aria-label="Navegación">
+        <button id="btnPrev" class="btn btn--ghost" type="button">Página anterior</button>
+        <button id="btnNext" class="btn btn--primary" type="button">Siguiente</button>
+        <div id="counter" class="counter" aria-label="Contador de página"></div>
+      </div>
+    </main>
+  </div>
 
-          <h2 class="page__h2">Índice institucional</h2>
-
-          <ol class="indexlist">
-            <li><span class="indexlist__label">Presentación</span><span class="indexlist__page">3</span></li>
-            <li><span class="indexlist__label">Acceso al campus</span><span class="indexlist__page">4</span></li>
-            <li><span class="indexlist__label">Si no puedo ingresar</span><span class="indexlist__page">5</span></li>
-            <li><span class="indexlist__label">Estructura del campus</span><span class="indexlist__page">6</span></li>
-            <li><span class="indexlist__label">Clases sincrónicas</span><span class="indexlist__page">7</span></li>
-            <li><span class="indexlist__label">Clases y grabaciones</span><span class="indexlist__page">8</span></li>
-            <li><span class="indexlist__label">Materiales</span><span class="indexlist__page">9</span></li>
-            <li><span class="indexlist__label">Trabajos prácticos</span><span class="indexlist__page">10</span></li>
-            <li><span class="indexlist__label">Cómo subir un TP</span><span class="indexlist__page">11</span></li>
-            <li><span class="indexlist__label">Canales institucionales</span><span class="indexlist__page">12</span></li>
-            <li><span class="indexlist__label">Cierre institucional</span><span class="indexlist__page">13</span></li>
-          </ol>
-
-          <div class="callout">
-            <div class="callout__title">Uso rápido</div>
-            <div class="callout__text">
-              Navegación por botones (abajo a la derecha) o teclas: <b>←</b> anterior / <b>→</b> siguiente.
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- PÁGINA 3/13 — PRESENTACIÓN -->
-      <section class="page" data-title="Presentación">
-        <div class="page__pad">
-          <div class="page__top">
-            <div class="page__kicker">DIPLOMATURAS AMBIENTALES · GUÍA DEL ESTUDIANTE</div>
-            <div class="page__righttag">Hoja 3 de 13</div>
-          </div>
-
-          <h2 class="page__h2">Presentación</h2>
-          <p>
-            Esta guía fue elaborada para acompañar a las y los estudiantes de las Diplomaturas Ambientales de la Universidad del Este durante toda la cohorte.
-          </p>
-          <p>
-            Su objetivo es brindar instrucciones claras, operativas y accesibles sobre el uso del campus virtual, la organización académica, los canales de comunicación y las instancias de evaluación, para favorecer un desarrollo ordenado y previsible.
-          </p>
-
-          <div class="callout">
-            <div class="callout__title">Criterio general</div>
-            <div class="callout__text">
-              Recomendación institucional: revisar el campus con frecuencia y sostener una rutina mínima semanal (ingreso, lectura, descarga, entrega).
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- PÁGINA 4/13 — ACCESO -->
-      <section class="page" data-title="Acceso al campus">
-        <div class="page__pad">
-          <div class="page__top">
-            <div class="page__kicker">ACCESO</div>
-            <div class="page__righttag">Hoja 4 de 13</div>
-          </div>
-
-          <h2 class="page__h2">Acceso al campus</h2>
-          <ul class="bullets">
-            <li>Ingresá al campus desde el enlace provisto por la Universidad / coordinación.</li>
-            <li>Usá tu usuario y contraseña institucional.</li>
-            <li>Al primer ingreso, verificá que estés matriculado/a en la cohorte correspondiente.</li>
-          </ul>
-
-          <div class="callout">
-            <div class="callout__title">Dato útil</div>
-            <div class="callout__text">
-              Guardá el enlace del campus en favoritos y evitá entrar desde links reenviados sin verificar (pueden estar vencidos o incompletos).
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- PÁGINA 5/13 — NO PUEDO INGRESAR -->
-      <section class="page" data-title="Si no puedo ingresar">
-        <div class="page__pad">
-          <div class="page__top">
-            <div class="page__kicker">SOPORTE</div>
-            <div class="page__righttag">Hoja 5 de 13</div>
-          </div>
-
-          <h2 class="page__h2">Si no puedo ingresar</h2>
-          <p>Antes de pedir asistencia, probá estas acciones (en orden):</p>
-          <ul class="bullets">
-            <li>Revisar mayúsculas/minúsculas y teclado (bloq. mayús / idioma).</li>
-            <li>Actualizar la página (Ctrl+R) y reintentar.</li>
-            <li>Abrir en modo incógnito o cambiar de navegador.</li>
-            <li>Si persiste, solicitar restablecimiento de contraseña por el canal institucional.</li>
-          </ul>
-
-          <div class="callout">
-            <div class="callout__title">Qué incluir al reportar el problema</div>
-            <div class="callout__text">
-              Nombre completo, DNI, diplomatura, captura del error y dispositivo (PC/celular).
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- PÁGINA 6/13 — ESTRUCTURA -->
-      <section class="page" data-title="Estructura del campus">
-        <div class="page__pad">
-          <div class="page__top">
-            <div class="page__kicker">ORGANIZACIÓN</div>
-            <div class="page__righttag">Hoja 6 de 13</div>
-          </div>
-
-          <h2 class="page__h2">Estructura del campus</h2>
-          <ul class="bullets">
-            <li>El campus se organiza por <b>unidades</b> y <b>semanas</b> (según cronograma).</li>
-            <li>Cada unidad concentra: materiales, consignas, grabaciones, avisos y entregas.</li>
-            <li>Revisá siempre el <b>tópico</b> de tu unidad antes de comenzar.</li>
-          </ul>
-
-          <div class="callout">
-            <div class="callout__title">Regla práctica</div>
-            <div class="callout__text">
-              Si buscás algo, primero ubicá la unidad. La información “vive” dentro del tópico correspondiente.
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- PÁGINA 7/13 — CLASES SINCRÓNICAS -->
-      <section class="page" data-title="Clases sincrónicas">
-        <div class="page__pad">
-          <div class="page__top">
-            <div class="page__kicker">CLASES</div>
-            <div class="page__righttag">Hoja 7 de 13</div>
-          </div>
-
-          <h2 class="page__h2">Clases sincrónicas</h2>
-          <ul class="bullets">
-            <li>Ingresá con antelación (5 minutos) y verificá audio/cámara.</li>
-            <li>Mantené micrófono en silencio si no estás interviniendo.</li>
-            <li>Tomá nota de consignas y fechas informadas por el/la docente.</li>
-          </ul>
-
-          <div class="callout">
-            <div class="callout__title">Sugerencia</div>
-            <div class="callout__text">
-              Si tenés mala conexión, mantené cámara apagada y priorizá audio + chat.
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- PÁGINA 8/13 — GRABACIONES -->
-      <section class="page" data-title="Clases y grabaciones">
-        <div class="page__pad">
-          <div class="page__top">
-            <div class="page__kicker">CLASES</div>
-            <div class="page__righttag">Hoja 8 de 13</div>
-          </div>
-
-          <h2 class="page__h2">Clases y grabaciones</h2>
-          <ul class="bullets">
-            <li>Las clases sincrónicas quedan grabadas.</li>
-            <li>Las grabaciones se publican durante la semana posterior al dictado.</li>
-            <li>Se encuentran dentro del tópico correspondiente a cada unidad.</li>
-          </ul>
-
-          <div class="callout">
-            <div class="callout__title">Criterio</div>
-            <div class="callout__text">
-              La grabación complementa la clase. No reemplaza la lectura de los materiales.
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- PÁGINA 9/13 — MATERIALES -->
-      <section class="page" data-title="Materiales">
-        <div class="page__pad">
-          <div class="page__top">
-            <div class="page__kicker">RECURSOS</div>
-            <div class="page__righttag">Hoja 9 de 13</div>
-          </div>
-
-          <h2 class="page__h2">Materiales</h2>
-          <ul class="bullets">
-            <li>Leé primero la consigna o guía de la unidad (orden de trabajo).</li>
-            <li>Descargá o marcá como “visto” lo que corresponda.</li>
-            <li>Si hay bibliografía, priorizá los fragmentos indicados.</li>
-          </ul>
-
-          <div class="callout">
-            <div class="callout__title">Buenas prácticas</div>
-            <div class="callout__text">
-              Unificá tus apuntes en un solo documento por unidad (fecha + tema + idea central).
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- PÁGINA 10/13 — TPS -->
-      <section class="page" data-title="Trabajos prácticos">
-        <div class="page__pad">
-          <div class="page__top">
-            <div class="page__kicker">EVALUACIÓN</div>
-            <div class="page__righttag">Hoja 10 de 13</div>
-          </div>
-
-          <h2 class="page__h2">Trabajos prácticos</h2>
-          <ul class="bullets">
-            <li>Verificá la fecha/hora de entrega y el formato solicitado.</li>
-            <li>Respetá extensión, consigna y nombre de archivo (si se indica).</li>
-            <li>Confirmá que el archivo subió correctamente (ver comprobación).</li>
-          </ul>
-
-          <div class="callout">
-            <div class="callout__title">Atención</div>
-            <div class="callout__text">
-              No dejes la carga del archivo para el último minuto: puede fallar conexión o sesión.
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- PÁGINA 11/13 — SUBIR TP -->
-      <section class="page" data-title="Cómo subir un TP">
-        <div class="page__pad">
-          <div class="page__top">
-            <div class="page__kicker">EVALUACIÓN</div>
-            <div class="page__righttag">Hoja 11 de 13</div>
-          </div>
-
-          <h2 class="page__h2">Cómo subir un TP</h2>
-          <ol class="steps">
-            <li>Entrá al tópico de la unidad y abrí la actividad de entrega.</li>
-            <li>Adjuntá el archivo (o pegá el texto si se solicita entrega en línea).</li>
-            <li>Guardá cambios y presioná <b>Enviar tarea</b> / <b>Confirmar</b> (según campus).</li>
-            <li>Verificá el estado: “Enviado para calificación” o equivalente.</li>
-          </ol>
-
-          <div class="callout">
-            <div class="callout__title">Comprobación</div>
-            <div class="callout__text">
-              Si el campus permite, revisá que figure fecha de envío y que el archivo se pueda abrir.
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- PÁGINA 12/13 — CANALES -->
-      <section class="page" data-title="Canales institucionales">
-        <div class="page__pad">
-          <div class="page__top">
-            <div class="page__kicker">COMUNICACIÓN</div>
-            <div class="page__righttag">Hoja 12 de 13</div>
-          </div>
-
-          <h2 class="page__h2">Canales institucionales</h2>
-          <ul class="bullets">
-            <li>Usá los canales formales indicados por la coordinación (campus/correo).</li>
-            <li>Para soporte técnico, adjuntá captura y detalle del problema.</li>
-            <li>Para consultas académicas, indicá unidad, clase y punto específico.</li>
-          </ul>
-
-          <div class="callout">
-            <div class="callout__title">Regla simple</div>
-            <div class="callout__text">
-              Mensajes breves, con datos completos. Eso acelera respuestas y evita idas y vueltas.
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- PÁGINA 13/13 — CIERRE (SIN “VERSIÓN DESCARGABLE”) -->
-      <section class="page" data-title="Cierre institucional">
-        <div class="page__pad">
-          <div class="page__top">
-            <div class="page__kicker">CIERRE</div>
-            <div class="page__righttag">Hoja 13 de 13</div>
-          </div>
-
-          <h2 class="page__h2">Cierre institucional</h2>
-          <p>
-            Esta guía busca sostener una cohorte organizada, autónoma y previsible. El correcto uso del campus virtual y el respeto por los canales institucionales contribuyen al buen desarrollo académico de las Diplomaturas Ambientales.
-          </p>
-
-          <div class="fineprint">
-            Fin de la guía · UDE · FDCS · 2026
-          </div>
-        </div>
-      </section>
-
-    </article>
-
-    <!-- NAV INFERIOR DERECHA -->
-    <div class="navdock" aria-label="Navegación">
-      <button class="navdock__btn" id="btnPrev" type="button">Página anterior</button>
-      <button class="navdock__btn navdock__btn--primary" id="btnNext" type="button">Siguiente</button>
-      <div class="navdock__counter" id="counter">Página 1 de 13</div>
-    </div>
-  </main>
-
-  <script src="./app.js"></script>
+  <script src="app.js?v=20260110-2"></script>
 </body>
 </html>
