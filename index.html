@@ -4,19 +4,18 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Diplomaturas Ambientales · Guía del Estudiante · Edición 2026</title>
-  <link rel="stylesheet" href="style.css?v=20260110-2" />
+  <link rel="stylesheet" href="./style.css?v=20260110-3" />
 </head>
 
 <body>
   <div class="app">
-    <!-- HEADER INSTITUCIONAL -->
     <header class="topbar" role="banner">
       <div class="topbar__inner">
         <div class="brand">
-          <!-- Ajustá rutas/nombres si tus archivos difieren -->
           <div class="brand__logos">
-            <img class="brand__logo" src="assets/ude_logo.png" alt="Universidad del Este" />
-            <img class="brand__logo" src="assets/fdcs_logo.png" alt="Facultad de Derecho y Ciencias Sociales" />
+            <!-- IMPORTANTE: cambiá SOLO estos dos src por los nombres reales de tus imágenes -->
+            <img class="brand__logo" src="./assets/ude_logo.png" alt="Universidad del Este" />
+            <img class="brand__logo" src="./assets/fdcs_logo.png" alt="Facultad de Derecho y Ciencias Sociales" />
           </div>
 
           <div class="brand__text">
@@ -32,13 +31,11 @@
       </div>
     </header>
 
-    <!-- CONTENEDOR -->
     <main class="stage" role="main">
       <section class="card" aria-label="E-book">
         <div id="page" class="page" aria-live="polite"></div>
       </section>
 
-      <!-- CONTROLES (abajo-derecha, pero “más adentro” a la izquierda) -->
       <div class="controls" aria-label="Navegación">
         <button id="btnPrev" class="btn btn--ghost" type="button">Página anterior</button>
         <button id="btnNext" class="btn btn--primary" type="button">Siguiente</button>
@@ -47,6 +44,6 @@
     </main>
   </div>
 
-  <script src="app.js?v=20260110-2"></script>
+  <script defer src="./app.js?v=20260110-3"></script>
 </body>
 </html>
