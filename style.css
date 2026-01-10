@@ -64,20 +64,22 @@ body{
 .brand__logos{
   display:flex;
   align-items:center;
-  gap: 10px;
+  justify-content:center;
   padding: 6px 10px;
-  border: 1px solid var(--stroke);
+  border: 1px solid rgba(255,255,255,.14);
   border-radius: 14px;
   background: rgba(255,255,255,.06);
-  min-height: 60px; /* mantiene “caja” aunque se oculten logos */
+  min-height: 64px;
 }
 
-.brand__logo{
-  height: 56px; /* grande, pero si no carga se oculta solo */
+.brand__logo--combo{
+  height: 70px;       /* subilo a 68 si lo querés más dominante */
   width: auto;
   display:block;
   object-fit: contain;
+  image-rendering: auto;
   filter: drop-shadow(0 6px 14px rgba(0,0,0,.35));
+  border-radius: 10px;
 }
 
 .brand__text{line-height:1.05}
