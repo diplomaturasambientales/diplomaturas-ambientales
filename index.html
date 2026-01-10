@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Diplomaturas Ambientales · Guía del Estudiante · Edición 2026</title>
-  <link rel="stylesheet" href="./style.css?v=20260110-3" />
+  <link rel="stylesheet" href="./style.css?v=20260110-4" />
 </head>
 
 <body>
@@ -12,10 +12,12 @@
     <header class="topbar" role="banner">
       <div class="topbar__inner">
         <div class="brand">
-          <div class="brand__logos">
-            <!-- IMPORTANTE: cambiá SOLO estos dos src por los nombres reales de tus imágenes -->
-            <img class="brand__logo" src="./assets/ude_logo.png" alt="Universidad del Este" />
-            <img class="brand__logo" src="./assets/fdcs_logo.png" alt="Facultad de Derecho y Ciencias Sociales" />
+          <div class="brand__logos" aria-label="Identidad institucional">
+            <!-- CAMBIÁ SOLO LOS src POR LOS NOMBRES REALES EN TU REPO -->
+            <img class="brand__logo" src="./assets/ude_logo.png" alt="Universidad del Este"
+                 onerror="this.style.display='none';" />
+            <img class="brand__logo" src="./assets/fdcs_logo.png" alt="Facultad de Derecho y Ciencias Sociales"
+                 onerror="this.style.display='none';" />
           </div>
 
           <div class="brand__text">
@@ -36,7 +38,8 @@
         <div id="page" class="page" aria-live="polite"></div>
       </section>
 
-      <div class="controls" aria-label="Navegación">
+      <!-- Controles: FIXED para que jamás queden cortados -->
+      <div class="controls controls--fixed" aria-label="Navegación">
         <button id="btnPrev" class="btn btn--ghost" type="button">Página anterior</button>
         <button id="btnNext" class="btn btn--primary" type="button">Siguiente</button>
         <div id="counter" class="counter" aria-label="Contador de página"></div>
@@ -44,6 +47,6 @@
     </main>
   </div>
 
-  <script defer src="./app.js?v=20260110-3"></script>
+  <script defer src="./app.js?v=20260110-4"></script>
 </body>
 </html>
