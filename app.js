@@ -349,32 +349,7 @@ let currentPage = getPageFromURL(TOTAL_PAGES);
 /* =========================
    Render + animación
    ========================= */
-function renderPage(nextPage, direction) {
-  const idx = nextPage - 1;
 
-  elCounter.textContent = `Página ${nextPage} de ${TOTAL_PAGES}`;
-  elPrev.disabled = nextPage <= 1;
-  elNext.disabled = nextPage >= TOTAL_PAGES;
-
-  elPage.classList.add("page-anim", "exit-active");
-
-  setTimeout(() => {
-    elPage.innerHTML = pages[idx] ?? `<p class="p">Página no disponible.</p>`;
-    elPage.classList.remove("exit-active", "enter-active", "enter-left", "enter-right");
-
-    if (direction === "prev") elPage.classList.add("enter-left");
-    else elPage.classList.add("enter-right");
-
-    // reflow
-    void elPage.offsetWidth;
-
-    elPage.classList.add("enter-active");
-
-    setTimeout(() => {
-      elPage.classList.remove("enter-left", "enter-right");
-    }, 260);
-  }, 160);
-}
 
 function goTo(p, direction) {
   const next = Math.max(1, Math.min(TOTAL_PAGES, p));
