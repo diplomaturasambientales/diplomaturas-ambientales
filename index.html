@@ -1,486 +1,66 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Diplomaturas Ambientales · Guía del Estudiante · UDE · 2026</title>
+  <meta charset="UTF-8" />
+  <title>Diplomaturas Ambientales · Guía del Estudiante</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- CSS -->
   <link rel="stylesheet" href="./style.css" />
 </head>
+
 <body>
-  <header class="header">
-    <div class="brand">
-      <img class="logo" src="./assets/logo_ude_fdcs.jpg" alt="Universidad del Este - FDCS" />
-      <div class="t">
-        <div class="h">Diplomaturas Ambientales</div>
-        <div class="s">Guía del Estudiante · Edición 2026</div>
-      </div>
-    </div>
 
-    <div class="controls">
-      <button class="btn" id="btnPrev">Anterior</button>
-      <button class="btn" id="btnNext">Siguiente</button>
-      <div class="hint" id="pageCounter">Portada</div>
+<header class="header">
+  <div class="brand">
+    <img src="./logo_ude_fdcs.jpg" alt="Universidad del Este · FDCS" />
+    <div class="t">
+      <h1>Diplomaturas Ambientales</h1>
+      <p>Guía del Estudiante · Edición 2026</p>
     </div>
-  </header>
+  </div>
 
-  <main class="stage">
-    <div class="book-shell">
-      <div class="book" aria-label="Flipbook Diplomaturas Ambientales UDE">
-        
-    <div class="page" data-index="0">
-      <div class="front">
-      <div class="pad">
-        <div class="topline">
-          <div>
-            <div class="kicker">Diplomaturas Ambientales · Guía del Estudiante</div>
-            <h2>Diplomaturas Ambientales</h2>
-          </div>
-          <div class="pageno">Portada</div>
-        </div>
-        
-        <div style="margin-top:14px">
-          <div class="pill">Edición 2026</div>
-          <h1>Guía del Estudiante</h1>
-          <div class="hr"></div>
-          <p style="font-size:16px;color:var(--muted)"><b>Universidad del Este – Facultad de Derecho y Ciencias Sociales</b></p>
-          <p style="font-size:14px;color:var(--muted)">Edición 2026</p>
-        </div>
-        <div class="note">
-          Uso: clic a la derecha para avanzar · clic a la izquierda para retroceder · teclas ← →.
-        </div>
-        
-      </div>
-    </div>
-      <div class="back">
-      <div class="pad">
-        <div class="topline">
-          <div class="kicker">Navegación</div>
-          <div class="pageno">Reverso</div>
-        </div>
-        <p>Avanzá con <b>Siguiente</b> o clic sobre el lado derecho del libro. Para volver, usá <b>Anterior</b> o clic sobre el lado izquierdo.</p>
-        <p class="small">Atajos: <b>←</b> / <b>→</b> · Inicio: <b>Home</b> · Final: <b>End</b>.</p>
-        <div class="note">Reverso sobrio para preservar estética institucional.</div>
-      </div>
-    </div>
-    </div>
-    
-    <div class="page" data-index="1">
-      <div class="front">
-      <div class="pad">
-        <div class="topline">
-          <div>
-            <div class="kicker">Diplomaturas Ambientales · Guía del Estudiante</div>
-            <h2>Presentación</h2>
-          </div>
-          <div class="pageno">Hoja 1 de 12</div>
-        </div>
-        <p>Esta guía fue elaborada para acompañar a las y los estudiantes de las Diplomaturas Ambientales de la Universidad del Este durante toda la cohorte.</p>
-<p>Su objetivo es brindar instrucciones claras, operativas y accesibles sobre el uso del campus virtual, la organización académica, los canales de comunicación y las instancias de evaluación, a fin de facilitar una cursada ordenada y autónoma.</p>
+  <div class="controls">
+    <button id="prev">Anterior</button>
+    <button id="next">Siguiente</button>
+    <span id="page-indicator">Página 1 de 13</span>
+  </div>
+</header>
 
-            <div class="footerbar">
-              <a class="pill" href="#" data-goto="3">Volver al índice</a>
-              <span class="small">UDE · FDCS</span>
-            </div>
-            
-      </div>
-    </div>
-      <div class="back">
-      <div class="pad">
-        <div class="topline">
-          <div class="kicker">Navegación</div>
-          <div class="pageno">Reverso</div>
-        </div>
-        <p>Avanzá con <b>Siguiente</b> o clic sobre el lado derecho del libro. Para volver, usá <b>Anterior</b> o clic sobre el lado izquierdo.</p>
-        <p class="small">Atajos: <b>←</b> / <b>→</b> · Inicio: <b>Home</b> · Final: <b>End</b>.</p>
-        <div class="note">Reverso sobrio para preservar estética institucional.</div>
-      </div>
-    </div>
-    </div>
-    
-    <div class="page" data-index="2">
-      <div class="front">
-      <div class="pad">
-        <div class="topline">
-          <div>
-            <div class="kicker">Diplomaturas Ambientales · Guía del Estudiante</div>
-            <h2>Cómo usar esta guía</h2>
-          </div>
-          <div class="pageno">Hoja 2 de 12</div>
-        </div>
-        <p>Este e-book está organizado por secciones temáticas. Cada capítulo explica un procedimiento concreto, paso a paso.</p>
-<p>Se recomienda:</p>
-<ul><li>leer la guía completa al inicio de la cohorte;</li><li>consultarla ante cualquier duda operativa;</li><li>respetar siempre los canales institucionales indicados.</li></ul>
+<main>
+  <div class="book" id="book">
 
-            <div class="footerbar">
-              <a class="pill" href="#" data-goto="3">Volver al índice</a>
-              <span class="small">UDE · FDCS</span>
-            </div>
-            
-      </div>
-    </div>
-      <div class="back">
+    <!-- PÁGINA 1 -->
+    <section class="page active">
       <div class="pad">
-        <div class="topline">
-          <div class="kicker">Navegación</div>
-          <div class="pageno">Reverso</div>
-        </div>
-        <p>Avanzá con <b>Siguiente</b> o clic sobre el lado derecho del libro. Para volver, usá <b>Anterior</b> o clic sobre el lado izquierdo.</p>
-        <p class="small">Atajos: <b>←</b> / <b>→</b> · Inicio: <b>Home</b> · Final: <b>End</b>.</p>
-        <div class="note">Reverso sobrio para preservar estética institucional.</div>
+        <h2>Presentación</h2>
+        <p>
+          Esta guía fue elaborada para acompañar a las y los estudiantes de las
+          Diplomaturas Ambientales de la Universidad del Este durante toda la cohorte.
+        </p>
+        <p>
+          Su objetivo es brindar instrucciones claras, operativas y accesibles
+          sobre el uso del campus virtual, la organización académica, los canales
+          de comunicación y las instancias de evaluación.
+        </p>
       </div>
-    </div>
-    </div>
-    
-    <div class="page" data-index="3">
-      <div class="front">
-      <div class="pad">
-        <div class="topline">
-          <div>
-            <div class="kicker">Diplomaturas Ambientales · Guía del Estudiante</div>
-            <h2>Índice</h2>
-          </div>
-          <div class="pageno">Hoja 3 de 12</div>
-        </div>
-        
-        <p>Seleccioná un tema para ir directamente a la sección correspondiente.</p>
-        <div class="toc">
-          <a href="#" data-goto="4">Acceso al campus virtual</a>
-<a href="#" data-goto="5">Estructura del curso</a>
-<a href="#" data-goto="6">Comunicación institucional</a>
-<a href="#" data-goto="7">Mensajes privados en el campus</a>
-<a href="#" data-goto="8">Trabajos prácticos</a>
-<a href="#" data-goto="9">Clases y grabaciones</a>
-<a href="#" data-goto="10">Trabajo Final Integrador y defensa oral</a>
-<a href="#" data-goto="11">Problemas frecuentes</a>
-<a href="#" data-goto="12">Cierre</a>
-        </div>
-        <div class="note">
-          Consejo: guardá esta página. Es la “mesa de entradas” del libro.
-        </div>
-        
-      </div>
-    </div>
-      <div class="back">
-      <div class="pad">
-        <div class="topline">
-          <div class="kicker">Navegación</div>
-          <div class="pageno">Reverso</div>
-        </div>
-        <p>Avanzá con <b>Siguiente</b> o clic sobre el lado derecho del libro. Para volver, usá <b>Anterior</b> o clic sobre el lado izquierdo.</p>
-        <p class="small">Atajos: <b>←</b> / <b>→</b> · Inicio: <b>Home</b> · Final: <b>End</b>.</p>
-        <div class="note">Reverso sobrio para preservar estética institucional.</div>
-      </div>
-    </div>
-    </div>
-    
-    <div class="page" data-index="4">
-      <div class="front">
-      <div class="pad">
-        <div class="topline">
-          <div>
-            <div class="kicker">Diplomaturas Ambientales · Guía del Estudiante</div>
-            <h2>Acceso al campus virtual</h2>
-          </div>
-          <div class="pageno">Hoja 4 de 12</div>
-        </div>
-        <p>El campus virtual es el espacio oficial donde se desarrolla la cursada.</p>
-<p>El acceso se habilita una vez acreditado el pago correspondiente. El usuario y la contraseña institucional se informan por los canales oficiales.</p>
-<p>Desde el campus se accede a clases grabadas, materiales, trabajos prácticos y comunicaciones académicas.</p>
+    </section>
 
-            <div class="footerbar">
-              <a class="pill" href="#" data-goto="3">Volver al índice</a>
-              <span class="small">UDE · FDCS</span>
-            </div>
-            
-      </div>
-    </div>
-      <div class="back">
+    <!-- PÁGINA 2 -->
+    <section class="page">
       <div class="pad">
-        <div class="topline">
-          <div class="kicker">Navegación</div>
-          <div class="pageno">Reverso</div>
-        </div>
-        <p>Avanzá con <b>Siguiente</b> o clic sobre el lado derecho del libro. Para volver, usá <b>Anterior</b> o clic sobre el lado izquierdo.</p>
-        <p class="small">Atajos: <b>←</b> / <b>→</b> · Inicio: <b>Home</b> · Final: <b>End</b>.</p>
-        <div class="note">Reverso sobrio para preservar estética institucional.</div>
-      </div>
-    </div>
-    </div>
-    
-    <div class="page" data-index="5">
-      <div class="front">
-      <div class="pad">
-        <div class="topline">
-          <div>
-            <div class="kicker">Diplomaturas Ambientales · Guía del Estudiante</div>
-            <h2>Estructura del curso</h2>
-          </div>
-          <div class="pageno">Hoja 5 de 12</div>
-        </div>
-        <p>El curso se organiza por tópicos identificados por su título, sin numeración.</p>
-<p>Cada tópico puede contener material de lectura, enlaces, actividades y grabaciones (cuando corresponda).</p>
-<p>La secuencia responde a un criterio pedagógico progresivo.</p>
-
-            <div class="footerbar">
-              <a class="pill" href="#" data-goto="3">Volver al índice</a>
-              <span class="small">UDE · FDCS</span>
-            </div>
-            
-      </div>
-    </div>
-      <div class="back">
-      <div class="pad">
-        <div class="topline">
-          <div class="kicker">Navegación</div>
-          <div class="pageno">Reverso</div>
-        </div>
-        <p>Avanzá con <b>Siguiente</b> o clic sobre el lado derecho del libro. Para volver, usá <b>Anterior</b> o clic sobre el lado izquierdo.</p>
-        <p class="small">Atajos: <b>←</b> / <b>→</b> · Inicio: <b>Home</b> · Final: <b>End</b>.</p>
-        <div class="note">Reverso sobrio para preservar estética institucional.</div>
-      </div>
-    </div>
-    </div>
-    
-    <div class="page" data-index="6">
-      <div class="front">
-      <div class="pad">
-        <div class="topline">
-          <div>
-            <div class="kicker">Diplomaturas Ambientales · Guía del Estudiante</div>
-            <h2>Comunicación institucional</h2>
-          </div>
-          <div class="pageno">Hoja 6 de 12</div>
-        </div>
-        <p>Toda comunicación académica debe canalizarse por los medios institucionales.</p>
-<p>No se responden consultas académicas por canales informales o personales.</p>
-<p>Es responsabilidad del estudiante consultar el campus con regularidad y leer las comunicaciones publicadas.</p>
-
-            <div class="footerbar">
-              <a class="pill" href="#" data-goto="3">Volver al índice</a>
-              <span class="small">UDE · FDCS</span>
-            </div>
-            
-      </div>
-    </div>
-      <div class="back">
-      <div class="pad">
-        <div class="topline">
-          <div class="kicker">Navegación</div>
-          <div class="pageno">Reverso</div>
-        </div>
-        <p>Avanzá con <b>Siguiente</b> o clic sobre el lado derecho del libro. Para volver, usá <b>Anterior</b> o clic sobre el lado izquierdo.</p>
-        <p class="small">Atajos: <b>←</b> / <b>→</b> · Inicio: <b>Home</b> · Final: <b>End</b>.</p>
-        <div class="note">Reverso sobrio para preservar estética institucional.</div>
-      </div>
-    </div>
-    </div>
-    
-    <div class="page" data-index="7">
-      <div class="front">
-      <div class="pad">
-        <div class="topline">
-          <div>
-            <div class="kicker">Diplomaturas Ambientales · Guía del Estudiante</div>
-            <h2>Mensajes privados en el campus</h2>
-          </div>
-          <div class="pageno">Hoja 7 de 12</div>
-        </div>
-        <p>Los mensajes privados son el medio adecuado para comunicarse con docentes y coordinación académica.</p>
-<p>Uso recomendado: consultas sobre consignas, aclaraciones académicas y dudas puntuales sobre actividades.</p>
-<p>Regla de calidad: tema + unidad/actividad + pedido concreto + datos mínimos de identificación.</p>
-
-            <div class="footerbar">
-              <a class="pill" href="#" data-goto="3">Volver al índice</a>
-              <span class="small">UDE · FDCS</span>
-            </div>
-            
-      </div>
-    </div>
-      <div class="back">
-      <div class="pad">
-        <div class="topline">
-          <div class="kicker">Navegación</div>
-          <div class="pageno">Reverso</div>
-        </div>
-        <p>Avanzá con <b>Siguiente</b> o clic sobre el lado derecho del libro. Para volver, usá <b>Anterior</b> o clic sobre el lado izquierdo.</p>
-        <p class="small">Atajos: <b>←</b> / <b>→</b> · Inicio: <b>Home</b> · Final: <b>End</b>.</p>
-        <div class="note">Reverso sobrio para preservar estética institucional.</div>
-      </div>
-    </div>
-    </div>
-    
-    <div class="page" data-index="8">
-      <div class="front">
-      <div class="pad">
-        <div class="topline">
-          <div>
-            <div class="kicker">Diplomaturas Ambientales · Guía del Estudiante</div>
-            <h2>Trabajos prácticos</h2>
-          </div>
-          <div class="pageno">Hoja 8 de 12</div>
-        </div>
-        <p>Los trabajos prácticos se entregan exclusivamente a través del campus virtual.</p>
-<p>Cada actividad indica consigna, formato y plazo de entrega.</p>
-<p>Es responsabilidad del estudiante subir el archivo correcto y verificar el estado final de envío.</p>
-
-            <div class="footerbar">
-              <a class="pill" href="#" data-goto="3">Volver al índice</a>
-              <span class="small">UDE · FDCS</span>
-            </div>
-            
-      </div>
-    </div>
-      <div class="back">
-      <div class="pad">
-        <div class="topline">
-          <div class="kicker">Navegación</div>
-          <div class="pageno">Reverso</div>
-        </div>
-        <p>Avanzá con <b>Siguiente</b> o clic sobre el lado derecho del libro. Para volver, usá <b>Anterior</b> o clic sobre el lado izquierdo.</p>
-        <p class="small">Atajos: <b>←</b> / <b>→</b> · Inicio: <b>Home</b> · Final: <b>End</b>.</p>
-        <div class="note">Reverso sobrio para preservar estética institucional.</div>
-      </div>
-    </div>
-    </div>
-    
-    <div class="page" data-index="9">
-      <div class="front">
-      <div class="pad">
-        <div class="topline">
-          <div>
-            <div class="kicker">Diplomaturas Ambientales · Guía del Estudiante</div>
-            <h2>Clases y grabaciones</h2>
-          </div>
-          <div class="pageno">Hoja 9 de 12</div>
-        </div>
+        <h2>Clases y grabaciones</h2>
         <p>Las clases sincrónicas quedan grabadas.</p>
-<p>Las grabaciones se publican en el campus durante la semana posterior al dictado de la clase.</p>
-<p>Se encuentran dentro del tópico correspondiente a cada unidad.</p>
+        <p>Las grabaciones se publican durante la semana posterior al dictado.</p>
+        <p>Se encuentran dentro del tópico correspondiente a cada unidad.</p>
+      </div>
+    </section>
 
-            <div class="footerbar">
-              <a class="pill" href="#" data-goto="3">Volver al índice</a>
-              <span class="small">UDE · FDCS</span>
-            </div>
-            
-      </div>
-    </div>
-      <div class="back">
-      <div class="pad">
-        <div class="topline">
-          <div class="kicker">Navegación</div>
-          <div class="pageno">Reverso</div>
-        </div>
-        <p>Avanzá con <b>Siguiente</b> o clic sobre el lado derecho del libro. Para volver, usá <b>Anterior</b> o clic sobre el lado izquierdo.</p>
-        <p class="small">Atajos: <b>←</b> / <b>→</b> · Inicio: <b>Home</b> · Final: <b>End</b>.</p>
-        <div class="note">Reverso sobrio para preservar estética institucional.</div>
-      </div>
-    </div>
-    </div>
-    
-    <div class="page" data-index="10">
-      <div class="front">
-      <div class="pad">
-        <div class="topline">
-          <div>
-            <div class="kicker">Diplomaturas Ambientales · Guía del Estudiante</div>
-            <h2>Trabajo Final Integrador y defensa oral</h2>
-          </div>
-          <div class="pageno">Hoja 10 de 12</div>
-        </div>
-        <p>La aprobación requiere la entrega del Trabajo Final Integrador y la defensa oral virtual ante mesa evaluadora, conforme al protocolo institucional.</p>
-<p>Las fechas y condiciones se informan por los canales oficiales.</p>
+    <!-- agregás más <section class="page"> según necesites -->
 
-            <div class="footerbar">
-              <a class="pill" href="#" data-goto="3">Volver al índice</a>
-              <span class="small">UDE · FDCS</span>
-            </div>
-            
-      </div>
-    </div>
-      <div class="back">
-      <div class="pad">
-        <div class="topline">
-          <div class="kicker">Navegación</div>
-          <div class="pageno">Reverso</div>
-        </div>
-        <p>Avanzá con <b>Siguiente</b> o clic sobre el lado derecho del libro. Para volver, usá <b>Anterior</b> o clic sobre el lado izquierdo.</p>
-        <p class="small">Atajos: <b>←</b> / <b>→</b> · Inicio: <b>Home</b> · Final: <b>End</b>.</p>
-        <div class="note">Reverso sobrio para preservar estética institucional.</div>
-      </div>
-    </div>
-    </div>
-    
-    <div class="page" data-index="11">
-      <div class="front">
-      <div class="pad">
-        <div class="topline">
-          <div>
-            <div class="kicker">Diplomaturas Ambientales · Guía del Estudiante</div>
-            <h2>Problemas frecuentes</h2>
-          </div>
-          <div class="pageno">Hoja 11 de 12</div>
-        </div>
-        <p>Antes de consultar: revisá esta guía, verificá el campus y releé el índice.</p>
-<p>Si el inconveniente es de acceso o usuario, se canaliza por soporte institucional. Si es académico, por mensajes privados en el campus.</p>
+  </div>
+</main>
 
-            <div class="footerbar">
-              <a class="pill" href="#" data-goto="3">Volver al índice</a>
-              <span class="small">UDE · FDCS</span>
-            </div>
-            
-      </div>
-    </div>
-      <div class="back">
-      <div class="pad">
-        <div class="topline">
-          <div class="kicker">Navegación</div>
-          <div class="pageno">Reverso</div>
-        </div>
-        <p>Avanzá con <b>Siguiente</b> o clic sobre el lado derecho del libro. Para volver, usá <b>Anterior</b> o clic sobre el lado izquierdo.</p>
-        <p class="small">Atajos: <b>←</b> / <b>→</b> · Inicio: <b>Home</b> · Final: <b>End</b>.</p>
-        <div class="note">Reverso sobrio para preservar estética institucional.</div>
-      </div>
-    </div>
-    </div>
-    
-    <div class="page" data-index="12">
-      <div class="front">
-      <div class="pad">
-        <div class="topline">
-          <div>
-            <div class="kicker">Diplomaturas Ambientales · Guía del Estudiante</div>
-            <h2>Cierre</h2>
-          </div>
-          <div class="pageno">Hoja 12 de 12</div>
-        </div>
-        <p>Esta guía fue pensada para facilitar una cohorte organizada, autónoma y previsible.</p>
-<p>El correcto uso del campus virtual y el respeto por los canales institucionales contribuyen al buen desarrollo académico de toda la cohorte.</p>
-<p>Versión descargable (PDF): disponible en el botón inferior.</p>
-
-            <div class="footerbar">
-              <a class="pill" href="./guia_estudiante_2026.pdf" target="_blank" rel="noopener">Descargar PDF institucional</a>
-              <span class="small">UDE · FDCS · 2026</span>
-            </div>
-            
-      </div>
-    </div>
-      <div class="back">
-      <div class="pad">
-        <div class="topline">
-          <div class="kicker">Navegación</div>
-          <div class="pageno">Reverso</div>
-        </div>
-        <p>Avanzá con <b>Siguiente</b> o clic sobre el lado derecho del libro. Para volver, usá <b>Anterior</b> o clic sobre el lado izquierdo.</p>
-        <p class="small">Atajos: <b>←</b> / <b>→</b> · Inicio: <b>Home</b> · Final: <b>End</b>.</p>
-        <div class="note">Reverso sobrio para preservar estética institucional.</div>
-      </div>
-    </div>
-    </div>
-    
-      </div>
-    </div>
-  </main>
-
-  <script src="./app.js"></script>
+<script src="./app.js"></script>
 </body>
 </html>
