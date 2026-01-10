@@ -201,3 +201,17 @@ main{
 @media (max-width: 740px){
   :root{ --book-max: 560px; --side-pad: 12px; }
 }
+
+/* ====== LOGO: prolijo, proporcional, sin “cachivache” ====== */
+.header .brand { align-items: center; gap: 12px; }
+
+.logo{
+  height: 42px;          /* tamaño institucional */
+  width: auto;           /* mantiene proporción */
+  display: block;
+  object-fit: contain;
+}
+
+@media (max-width: 740px){
+  .logo{ height: 34px; }
+}
