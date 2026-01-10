@@ -52,7 +52,7 @@ function pageText(title, paragraphs = [], bullets = [], noteHtml = "") {
 }
 
 /* =========================
-   CONTENIDO (ORDEN LÓGICO NUEVO)
+   CONTENIDO (ORDEN LÓGICO)
    ========================= */
 
 const rawPages = [
@@ -77,7 +77,7 @@ const rawPages = [
     `
   },
 
-  // 2) Índice (coherente con 13 páginas y división de canales)
+  // 2) Índice
   {
     kind: "index",
     render: () => `
@@ -203,7 +203,7 @@ const rawPages = [
     )
   },
 
-  // 7) NUEVA PÁGINA: asistencia a sincrónicas
+  // 7) Asistencia sincrónica
   {
     kind: "content",
     ...pageText(
@@ -234,7 +234,7 @@ const rawPages = [
     )
   },
 
-  // 9) TP (con el texto institucional exigido)
+  // 9) TP
   {
     kind: "content",
     ...pageText(
@@ -275,7 +275,7 @@ const rawPages = [
     )
   },
 
-  // 11) Cronograma + grabaciones (contacto corregido)
+  // 11) Cronograma + grabaciones
   {
     kind: "content",
     ...pageText(
@@ -329,9 +329,11 @@ const TOTAL_PAGES = rawPages.length;
 
 const pages = rawPages.map((p, i) => {
   const n = i + 1;
+
   if (p.kind === "cover" || p.kind === "index") {
     return `${pageMeta(n, TOTAL_PAGES)}${p.render()}`;
   }
+
   return `
     ${pageMeta(n, TOTAL_PAGES)}
     <h1 class="h1">${escapeHtml(p.title || "")}</h1>
@@ -363,6 +365,7 @@ function renderPage(nextPage, direction) {
     if (direction === "prev") elPage.classList.add("enter-left");
     else elPage.classList.add("enter-right");
 
+    // reflow
     void elPage.offsetWidth;
 
     elPage.classList.add("enter-active");
