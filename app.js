@@ -108,13 +108,13 @@ const rawPages = [
         "Regla práctica: buscá cada recurso dentro del tópico o unidad correspondiente. Esto reduce errores y evita consultas innecesarias."
       ],
       [
-        "Tópico 0: bienvenida + acción inicial (Ficha de cohorte).",
-        "Tópico 1: canales oficiales de comunicación.",
-        "Tópico 2: evaluación, TPs y TFI.",
-        "Tópico 3: cronograma de la cohorte, clases y grabaciones.",
-        "Tópico 4: reconocimientos académicos.",
-        "Desde el Tópico 5: unidades y seminarios temáticos (materiales, grabaciones y actividad asociada)."
-      ],
+  "Bienvenida y acción inicial (Ficha de cohorte).",
+  "Canales oficiales de comunicación.",
+  "Evaluación, TPs y TFI.",
+  "Cronograma de la cohorte, clases y grabaciones.",
+  "Reconocimientos académicos.",
+  "Unidades y seminarios temáticos (materiales, grabaciones y actividad asociada)."
+],
       "Consejo operativo: trabajá en el orden propuesto. La secuencia está pensada para que lo anterior sea la base de lo siguiente."
     )
   },
