@@ -215,18 +215,18 @@
       <ul>
         <li>El TFI se sube al campus en las fechas indicadas.</li>
         <li>La defensa es individual, oral y virtual, y consiste exclusivamente en la defensa del
-        Trabajo Final previamente entregado.<li>
+        Trabajo Final previamente entregado.
         <li>La defensa se agenda en las mesas previstas (fecha y horario comunicados oportunamente).</li>
         <li>Condición habilitante: solo acceden quienes tengan el arancel total cancelado,
-        según nómina oficial de Aranceles.<li>
+        según nómina oficial de Aranceles.
         <li>Validación de identidad: al ingresar, debés exhibir el DNI frente a cámara. Si no
-        lo exhibís, no rendís y se registra ausencia.<li>
+        lo exhibís, no rendís y se registra ausencia.
         <li>Responsabilidad técnica del estudiante: cámara, micrófono y conexión. Fallas
-        atribuibles al estudiante no habilitan reprogramación.<li>
+        atribuibles al estudiante no habilitan reprogramación.
         <li>Causales de finalización sin calificación: desconexión, cámara apagada o
-        micrófono silenciado sin causa, o no exhibición de DNI.<li>
+        micrófono silenciado sin causa, o no exhibición de DNI.
         <li>Orden y tiempos: convocatoria escalonada; duración aproximada 10 minutos por
-        estudiante; ingreso solo cuando la coordinación autorice.<li>
+        estudiante; ingreso solo cuando la coordinación autorice.
         <li>Se exige claridad expositiva, dominio conceptual y referencia a fuentes trabajadas.</li>
       </ul>
       <div class="box">
