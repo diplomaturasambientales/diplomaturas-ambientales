@@ -1,378 +1,406 @@
 /* =========================================================
-   Diplomaturas Ambientales · Guía del Estudiante · Edición 2026
-   Paginado robusto + transición sobria (pase de páginas)
+   UDE · Diplomaturas Ambientales · Guía del Estudiante 2026
+   app.js (REEMPLAZO TOTAL)
    ========================================================= */
 
-const elPage = document.getElementById("page");
-const elPrev = document.getElementById("btnPrev");
-const elNext = document.getElementById("btnNext");
-const elCounter = document.getElementById("counter");
+(() => {
+  "use strict";
 
-if (!elPage || !elPrev || !elNext || !elCounter) {
-  throw new Error("Faltan elementos del DOM (page/btnPrev/btnNext/counter). Revisá index.html.");
-}
+  // ======== CONFIG ========
+  const TOTAL_PAGES = 13;
 
-function escapeHtml(str) {
-  return String(str)
-    .replace(/&/g, "&amp;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;");
-}
+  // Cambia este número si querés forzar “invalidador de cache” desde JS
+  // (igual, tu ?v= en la URL ya alcanza).
+  const BUILD_TAG = "20260110";
 
-function getPageFromURL(max) {
-  const params = new URLSearchParams(window.location.search);
-  const p = parseInt(params.get("p"), 10);
-  if (!Number.isFinite(p) || p < 1) return 1;
-  if (p > max) return max;
-  return p;
-}
-
-function setPageToURL(p) {
-  const params = new URLSearchParams(window.location.search);
-  params.set("p", String(p));
-  const newUrl = `${window.location.pathname}?${params.toString()}`;
-  window.history.replaceState({}, "", newUrl);
-}
-
-/* =========================
-   COMPONENTES DE PÁGINA
-   ========================= */
-
-function pageMeta(pageNo, total) {
-  return `<div class="page__meta">Universidad del Este · FDCS · Guía del Estudiante · Edición 2026 · Página ${pageNo} de ${total}</div>`;
-}
-
-function pageText(title, paragraphs = [], bullets = [], noteHtml = "") {
-  const ps = paragraphs.map(t => `<p class="p">${escapeHtml(t)}</p>`).join("");
-  const bs = bullets.length
-    ? `<div class="hr"></div><ul class="list">${bullets.map(b => `<li>${escapeHtml(b)}</li>`).join("")}</ul>`
-    : "";
-  const note = noteHtml ? `<div class="note">${noteHtml}</div>` : "";
-  return { title, ps, bs, note };
-}
-
-/* =========================
-   CONTENIDO (13 PÁGINAS)
-   ========================= */
-
-const rawPages = [
-  // 1) Portada
-  {
-    kind: "cover",
-    render: () => `
-      <div class="kicker muted">Universidad del Este · Facultad de Derecho y Ciencias Sociales</div>
-      <div class="hr"></div>
-      <h1 class="h1">Diplomaturas Ambientales</h1>
-      <div class="h2">Guía del Estudiante · Campus Virtual (Moodle)</div>
-      <p class="p"><span class="kicker">Edición:</span> 2026</p>
-      <div class="hr"></div>
-      <p class="p muted">
+  // ======== CONTENIDO ========
+  // IMPORTANTE: 13 entradas EXACTAS (índices 0..12)
+  // Si falta una, antes te quedaba "en blanco". Acá NO: se muestra aviso.
+  const pages = [
+    // 1
+    `
+      <div class="kicker">Universidad del Este · FDCS · Guía del Estudiante · Edición 2026 · Página 1 de 13</div>
+      <h1>Diplomaturas Ambientales</h1>
+      <h2>Guía del Estudiante · Campus Virtual (Moodle)</h2>
+      <p><strong>Edición:</strong> 2026</p>
+      <hr>
+      <p>
         Este e-book reúne instrucciones operativas, criterios académicos y pasos concretos para usar el campus virtual,
         comunicarte con el equipo y entregar actividades.
       </p>
-      <p class="p muted">
-        Importante: los enlaces y la disponibilidad de contenidos se actualizan durante el dictado. Si ves una unidad sin grabación,
-        significa que la clase fue reciente y la publicación se realiza durante la semana siguiente.
+      <p class="small">
+        Importante: los enlaces y la disponibilidad de contenidos se actualizan durante el dictado.
+        Si ves una unidad sin grabación, significa que la clase fue reciente y la publicación se realiza durante la semana siguiente.
       </p>
-    `
-  },
+    `,
 
-  // 2) Índice
-  {
-    kind: "index",
-    render: () => `
-      <h1 class="h1">Índice</h1>
-      <div class="hr"></div>
-      <ol class="list ol">
-        <li><span class="kicker">Estructura del curso (tópicos, unidades y seminarios)</span></li>
-        <li><span class="kicker">Problemas frecuentes y solución rápida</span></li>
-        <li><span class="kicker">Canales oficiales de comunicación (I)</span></li>
-        <li><span class="kicker">Canales oficiales de comunicación (II)</span></li>
-        <li><span class="kicker">Asistencia a clases sincrónicas y beneficios</span></li>
-        <li><span class="kicker">Primeros pasos en el Campus</span></li>
-        <li><span class="kicker">Trabajos prácticos (TP): entrega y reglas</span></li>
-        <li><span class="kicker">Cómo ver la devolución y la nota</span></li>
-        <li><span class="kicker">Cronograma, clases sincrónicas y grabaciones</span></li>
-        <li><span class="kicker">Defensa oral del TFI (reglas esenciales)</span></li>
-        <li><span class="kicker">Cierre institucional</span></li>
+    // 2
+    `
+      <div class="kicker">Universidad del Este · FDCS · Guía del Estudiante · Edición 2026 · Página 2 de 13</div>
+      <h1>Índice</h1>
+      <hr>
+      <ol>
+        <li><strong>Estructura del curso</strong> (tópicos, unidades y seminarios)</li>
+        <li><strong>Problemas frecuentes</strong> y solución rápida</li>
+        <li><strong>Canales oficiales de comunicación (I)</strong></li>
+        <li><strong>Canales oficiales de comunicación (II)</strong></li>
+        <li><strong>Asistencia</strong> a clases sincrónicas y beneficios</li>
+        <li><strong>Primeros pasos</strong> en el Campus</li>
+        <li><strong>Trabajos prácticos (TP)</strong>: entrega y reglas</li>
+        <li><strong>Cómo ver</strong> la devolución y la nota</li>
+        <li><strong>Cronograma</strong>, clases sincrónicas y grabaciones</li>
+        <li><strong>Defensa oral del TFI</strong> (reglas esenciales)</li>
+        <li><strong>Cierre institucional</strong></li>
       </ol>
+    `,
+
+    // 3
     `
-  },
+      <div class="kicker">Universidad del Este · FDCS · Guía del Estudiante · Edición 2026 · Página 3 de 13</div>
+      <h1>Estructura del curso</h1>
+      <p>La organización en Moodle se presenta por <strong>tópicos</strong>. Dentro de cada tópico vas a encontrar:</p>
+      <ul>
+        <li><strong>Clase sincrónica</strong> (link, fecha, horario, docente)</li>
+        <li><strong>Materiales</strong> (lecturas, normativa, jurisprudencia, guías)</li>
+        <li><strong>Clases grabadas</strong> (cuando corresponda)</li>
+        <li><strong>Actividades</strong> (TP / consignas / evaluaciones)</li>
+      </ul>
+      <div class="box">
+        <strong>Regla práctica:</strong> entrá siempre por la <em>unidad correspondiente</em> y buscá el bloque “Clases grabadas”
+        para acceder a la grabación cuando ya esté publicada.
+      </div>
+    `,
 
-  // 3) Estructura del curso
-  {
-    kind: "content",
-    ...pageText(
-      "Estructura del curso (tópicos, unidades y seminarios)",
-      [
-        "El curso se organiza por tópicos. Los primeros contienen información general y operativa; luego se despliegan las unidades y seminarios temáticos.",
-        "Regla práctica: buscá cada recurso dentro del tópico o unidad correspondiente. Esto reduce errores y evita consultas innecesarias."
-      ],
-      [
-        "Bienvenida y acción inicial (Ficha de cohorte).",
-        "Canales oficiales de comunicación.",
-        "Evaluación, TPs y TFI.",
-        "Cronograma de la cohorte, clases y grabaciones.",
-        "Reconocimientos académicos.",
-        "Unidades y seminarios temáticos (materiales, grabaciones y actividad asociada)."
-      ],
-      "Consejo operativo: trabajá en el orden propuesto. La secuencia está pensada para que lo anterior sea la base de lo siguiente."
-    )
-  },
+    // 4
+    `
+      <div class="kicker">Universidad del Este · FDCS · Guía del Estudiante · Edición 2026 · Página 4 de 13</div>
+      <h1>Problemas frecuentes y solución rápida</h1>
+      <p>Antes de frustrarte: identificá el tipo de problema, reuní evidencia (captura, comprobante) y usá el canal correcto.</p>
+      <ul>
+        <li><strong>No puedo ingresar al campus:</strong> verificá primero que el pago esté acreditado (Aranceles). Si ya pagaste, escribí con captura del error y tus datos.</li>
+        <li><strong>No me llega el correo de validación:</strong> revisá spam/no deseado. Si persiste, contactá al área correspondiente.</li>
+        <li><strong>Subí un archivo equivocado:</strong> verificá si el campus permite reemplazo antes del cierre; si no, contactá por canales oficiales.</li>
+        <li><strong>No encuentro una grabación:</strong> buscala dentro de la unidad y sección “Clases grabadas”.</li>
+      </ul>
+    `,
 
-  // 4) Problemas frecuentes
-  {
-    kind: "content",
-    ...pageText(
-      "Problemas frecuentes y solución rápida",
-      ["Antes de frustrarte: identificá el tipo de problema, reuní evidencia (captura de pantalla, comprobante) y usá el canal correcto."],
-      [
-        "No puedo ingresar al campus: verificá primero que el pago esté acreditado (Aranceles). Si ya pagaste, escribí con captura del error y tus datos.",
-        "No me llega el correo de validación: revisá spam/no deseado. Si persiste, contactá al área correspondiente.",
-        "Subí un archivo equivocado: verificá si el campus permite reemplazo antes del cierre; si no, contactá por los canales oficiales.",
-        "No encuentro una grabación: buscala dentro de la unidad y sección “Clases grabadas”."
-      ]
-    )
-  },
+    // 5
+    `
+      <div class="kicker">Universidad del Este · FDCS · Guía del Estudiante · Edición 2026 · Página 5 de 13</div>
+      <h1>Canales Oficiales de Comunicación (I)</h1>
+      <p>Además de la ficha online y el grupo de WhatsApp, la coordinación de la cohorte pone a disposición los siguientes canales.</p>
 
-  // 5) Canales (I)
-  {
-    kind: "content",
-    ...pageText(
-      "Canales Oficiales de Comunicación (I)",
-      ["Además de la ficha online y el grupo de WhatsApp, la coordinación de la cohorte pone a disposición los siguientes canales."],
-      [],
-      `
-        <div class="box">
-          <div class="kicker">📧 Contacto principal de la Diplomatura</div>
-          <div class="p tight">Correo: <b>diplomaturaambientalude@gmail.com</b></div>
-          <div class="p tight">Mensajería privada del Campus Virtual.</div>
-        </div>
+      <div class="box">
+        <p><strong>📩 Contacto principal de la Diplomatura</strong><br>
+        Correo: <strong>diplomaturaambientalude@gmail.com</strong><br>
+        Mensajería privada del Campus Virtual.</p>
+      </div>
 
-        <div class="box">
-          <div class="kicker">🏛️ Facultad de Derecho – UDE</div>
-          <div class="p tight">Decanato: <b>fderchoysociales@ude.edu.ar</b></div>
-          <div class="p tight">Secretarías: <b>Agostina</b> o <b>Bárbara</b>.</div>
-          <div class="p tight">Departamento de Alumnos: <b>departamentoalumnos@ude.edu.ar</b></div>
-          <div class="p tight">Tel. <b>(+54 9) 221 424-9026</b></div>
-        </div>
-      `
-    )
-  },
+      <div class="box">
+        <p><strong>🏛️ Facultad de Derecho – UDE</strong><br>
+        Decanato: <strong>fderchoysociales@ude.edu.ar</strong><br>
+        Secretarías: <strong>Agostina</strong> o <strong>Bárbara</strong>.<br>
+        Departamento de Alumnos: <strong>departamentoalumnos@ude.edu.ar</strong></p>
+      </div>
+    `,
 
-  // 6) Canales (II)
-  {
-    kind: "content",
-    ...pageText(
-      "Canales Oficiales de Comunicación (II)",
-      ["Continuación de los canales disponibles, según el tipo de consulta."],
-      [],
-      `
-        <div class="box">
-          <div class="kicker">💰 Área Aranceles</div>
-          <div class="p tight">Correo: <b>aranceles@ude.edu.ar</b></div>
-          <div class="p tight">Teléfonos: <b>(0221) 422-4636 / 423-1689 / 423-1692</b></div>
-          <div class="p tight">WhatsApp: <b>(+54 9) 221 669-9990</b></div>
-          <div class="p tight">Horario: <b>9:00 a 19:00</b> (WhatsApp solo <b>10 a 14 hs</b>).</div>
-          <div class="p tight">Recordatorio: el link de pago se envía del <b>1 al 10</b> de cada mes al correo declarado en la inscripción.</div>
-        </div>
+    // 6
+    `
+      <div class="kicker">Universidad del Este · FDCS · Guía del Estudiante · Edición 2026 · Página 6 de 13</div>
+      <h1>Canales Oficiales de Comunicación (II)</h1>
+      <p>Continuación de los canales disponibles, según el tipo de consulta.</p>
 
-        <div class="box">
-          <div class="kicker">🌐 Campus Virtual</div>
-          <div class="p tight">Soporte técnico: <b>dycsvirtual@ude.edu.ar</b> (Contacto: <b>Sr. Alejo</b>).</div>
-        </div>
+      <div class="box">
+        <p><strong>💰 Área Aranceles</strong><br>
+        Correo: <strong>aranceles@ude.edu.ar</strong><br>
+        Teléfonos: <strong>(0221) 422-4636 / 423-1689 / 423-1692</strong><br>
+        WhatsApp: <strong>(+54 9) 221 669-9990</strong><br>
+        Horario: <strong>9:00 a 19:00</strong> (WhatsApp solo <strong>10 a 14 hs</strong>).<br>
+        Recordatorio: el link de pago se envía del <strong>1 al 10</strong> de cada mes, exclusivamente al correo declarado al momento de la inscripción.</p>
+      </div>
 
-        <div class="box">
-          <div class="kicker">📝 Área de Ingreso / Inscripción</div>
-          <div class="p tight">Tel: <b>(+54 9) 221 422-4636</b></div>
-          <div class="p tight">Correo: <b>consultasingreso@ude.edu.ar</b></div>
-          <div class="p tight">WhatsApp: <b>(+54 9) 221 477-7950</b></div>
-          <div class="p tight">Horario: <b>lunes a viernes de 9:00 a 17:00</b>.</div>
-          <div class="p tight">👉 Se recomienda usar el canal correcto según el tipo de consulta para recibir respuestas ágiles y precisas.</div>
-        </div>
-      `
-    )
-  },
+      <div class="box">
+        <p><strong>🌐 Campus Virtual</strong><br>
+        Soporte técnico: <strong>dycsvirtual@ude.edu.ar</strong> (Contacto: <strong>Sr. Alejo</strong>).</p>
+      </div>
 
-  // 7) Asistencia sincrónicas
-  {
-    kind: "content",
-    ...pageText(
-      "Asistencia a clases sincrónicas y beneficios",
-      [
-        "Si bien las clases se graban, es importante que, en la medida de lo posible, asistas a los encuentros sincrónicos.",
-        "La asistencia posibilita la interacción con los profesores (consultas, aclaraciones y orientación directa).",
-        "Asimismo, podrán desarrollarse ejercicios o actividades grupales vinculadas con la temática abordada en cada unidad."
-      ]
-    )
-  },
+      <div class="box">
+        <p><strong>📝 Área de Ingreso / Inscripción</strong><br>
+        Tel: <strong>(+54 9) 221 422-4636</strong><br>
+        Correo: <strong>consultasingreso@ude.edu.ar</strong><br>
+        WhatsApp: <strong>(+54 9) 221 477-7950</strong><br>
+        Horario: <strong>lunes a viernes de 9:00 a 17:00</strong>.</p>
+        <p class="small">👉 Se recomienda guardar estas vías de comunicación y utilizarlas según el tipo de consulta, para recibir respuestas ágiles y precisas.</p>
+      </div>
+    `,
 
-  // 8) Primeros pasos
-  {
-    kind: "content",
-    ...pageText(
-      "Primeros pasos en el Campus",
-      [
-        "El campus virtual de la Universidad del Este (FDCS) es el espacio donde vas a encontrar: cronograma, clases grabadas, materiales, actividades prácticas y comunicaciones oficiales.",
-        "Regla práctica: si algo es académico (materiales, consignas, devoluciones), se busca primero en el campus. Si algo es administrativo, se canaliza por las áreas correspondientes."
-      ],
-      [
-        "Ingresá con tu usuario y contraseña institucionales.",
-        "Usá el menú “Mis cursos” para ingresar a tu diplomatura.",
-        "Si aparece un error, tomá captura y usá los canales oficiales."
-      ]
-    )
-  },
+    // 7
+    `
+      <div class="kicker">Universidad del Este · FDCS · Guía del Estudiante · Edición 2026 · Página 7 de 13</div>
+      <h1>Asistencia a clases sincrónicas y beneficios</h1>
+      <p>Si bien las clases se graban, es importante que, en la medida de lo posible, asistas a los encuentros sincrónicos.</p>
+      <ul>
+        <li>La asistencia facilita la interacción con los profesores (consultas, aclaraciones y orientación directa).</li>
+        <li>Podrán desarrollarse ejercicios o actividades grupales vinculadas con la temática abordada en cada unidad.</li>
+      </ul>
+    `,
 
-  // 9) TP
-  {
-    kind: "content",
-    ...pageText(
-      "Trabajos prácticos (TP): entrega y reglas",
-      ["Las actividades prácticas cumplen una función formativa. La entrega debe realizarse exclusivamente por el Campus Virtual, conforme a las pautas publicadas en cada unidad."],
-      [
-        "Entrá al curso y ubicá la unidad correspondiente.",
-        "Abrí la actividad del TP y seleccioná “Agregar entrega / Añadir entrega”.",
-        "Subí tu archivo (preferentemente Word) y presioná “Guardar cambios”.",
-        "Si el campus pide confirmación final, completá “Enviar tarea”.",
-        "Verificá el estado: “Enviado para calificar” (o equivalente)."
-      ],
-      `
-        <b>Antes de comenzar</b>, se solicita leer detenidamente el instructivo correspondiente a esta actividad.<br><br>
-        El trabajo deberá realizarse conforme a las consignas indicadas y subirse al campus dentro del plazo fijado, preferentemente en formato Word.<br><br>
-        <b>No se aceptarán trabajos enviados por correo electrónico ni por el grupo de WhatsApp.</b><br>
-        Únicamente se considerarán válidos aquellos cargados en el campus.
-      `
-    )
-  },
+    // 8
+    `
+      <div class="kicker">Universidad del Este · FDCS · Guía del Estudiante · Edición 2026 · Página 8 de 13</div>
+      <h1>Primeros pasos en el Campus</h1>
+      <ol>
+        <li>Ingresá con tu usuario y contraseña provistos al momento de la inscripción.</li>
+        <li>Ubicá el curso “Diplomaturas Ambientales · Edición 2026”.</li>
+        <li>Recorré el tópico de bienvenida: reglamento, canales oficiales, cronograma y materiales iniciales.</li>
+        <li>Verificá que puedas abrir recursos y visualizar actividades (TP / foros / enlaces).</li>
+      </ol>
+      <div class="box">
+        <strong>Consejo:</strong> si un recurso no abre, probá otro navegador o modo incógnito. Si persiste, contactá a Soporte con captura.
+      </div>
+    `,
 
-  // 10) Devolución y nota
-  {
-    kind: "content",
-    ...pageText(
-      "Cómo ver la devolución y la nota",
-      ["La devolución se consulta dentro de la misma actividad del TP y/o desde el menú de calificaciones del curso."],
-      [
-        "Abrí la actividad del TP → “Estado de la entrega / Ver entrega”.",
-        "Descargá archivos de retroalimentación (si los hubiera).",
-        "Revisá comentarios en pantalla y la calificación asignada.",
-        "También podés ver tu nota desde “Calificaciones”."
-      ]
-    )
-  },
+    // 9
+    `
+      <div class="kicker">Universidad del Este · FDCS · Guía del Estudiante · Edición 2026 · Página 9 de 13</div>
+      <h1>Trabajos prácticos (TP): entrega y reglas</h1>
+      <p>Las actividades prácticas (TPs) cumplen una función formativa. La entrega debe realizarse exclusivamente por el Campus Virtual.</p>
+      <ul>
+        <li>Entrá al curso y ubicá la unidad correspondiente (o el tópico general de evaluación).</li>
+        <li>Abrí la actividad del TP y seleccioná “Agregar entrega / Añadir entrega”.</li>
+        <li>Subí tu archivo (preferentemente en Word) y presioná “Guardar cambios”.</li>
+        <li>Si el campus solicita confirmación final, completá el paso “Enviar tarea”.</li>
+        <li>Verificá el estado: debe figurar “Enviado para calificar” (o equivalente).</li>
+      </ul>
+      <div class="box">
+        <p><strong>Antes de comenzar</strong>, se solicita leer detenidamente el instructivo correspondiente a esta actividad.</p>
+        <p><strong>No se aceptarán trabajos enviados por correo electrónico ni por el grupo de WhatsApp.</strong><br>
+        Únicamente se considerarán válidos aquellos cargados en el campus.</p>
+      </div>
+    `,
 
-  // 11) Cronograma + grabaciones
-  {
-    kind: "content",
-    ...pageText(
-      "Cronograma, clases sincrónicas y grabaciones",
-      [
-        "Las clases se dictan en modalidad sincrónica y quedan grabadas. Las grabaciones se publican durante la semana posterior a cada clase.",
-        "Regla práctica: buscá las grabaciones dentro de la unidad correspondiente, en el bloque “Clases grabadas” o “Grabaciones”."
-      ],
-      [
-        "Si no aparece una grabación y ya pasó la semana, escribí a diplomaturaambientalude@gmail.com o contactate por el WhatsApp de la cohorte (Mg. Mariana De los Santos)."
-      ]
-    )
-  },
+    // 10
+    `
+      <div class="kicker">Universidad del Este · FDCS · Guía del Estudiante · Edición 2026 · Página 10 de 13</div>
+      <h1>Cómo ver la devolución y la nota</h1>
+      <ol>
+        <li>Ingresá a la actividad del TP entregado.</li>
+        <li>Revisá el estado de calificación y comentarios.</li>
+        <li>Descargá el archivo corregido si el docente lo adjuntó.</li>
+        <li>Si hay observaciones, leelas antes de reenviar o consultar.</li>
+      </ol>
+      <div class="box">
+        <strong>Regla:</strong> las consultas deben formularse por canales oficiales y con referencia clara a la unidad, TP y fecha.
+      </div>
+    `,
 
-  // 12) Defensa TFI
-  {
-    kind: "content",
-    ...pageText(
-      "Defensa oral del TFI (reglas esenciales)",
-      ["La defensa es individual, oral y virtual, y consiste exclusivamente en la defensa del Trabajo Final previamente entregado."],
-      [
-        "Condición habilitante: arancel total cancelado (según nómina oficial).",
-        "Validación de identidad: exhibición de DNI frente a cámara.",
-        "Responsabilidad técnica del estudiante: cámara, micrófono y conexión.",
-        "Causales de finalización sin calificación: desconexión, cámara apagada o micrófono silenciado sin causa, o no exhibición de DNI."
-      ],
-      "Este e-book resume reglas operativas para evitar errores formales. Las pautas completas se publican por la coordinación antes de cada mesa."
-    )
-  },
+    // 11
+    `
+      <div class="kicker">Universidad del Este · FDCS · Guía del Estudiante · Edición 2026 · Página 11 de 13</div>
+      <h1>Cronograma, clases sincrónicas y grabaciones</h1>
+      <ul>
+        <li>El cronograma oficial se publica en el tópico de bienvenida y/o en la sección correspondiente.</li>
+        <li>Las grabaciones se ubican dentro de cada unidad en “Clases grabadas”.</li>
+        <li>Si una clase reciente todavía no figura, se publica durante la semana siguiente.</li>
+      </ul>
+      <div class="box">
+        <strong>Importante:</strong> mantené tus notificaciones activas (correo y campus) para anuncios y cambios operativos.
+      </div>
+    `,
 
-  // 13) Cierre
-  {
-    kind: "content",
-    ...pageText(
-      "Cierre institucional",
-      [
-        "Este e-book está pensado para que puedas cursar con autonomía: acceder, ubicar contenidos, comunicarte por los canales correctos y entregar trabajos sin fricción.",
-        "Si seguís los pasos, evitás la mayoría de los problemas típicos de campus."
-      ],
-      [],
-      "Universidad del Este · Facultad de Derecho y Ciencias Sociales<br>Diplomaturas Ambientales · Guía del Estudiante · Edición 2026"
-    )
+    // 12
+    `
+      <div class="kicker">Universidad del Este · FDCS · Guía del Estudiante · Edición 2026 · Página 12 de 13</div>
+      <h1>Defensa oral del TFI (reglas esenciales)</h1>
+      <ul>
+        <li>El TFI se entrega en el campus dentro del período informado por coordinación.</li>
+        <li>La defensa se agenda en las mesas previstas (fecha y horario comunicados oportunamente).</li>
+        <li>Se exige claridad expositiva, dominio conceptual y referencia a fuentes trabajadas.</li>
+      </ul>
+      <div class="box">
+        <strong>Nota:</strong> la rúbrica de evaluación del TFI se publica con anticipación en el campus.
+      </div>
+    `,
+
+    // 13
+    `
+      <div class="kicker">Universidad del Este · FDCS · Guía del Estudiante · Edición 2026 · Página 13 de 13</div>
+      <h1>Cierre institucional</h1>
+      <p>Este e-book está pensado para que puedas cursar con autonomía: acceder, ubicar contenidos, comunicarte por los canales correctos y entregar trabajos sin fricción.</p>
+      <p>Si seguís los pasos, evitás la mayoría de los problemas típicos de campus.</p>
+      <div class="box">
+        <p>Universidad del Este · Facultad de Derecho y Ciencias Sociales<br>
+        Diplomaturas Ambientales · Guía del Estudiante · Edición 2026</p>
+      </div>
+    `
+  ];
+
+  // ======== UTILIDADES URL ========
+  function getParam(name) {
+    const u = new URL(window.location.href);
+    return u.searchParams.get(name);
   }
-];
 
-/* Compilación final */
-const TOTAL_PAGES = rawPages.length;
-
-const pages = rawPages.map((p, i) => {
-  const n = i + 1;
-  if (p.kind === "cover" || p.kind === "index") {
-    return `${pageMeta(n, TOTAL_PAGES)}${p.render()}`;
+  function setParam(name, value) {
+    const u = new URL(window.location.href);
+    u.searchParams.set(name, value);
+    // preserva v si está
+    if (!u.searchParams.get("v")) u.searchParams.set("v", BUILD_TAG);
+    window.history.replaceState({}, "", u.toString());
   }
-  return `
-    ${pageMeta(n, TOTAL_PAGES)}
-    <h1 class="h1">${escapeHtml(p.title || "")}</h1>
-    <div class="hr"></div>
-    ${p.ps || ""}
-    ${p.bs || ""}
-    ${p.note || ""}
-  `;
-});
 
-let currentPage = getPageFromURL(TOTAL_PAGES);
+  function clamp(n, min, max) {
+    return Math.max(min, Math.min(max, n));
+  }
 
-/* =========================
-   Render + animación “pasar hoja”
-   ========================= */
-function renderPage(nextPage, direction) {
-  const idx = nextPage - 1;
+  // ======== DOM HELPERS ========
+  function qs(sel) { return document.querySelector(sel); }
 
-  elCounter.textContent = `Página ${nextPage} de ${TOTAL_PAGES}`;
-  elPrev.disabled = nextPage <= 1;
-  elNext.disabled = nextPage >= TOTAL_PAGES;
+  // Render fallback si falta estructura HTML
+  function ensureDOM() {
+    // Esperamos que exista .page-shell .page .page-inner y .nav con botones.
+    // Si no existe, lo creamos para que nunca “se rompa”.
+    let stage = qs(".stage");
+    if (!stage) {
+      // intenta usar body
+      stage = document.createElement("div");
+      stage.className = "stage";
+      document.body.appendChild(stage);
+    }
 
-  // salida
-  elPage.classList.add("page-anim");
-  elPage.classList.remove("enter-active", "enter-left", "enter-right");
-  elPage.classList.add("exit-active");
+    let shell = qs(".page-shell");
+    if (!shell) {
+      shell = document.createElement("div");
+      shell.className = "page-shell";
+      stage.appendChild(shell);
+    }
 
-  setTimeout(() => {
-    elPage.innerHTML = pages[idx] ?? `<p class="p">Página no disponible.</p>`;
+    let page = qs(".page");
+    if (!page) {
+      page = document.createElement("div");
+      page.className = "page page-anim";
+      shell.appendChild(page);
+    }
 
-    // entrada
-    elPage.classList.remove("exit-active");
-    elPage.classList.add(direction === "prev" ? "enter-left" : "enter-right");
+    let inner = qs(".page-inner");
+    if (!inner) {
+      inner = document.createElement("div");
+      inner.className = "page-inner";
+      page.appendChild(inner);
+    }
 
-    // reflow
-    void elPage.offsetWidth;
+    let nav = qs(".nav");
+    if (!nav) {
+      nav = document.createElement("div");
+      nav.className = "nav";
+      nav.innerHTML = `
+        <button class="btn btn-prev" id="btnPrev">Página anterior</button>
+        <button class="btn btn-next" id="btnNext">Siguiente</button>
+        <div class="pill" id="pagePill">Página 1 de ${TOTAL_PAGES}</div>
+      `;
+      shell.appendChild(nav);
+    }
+  }
 
-    elPage.classList.add("enter-active");
+  // ======== ANIMACIÓN “PASAR HOJA” ========
+  function animate(direction) {
+    const page = qs(".page");
+    if (!page) return;
 
-    setTimeout(() => {
-      elPage.classList.remove("enter-left", "enter-right");
-    }, 260);
-  }, 160);
-}
+    page.classList.add("page-anim");
+    page.classList.remove("enter-left", "enter-right");
 
-function goTo(p, direction) {
-  const next = Math.max(1, Math.min(TOTAL_PAGES, p));
-  currentPage = next;
-  setPageToURL(next);
-  renderPage(next, direction);
-}
+    if (direction === "prev") page.classList.add("enter-left");
+    else page.classList.add("enter-right");
+  }
 
-elPrev.addEventListener("click", () => goTo(currentPage - 1, "prev"));
-elNext.addEventListener("click", () => goTo(currentPage + 1, "next"));
+  // ======== UI NAV ========
+  function updateNav(p) {
+    const btnPrev = qs("#btnPrev");
+    const btnNext = qs("#btnNext");
+    const pill = qs("#pagePill");
 
-window.addEventListener("keydown", (e) => {
-  if (e.key === "ArrowLeft") goTo(currentPage - 1, "prev");
-  if (e.key === "ArrowRight") goTo(currentPage + 1, "next");
-});
+    if (pill) pill.textContent = `Página ${p} de ${TOTAL_PAGES}`;
 
-renderPage(currentPage, "next");
+    if (btnPrev) btnPrev.disabled = (p <= 1);
+    if (btnNext) btnNext.disabled = (p >= TOTAL_PAGES);
+  }
+
+  // ======== RENDER ========
+  function render(p, direction = "next") {
+    const inner = qs(".page-inner");
+    if (!inner) return;
+
+    const idx = p - 1;
+
+    // Nunca blanco: si falta, aviso institucional
+    const html = pages[idx] ?? `
+      <div class="kicker">Universidad del Este · FDCS · Guía del Estudiante · Edición 2026</div>
+      <h1>Página no disponible</h1>
+      <p class="small">
+        Falta contenido para la página <strong>${p}</strong>. Revisá el array <strong>pages</strong> en <strong>app.js</strong>
+        (debe tener ${TOTAL_PAGES} entradas).
+      </p>
+    `;
+
+    // set contenido
+    inner.innerHTML = html;
+
+    // scroll arriba de la hoja para “sensación de página”
+    inner.scrollTop = 0;
+
+    // animación y nav
+    animate(direction);
+    updateNav(p);
+  }
+
+  // ======== NAVEGACIÓN ========
+  let currentPage = 1;
+
+  function goTo(p, direction = "next") {
+    const next = clamp(Number(p) || 1, 1, TOTAL_PAGES);
+    currentPage = next;
+    setParam("p", String(next));
+    render(next, direction);
+  }
+
+  function wireEvents() {
+    const btnPrev = qs("#btnPrev");
+    const btnNext = qs("#btnNext");
+
+    if (btnPrev) {
+      btnPrev.addEventListener("click", () => goTo(currentPage - 1, "prev"));
+    }
+
+    if (btnNext) {
+      btnNext.addEventListener("click", () => goTo(currentPage + 1, "next"));
+    }
+
+    // Teclado: ← / → para pasar página (institucional, útil)
+    window.addEventListener("keydown", (e) => {
+      if (e.key === "ArrowLeft") goTo(currentPage - 1, "prev");
+      if (e.key === "ArrowRight") goTo(currentPage + 1, "next");
+    });
+  }
+
+  // ======== INIT ========
+  function init() {
+    ensureDOM();
+    wireEvents();
+
+    const p = clamp(Number(getParam("p") || 1), 1, TOTAL_PAGES);
+    currentPage = p;
+
+    // asegura v para cache bust
+    if (!getParam("v")) setParam("v", BUILD_TAG);
+
+    render(p, "next");
+  }
+
+  // DOM ready
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", init);
+  } else {
+    init();
+  }
+})();
