@@ -78,9 +78,16 @@
       <p>Antes de frustrarte: identificá el tipo de problema, reuní evidencia (captura, comprobante) y usá el canal correcto.</p>
       <ul>
         <li><strong>No puedo ingresar al campus:</strong> verificá primero que el pago esté acreditado (Aranceles). Si ya pagaste, escribí a (dycsvirtual@ude.edu.ar) con la captura del error y tus datos.</li>
-        <li><strong>No me llega el correo de validación:</strong> revisá spam/no deseado. Si persiste, contactá al área correspondiente.</li>
+        <li><strong>No me llega el correo de validación de acceso al campus:</strong> revisá spam/no deseado. Si persiste, contactá a (dycsvirtual@ude.edu.ar).</li>
+        <li><strong>Perdí mi clave de acceso/nombre de usuario del campus:</strong> contactate a (dycsvirtual@ude.edu.ar).</li>
+        <li><strong>No tengo acceso al campus:</strong> Primero debes contactarte con el área de aranceles para cotejar el pago de matricula y luego a admisión ya que tal vez te falte subir documentación.</li>
+        <li><strong>No me llegó a mi correo el enlace para abonar la cuota de la diplomatura: </strong> Debes contactarte con el área de aranceles a (aranceles@ude.edu.ar).</li>
         <li><strong>Subí un archivo equivocado:</strong> verificá si el campus permite reemplazo antes del cierre; si no, contactate con la coordinación de la cohorte.</li>
-        <li><strong>No encuentro una grabación:</strong> buscala dentro de la unidad y sección “Clases grabadas”.</li>
+        <li><strong>No encuentras una grabación?:</strong> buscala dentro de la unidad y sección “Clases grabadas”, de lo contrario, ponete en contacto con la coordinación.</li>
+        <li><strong>No encuentras el link de la clase?:</strong> buscala en la unidad respectiva debajo del detalle de los temas de la unidad, sino la encuentras, pregunta a la coordinación de la cohorte.</li>
+        <li><strong>Subí un archivo equivocado o incompleto:</strong> Verificá si la actividad permite reemplazo antes del cierre. Si el campus no habilita una nueva carga, comunicate con la coordinación.</li>
+        <li><strong>No sé a quién dirigir una consulta:</strong> Utilizá siempre el canal correspondiente según el tipo de consulta (Campus Virtual, Aranceles, Ingreso o Coordinación).</li>
+        <li><strong>Tengo problemas técnicos durante una clase sincrónica:</strong> Verificá previamente tu conexión, cámara y micrófono. </li>
       </ul>
     `,
 
