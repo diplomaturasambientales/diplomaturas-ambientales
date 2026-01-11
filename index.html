@@ -12,13 +12,13 @@
     <header class="topbar" role="banner">
       <div class="topbar__inner">
         <div class="brand">
-        <div class="brand__logos" aria-label="Identidad institucional">
-  <img
-    class="brand__logo brand__logo--combo"
-    src="./logo_ude_fdcs.jpg"
-    alt="Universidad del Este · Facultad de Derecho y Ciencias Sociales"
-  />
-</div>
+          <div class="brand__logos" aria-label="Identidad institucional">
+            <img
+              class="brand__logo brand__logo--combo"
+              src="./logo_ude_fdcs.jpg"
+              alt="Universidad del Este · Facultad de Derecho y Ciencias Sociales"
+            />
+          </div>
 
           <div class="brand__text">
             <div class="brand__uni">Universidad del Este</div>
@@ -34,16 +34,19 @@
     </header>
 
     <main class="stage" role="main">
-      <section class="card" aria-label="E-book">
-        <div id="page" class="page" aria-live="polite"></div>
-      </section>
+      <!-- CONTENEDOR COMPATIBLE CON app.js NUEVO -->
+      <section class="page-shell" aria-label="E-book">
+        <div class="page page-anim" aria-live="polite">
+          <div class="page-inner"></div>
+        </div>
 
-      <!-- Controles: FIXED para que jamás queden cortados -->
-      <div class="controls controls--fixed" aria-label="Navegación">
-        <button id="btnPrev" class="btn btn--ghost" type="button">Página anterior</button>
-        <button id="btnNext" class="btn btn--primary" type="button">Siguiente</button>
-        <div id="counter" class="counter" aria-label="Contador de página"></div>
-      </div>
+        <!-- NAVEGACIÓN (la que usa app.js) -->
+        <div class="nav" aria-label="Navegación">
+          <button class="btn btn-prev" id="btnPrev" type="button">Página anterior</button>
+          <button class="btn btn-next" id="btnNext" type="button">Siguiente</button>
+          <div class="pill" id="pagePill" aria-label="Contador de página"></div>
+        </div>
+      </section>
     </main>
   </div>
 
