@@ -25,8 +25,8 @@
       <p><strong>Edición:</strong> 2026</p>
       <hr>
       <p>
-        Este e-book reúne instrucciones operativas, criterios académicos y pasos concretos para usar el campus virtual,
-        comunicarte con el equipo y entregar actividades.
+        Este e-book reúne las pautas operativas, criterios académicos y los criterios académicos esenciales para usar el campus virtual,
+        gestionar la comunicación tanto institucional como la coordinación y realizar la entrega de actividades programadas.
       </p>
       <p class="small">
         Importante: los enlaces y la disponibilidad de contenidos se actualizan durante el dictado.
@@ -88,7 +88,7 @@
     `
       <div class="kicker">Universidad del Este · FDCS · Guía del Estudiante · Edición 2026 · Página 5 de 13</div>
       <h1>Canales Oficiales de Comunicación (I)</h1>
-      <p>Además de la ficha online y el grupo de WhatsApp, la coordinación de la cohorte pone a disposición los siguientes canales.</p>
+      <p>Además del grupo de WhatsApp, la coordinación de la cohorte pone a disposición los siguientes canales.</p>
 
       <div class="box">
         <p><strong>📩 Contacto principal de la Diplomatura</strong><br>
@@ -138,10 +138,10 @@
     `
       <div class="kicker">Universidad del Este · FDCS · Guía del Estudiante · Edición 2026 · Página 7 de 13</div>
       <h1>Asistencia a clases sincrónicas y beneficios</h1>
-      <p>Si bien las clases se graban, es importante que, en la medida de lo posible, asistas a los encuentros sincrónicos.</p>
+      <p>Si bien las clases se graban y quedan disponibles en el Campus Virtual, se recomienda especialmente la asistencia a los encuentros sincrónicos, en la medida de las posibilidades de cada estudiante.</p>
       <ul>
-        <li>La asistencia facilita la interacción con los profesores (consultas, aclaraciones y orientación directa).</li>
-        <li>Podrán desarrollarse ejercicios o actividades grupales vinculadas con la temática abordada en cada unidad.</li>
+        <li>La participación en las clases en vivo favorece la interacción directa con los docentes, permitiendo la realización de consultas, aclaraciones conceptuales y orientaciones específicas sobre los contenidos de cada unidad..</li>
+        <li>Asimismo, durante los encuentros sincrónicos podrán desarrollarse ejercicios, consignas o actividades grupales vinculadas con la temática abordada, cuya realización en tiempo real enriquece la experiencia académica.</li>
       </ul>
     `,
 
@@ -150,13 +150,13 @@
       <div class="kicker">Universidad del Este · FDCS · Guía del Estudiante · Edición 2026 · Página 8 de 13</div>
       <h1>Primeros pasos en el Campus</h1>
       <ol>
-        <li>Ingresá con tu usuario y contraseña provistos al momento de la inscripción.</li>
-        <li>Ubicá el curso “Diplomaturas Ambientales · Edición 2026”.</li>
+        <li>Ingresá al campus virtual, con tu usuario y contraseña provistos al momento de la inscripción.</li>
+        <li>Ubicá la diplomatura ambiental a la cual te hayas inscripto · Edición 2026”.</li>
         <li>Recorré el tópico de bienvenida: reglamento, canales oficiales, cronograma y materiales iniciales.</li>
         <li>Verificá que puedas abrir recursos y visualizar actividades (TP / foros / enlaces).</li>
       </ol>
       <div class="box">
-        <strong>Consejo:</strong> si un recurso no abre, probá otro navegador o modo incógnito. Si persiste, contactá a Soporte con captura.
+        <strong>Consejo:</strong> si un recurso no abre, probá con otro navegador o en modo incógnito. Si persiste, contactate con el soporte del campus virtual con una captura del error.
       </div>
     `,
 
@@ -166,7 +166,7 @@
       <h1>Trabajos prácticos (TP): entrega y reglas</h1>
       <p>Las actividades prácticas (TPs) cumplen una función formativa. La entrega debe realizarse exclusivamente por el Campus Virtual.</p>
       <ul>
-        <li>Entrá al curso y ubicá la unidad correspondiente (o el tópico general de evaluación).</li>
+        <li>Entrá a la diplomatura y ubicá la unidad correspondiente (o el tópico general de actividad ó evaluación).</li>
         <li>Abrí la actividad del TP y seleccioná “Agregar entrega / Añadir entrega”.</li>
         <li>Subí tu archivo (preferentemente en Word) y presioná “Guardar cambios”.</li>
         <li>Si el campus solicita confirmación final, completá el paso “Enviar tarea”.</li>
@@ -185,8 +185,8 @@
       <h1>Cómo ver la devolución y la nota</h1>
       <ol>
         <li>Ingresá a la actividad del TP entregado.</li>
-        <li>Revisá el estado de calificación y comentarios.</li>
-        <li>Descargá el archivo corregido si el docente lo adjuntó.</li>
+        <li>Revisá el estado de comentarios y eventualmenete calificación.</li>
+        <li>Descargá el archivo corregido o bien el profesor te contacta y te lo solicita.</li>
         <li>Si hay observaciones, leelas antes de reenviar o consultar.</li>
       </ol>
       <div class="box">
