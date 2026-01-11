@@ -260,13 +260,25 @@
     // 13
     `
       <div class="kicker">Universidad del Este · FDCS · Guía del Estudiante · Edición 2026 · Página 13 de 13</div>
-      <h1>Cierre institucional</h1>
-      <p>Este e-book está pensado para que puedas cursar con autonomía: acceder, ubicar contenidos, comunicarte por los canales correctos y entregar trabajos sin fricción.</p>
-      <p>Si seguís los pasos, evitás la mayoría de los problemas típicos de campus.</p>
-      <div class="box">
-        <p>Universidad del Este · Facultad de Derecho y Ciencias Sociales<br>
-        Diplomaturas Ambientales · Guía del Estudiante · Edición 2026</p>
-      </div>
+      <h1>Cierre institucional de cohortes</h1>
+      <p>
+Este e-book fue diseñado para acompañarte durante toda la cursada, brindándote una guía clara y operativa para desenvolverte con autonomía en el Campus Virtual: acceder a los contenidos, ubicar cada unidad, comunicarte por los canales institucionales adecuados y cumplir con las instancias académicas previstas.
+</p>
+
+<p>
+El correcto uso de estas herramientas no solo facilita la gestión cotidiana del cursado, sino que también contribuye a un desarrollo académico ordenado, responsable y acorde a los estándares de la Universidad del Este.
+</p>
+
+<p>
+Seguir las pautas aquí indicadas te permitirá evitar la mayoría de las dificultades habituales del entorno virtual y concentrarte en lo verdaderamente importante: el aprendizaje, el intercambio académico y la formación profesional.
+</p>
+
+<div class="box">
+  <p>
+    Universidad del Este · Facultad de Derecho y Ciencias Sociales<br>
+    Diplomaturas Ambientales · Guía del Estudiante elaborada por la coordinación administrativa de las cohortes · Edición 2026
+  </p>
+</div>
     `
   ];
 
