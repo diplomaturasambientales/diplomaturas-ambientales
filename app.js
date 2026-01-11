@@ -60,13 +60,13 @@
       <h1>Estructura del curso</h1>
       <p>La organización en Moodle se presenta por <strong>tópicos</strong>. Dentro de cada tópico vas a encontrar:</p>
       <ul>
-        <li><strong>Clase sincrónica</strong> (link, fecha, horario, docente)</li>
-        <li><strong>Materiales</strong> (lecturas, normativa, jurisprudencia, guías)</li>
+        <li><strong>Clase sincrónica</strong> (link, fecha, horario, profesor/res a cargo)</li>
+        <li><strong>Materiales</strong> (lecturas, videos, normativa, jurisprudencia, guías)</li>
         <li><strong>Clases grabadas</strong> (cuando corresponda)</li>
         <li><strong>Actividades</strong> (TP / consignas / evaluaciones)</li>
       </ul>
       <div class="box">
-        <strong>Regla práctica:</strong> entrá siempre por la <em>unidad correspondiente</em> y buscá el bloque “Clases grabadas”
+        <strong>Regla práctica:</strong> entrá siempre por la <em>unidad correspondiente</em> y buscá el bloque “Clases grabadas o grabaciones”
         para acceder a la grabación cuando ya esté publicada.
       </div>
     `,
@@ -77,9 +77,9 @@
       <h1>Problemas frecuentes y solución rápida</h1>
       <p>Antes de frustrarte: identificá el tipo de problema, reuní evidencia (captura, comprobante) y usá el canal correcto.</p>
       <ul>
-        <li><strong>No puedo ingresar al campus:</strong> verificá primero que el pago esté acreditado (Aranceles). Si ya pagaste, escribí con captura del error y tus datos.</li>
+        <li><strong>No puedo ingresar al campus:</strong> verificá primero que el pago esté acreditado (Aranceles). Si ya pagaste, escribí a (dycsvirtual@ude.edu.ar) con la captura del error y tus datos.</li>
         <li><strong>No me llega el correo de validación:</strong> revisá spam/no deseado. Si persiste, contactá al área correspondiente.</li>
-        <li><strong>Subí un archivo equivocado:</strong> verificá si el campus permite reemplazo antes del cierre; si no, contactá por canales oficiales.</li>
+        <li><strong>Subí un archivo equivocado:</strong> verificá si el campus permite reemplazo antes del cierre; si no, contactate con la coordinación de la cohorte.</li>
         <li><strong>No encuentro una grabación:</strong> buscala dentro de la unidad y sección “Clases grabadas”.</li>
       </ul>
     `,
@@ -151,8 +151,8 @@
       <h1>Primeros pasos en el Campus</h1>
       <ol>
         <li>Ingresá al campus virtual, con tu usuario y contraseña provistos al momento de la inscripción.</li>
-        <li>Ubicá la diplomatura ambiental a la cual te hayas inscripto · Edición 2026”.</li>
-        <li>Recorré el tópico de bienvenida: reglamento, canales oficiales, cronograma y materiales iniciales.</li>
+        <li>Ubicá la diplomatura ambiental a la cual te hayas inscripto.</li>
+        <li>Recorré el tópico de bienvenida: reglamento, canales oficiales, cronograma, materiales iniciales y unidades.</li>
         <li>Verificá que puedas abrir recursos y visualizar actividades (TP / foros / enlaces).</li>
       </ol>
       <div class="box">
@@ -185,8 +185,8 @@
       <h1>Cómo ver la devolución y la nota</h1>
       <ol>
         <li>Ingresá a la actividad del TP entregado.</li>
-        <li>Revisá el estado de comentarios y eventualmenete calificación.</li>
-        <li>Descargá el archivo corregido o bien el profesor te contacta y te lo solicita.</li>
+        <li>Revisá el estado de comentarios y eventualmenente calificación.</li>
+        <li>Descargá el archivo corregido.Puede ser que el profesor te contacte a fin de darte mayores precisiones al respecto o contactate con el mismo.</li>
         <li>Si hay observaciones, leelas antes de reenviar o consultar.</li>
       </ol>
       <div class="box">
@@ -199,12 +199,12 @@
       <div class="kicker">Universidad del Este · FDCS · Guía del Estudiante · Edición 2026 · Página 11 de 13</div>
       <h1>Cronograma, clases sincrónicas y grabaciones</h1>
       <ul>
-        <li>El cronograma oficial se publica en el tópico de bienvenida y/o en la sección correspondiente.</li>
+        <li>El cronograma oficial se publica en el campus en los primeros tópicos.</li>
         <li>Las grabaciones se ubican dentro de cada unidad en “Clases grabadas”.</li>
         <li>Si una clase reciente todavía no figura, se publica durante la semana siguiente.</li>
       </ul>
       <div class="box">
-        <strong>Importante:</strong> mantené tus notificaciones activas (correo y campus) para anuncios y cambios operativos.
+        <strong>Importante:</strong> mantené tus notificaciones activas (correo, grupo de whatsAap y campus) para anuncios y cambios operativos.
       </div>
     `,
 
@@ -213,8 +213,20 @@
       <div class="kicker">Universidad del Este · FDCS · Guía del Estudiante · Edición 2026 · Página 12 de 13</div>
       <h1>Defensa oral del TFI (reglas esenciales)</h1>
       <ul>
-        <li>El TFI se entrega en el campus dentro del período informado por coordinación.</li>
+        <li>El TFI se sube al campus en las fechas indicadas.</li>
+        <li>La defensa es individual, oral y virtual, y consiste exclusivamente en la defensa del
+        Trabajo Final previamente entregado.<li>
         <li>La defensa se agenda en las mesas previstas (fecha y horario comunicados oportunamente).</li>
+        <li>Condición habilitante: solo acceden quienes tengan el arancel total cancelado,
+        según nómina oficial de Aranceles.<li>
+        <li>Validación de identidad: al ingresar, debés exhibir el DNI frente a cámara. Si no
+        lo exhibís, no rendís y se registra ausencia.<li>
+        <li>Responsabilidad técnica del estudiante: cámara, micrófono y conexión. Fallas
+        atribuibles al estudiante no habilitan reprogramación.<li>
+        <li>Causales de finalización sin calificación: desconexión, cámara apagada o
+        micrófono silenciado sin causa, o no exhibición de DNI.<li>
+        <li>Orden y tiempos: convocatoria escalonada; duración aproximada 10 minutos por
+        estudiante; ingreso solo cuando la coordinación autorice.<li>
         <li>Se exige claridad expositiva, dominio conceptual y referencia a fuentes trabajadas.</li>
       </ul>
       <div class="box">
