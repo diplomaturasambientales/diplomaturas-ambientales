@@ -68,6 +68,8 @@
       <div class="box">
         <strong>Regla práctica:</strong> entrá siempre por la <em>unidad correspondiente</em> y buscá el bloque “Clases grabadas o grabaciones”
         para acceder a la grabación cuando ya esté publicada.
+        <strong>Clases grabadas o grabaciones:</strong> Si la grabación aún no figura, significa que la clase fue reciente y su publicación se realizará durante la semana siguiente.
+        
       </div>
     `,
 
