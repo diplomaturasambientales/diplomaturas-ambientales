@@ -209,26 +209,49 @@
     `,
 
     // 12
-    `
-      <div class="kicker">Universidad del Este · FDCS · Guía del Estudiante · Edición 2026 · Página 12 de 13</div>
-      <h1>Defensa oral del TFI (reglas esenciales)</h1>
-      <ul>
-        <li>El TFI se sube al campus en las fechas indicadas.</li>
-        <li>La defensa es individual, oral y virtual, y consiste exclusivamente en la defensa del
-        Trabajo Final previamente entregado.
-        <li>La defensa se agenda en las mesas previstas (fecha y horario comunicados oportunamente).</li>
-        <li>Condición habilitante: solo acceden quienes tengan el arancel total cancelado,
-        según nómina oficial de Aranceles.
-        <li>Validación de identidad: al ingresar, debés exhibir el DNI frente a cámara. Si no
-        lo exhibís, no rendís y se registra ausencia.
-        <li>Responsabilidad técnica del estudiante: cámara, micrófono y conexión. Fallas
-        atribuibles al estudiante no habilitan reprogramación.
-        <li>Causales de finalización sin calificación: desconexión, cámara apagada o
-        micrófono silenciado sin causa, o no exhibición de DNI.
-        <li>Orden y tiempos: convocatoria escalonada; duración aproximada 10 minutos por
-        estudiante; ingreso solo cuando la coordinación autorice.
-        <li>Se exige claridad expositiva, dominio conceptual y referencia a fuentes trabajadas.</li>
-      </ul>
+    `<div class="kicker">
+  Universidad del Este · FDCS · Guía del Estudiante · Edición 2026 · Página 12 de 13
+</div>
+
+<h1>Defensa oral del TFI (reglas esenciales)</h1>
+
+<ol>
+  <li>
+    El Trabajo Final Integrador (TFI) debe subirse al campus en las fechas indicadas por la coordinación académica.
+  </li>
+
+  <li>
+    La defensa es individual, oral y virtual, y consiste exclusivamente en la exposición del Trabajo Final previamente entregado.
+  </li>
+
+  <li>
+    La defensa se agenda en las mesas previstas, conforme fecha y horario que serán comunicados oportunamente.
+  </li>
+
+  <li>
+    Condición habilitante: solo podrán acceder a la defensa quienes tengan el arancel total cancelado, según la nómina oficial del Área de Aranceles.
+  </li>
+
+  <li>
+    Validación de identidad: al ingresar a la defensa, el/la estudiante deberá exhibir su DNI frente a cámara. La falta de exhibición implica que no se rinde y se registra ausencia.
+  </li>
+
+  <li>
+    Responsabilidad técnica del estudiante: cámara, micrófono y conexión a internet. Las fallas técnicas atribuibles al estudiante no habilitan reprogramación.
+  </li>
+
+  <li>
+    Causales de finalización sin calificación: desconexión, cámara apagada o micrófono silenciado sin causa justificada, o no exhibición del DNI.
+  </li>
+
+  <li>
+    Orden y tiempos: la convocatoria es escalonada; la duración aproximada es de 10 minutos por estudiante; el ingreso se realiza únicamente cuando la coordinación lo autorice.
+  </li>
+
+  <li>
+    Se exige claridad expositiva, dominio conceptual y referencia adecuada a las fuentes trabajadas durante la diplomatura.
+  </li>
+</ol>
       <div class="box">
         <strong>Nota:</strong> la rúbrica de evaluación del TFI se publica con anticipación en el campus.
       </div>
