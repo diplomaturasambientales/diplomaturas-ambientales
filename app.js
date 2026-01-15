@@ -63,7 +63,7 @@
       <h1>Índice</h1>
       <hr>
       <ol>
-        <li><strong>Estructura del curso</strong> (tópicos, unidades y seminarios)</li>
+        <li><strong>Estructura de las diplomaturas</strong> (tópicos, unidades y seminarios)</li>
         <li><strong>Problemas frecuentes</strong> y solución rápida</li>
         <li><strong>Canales oficiales de comunicación (I)</strong></li>
         <li><strong>Canales oficiales de comunicación (II)</strong></li>
@@ -80,7 +80,7 @@
     // 3
     `
       <div class="kicker">Universidad del Este · FDCS · Guía del Estudiante · Edición 2026 · Página 3 de 13</div>
-      <h1>Estructura del curso</h1>
+      <h1>Estructura de las diplomaturas</h1>
       <p>La organización en Moodle se presenta por <strong>tópicos</strong>. Dentro de cada tópico vas a encontrar:</p>
       <ul>
         <li><strong>Clase sincrónica</strong> (link, fecha, horario, profesor/res a cargo)</li>
