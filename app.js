@@ -25,13 +25,47 @@
       <p><strong>Edición:</strong> 2026</p>
       <hr>
       <p>
-        Este e-book reúne las pautas operativas, criterios académicos y los criterios académicos esenciales para usar el campus virtual,
-        gestionar la comunicación tanto institucional como la coordinación y realizar la entrega de actividades programadas.
-      </p>
-      <p class="small">
-        Importante: los enlaces y la disponibilidad de contenidos se actualizan durante el dictado.
-        Si ves una unidad sin grabación, significa que la clase fue reciente y la publicación se realiza durante la semana siguiente.
-      </p>
+     Este instructivo ha sido elaborado como un <strong>instrumento académico-operativo integral</strong>, destinado a acompañar a las y los
+  estudiantes de las Diplomaturas Ambientales de la Universidad del Este durante todo el desarrollo de la cohorte 2026.
+</p>
+
+<p>
+  Su finalidad no se limita a brindar indicaciones técnicas de uso del Campus Virtual, sino que procura <strong>ordenar la experiencia
+  formativa</strong>, establecer <strong>criterios académicos claros y uniformes</strong>, y consolidar las pautas institucionales de
+  comunicación, seguimiento y evaluación académica.
+</p>
+
+<p>
+  En este documento se sistematizan las reglas de funcionamiento del Campus Virtual (Moodle), los criterios académicos esenciales que
+  rigen la cursada, los canales institucionales válidos de comunicación con la coordinación y el equipo docente, así como los
+  procedimientos formales para la entrega de actividades, trabajos prácticos y evaluaciones finales.
+</p>
+
+<p>
+  El Campus Virtual constituye el <strong>espacio académico central</strong> de las diplomaturas. En él se publican el cronograma oficial
+  de la cohorte, los accesos a las clases sincrónicas, las grabaciones, los materiales obligatorios y complementarios, las consignas de
+  evaluación y las comunicaciones institucionales relevantes. Su correcto uso no solo es un requisito operativo, sino también una
+  <strong>condición necesaria para el adecuado desarrollo del proceso formativo</strong>.
+</p>
+
+<div class="box info">
+  <p><strong>Actualización y disponibilidad de contenidos</strong></p>
+  <p>
+    Los contenidos del Campus Virtual se encuentran en actualización permanente a lo largo del dictado de la diplomatura. La
+    publicación de materiales y grabaciones responde a los tiempos propios de la cursada y a la organización académica de cada unidad.
+  </p>
+  <p>
+    Si al ingresar a una unidad determinada no se visualiza aún la grabación de una clase sincrónica reciente, ello no constituye un
+    error ni una omisión: por regla general, las grabaciones se publican durante la semana siguiente a su dictado, una vez finalizado su
+    procesamiento y verificación técnica.
+  </p>
+</div>
+
+<p class="small">
+  Importante: se recomienda revisar periódicamente el Campus Virtual, mantener activas las notificaciones institucionales y consultar
+  este instructivo antes de efectuar reclamos o consultas operativas. El seguimiento de estas pautas contribuye a un desarrollo
+  académico ordenado y a una mejor experiencia de cursada.
+</p>
     `,
 
     // 2
