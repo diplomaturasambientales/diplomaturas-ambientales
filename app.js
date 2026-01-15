@@ -48,17 +48,6 @@
   <strong>condición necesaria para el adecuado desarrollo del proceso formativo</strong>.
 </p>
 
-<div class="box info">
-  <p><strong>Actualización y disponibilidad de contenidos</strong></p>
-  <p>
-    Los contenidos del Campus Virtual se encuentran en actualización permanente a lo largo del dictado de la diplomatura. La
-    publicación de materiales y grabaciones responde a los tiempos propios de la cursada y a la organización académica de cada unidad.
-  </p>
-  <p>
-    Si al ingresar a una unidad determinada no se visualiza aún la grabación de una clase sincrónica reciente, ello no constituye un
-    error ni una omisión: por regla general, las grabaciones se publican durante la semana siguiente a su dictado, una vez finalizado su
-    procesamiento y verificación técnica.
-  </p>
 </div>
 
 <p class="small">
