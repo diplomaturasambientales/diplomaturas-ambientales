@@ -145,8 +145,8 @@
       <div class="box">
         <p><strong>💰 Área Aranceles</strong><br>
         Correo: <strong>aranceles@ude.edu.ar</strong><br>
-        Teléfonos: <strong>(0221) 422-4636 / 423-1689 / 423-1692</strong><br>
-        WhatsApp: <strong>(+54 9) 221 669-9990</strong><br>. Horario: <strong>9:00 a 19:00</strong> (WhatsApp solo <strong>10 a 14 hs</strong>).<br>
+        Teléfonos: <strong>(0221) 422-4636 / 423-1689 / 423-1692</strong><br> WhatsApp: <strong>(+54 9) 221 669-9990</strong><br>
+        Horario: <strong>9:00 a 19:00</strong> (WhatsApp solo <strong>10 a 14 hs</strong>).<br>
         Recordatorio: el link de pago se envía del <strong>1 al 10</strong> de cada mes, exclusivamente al correo declarado al momento de la inscripción.</p>
       </div>
 
@@ -157,8 +157,8 @@
 
       <div class="box">
         <p><strong>📝 Área de Ingreso / Inscripción</strong><br>
-        Tel: <strong>(+54 9) 221 422-4636</strong><br>. Correo: <strong>consultasingreso@ude.edu.ar</strong><br>
-        WhatsApp: <strong>(+54 9) 221 477-7950</strong><br>. Horario: <strong>lunes a viernes de 9:00 a 17:00</strong>.</p>
+        Tel: <strong>(+54 9) 221 422-4636</strong><br> Correo: <strong>consultasingreso@ude.edu.ar</strong><br>
+        WhatsApp: <strong>(+54 9) 221 477-7950</strong><br> Horario: <strong>lunes a viernes de 9:00 a 17:00</strong>.</p>
         <p class="small">👉 Se recomienda guardar estas vías de comunicación y utilizarlas según el tipo de consulta, para recibir respuestas ágiles y precisas.</p>
       </div>
     `,
