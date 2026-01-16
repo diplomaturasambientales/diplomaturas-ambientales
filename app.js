@@ -41,13 +41,6 @@
   procedimientos formales para la entrega de actividades, trabajos prácticos y evaluaciones finales.
 </p>
 
-<p>
-  El Campus Virtual constituye el <strong>espacio académico central</strong> de las diplomaturas. En él se publican el cronograma oficial
-  de la cohorte, los accesos a las clases sincrónicas, las grabaciones, los materiales obligatorios y complementarios, las consignas de
-  evaluación y las comunicaciones institucionales relevantes. Su correcto uso no solo es un requisito operativo, sino también una
-  <strong>condición necesaria para el adecuado desarrollo del proceso formativo</strong>.
-</p>
-
 </div>
 
 <p class="small">
