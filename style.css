@@ -33,6 +33,7 @@
 html,body{ height:100%; }
 body{
   margin:0;
+  overflow: hidden;
   font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, "Helvetica Neue", sans-serif;
   color:var(--ink);
   background:
@@ -47,6 +48,10 @@ body{
   max-width: 1280px;
   margin: 0 auto;
   padding: 16px 18px 24px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
 }
 
 /* ========== TOPBAR (encabezado real del index) ========== */
@@ -135,6 +140,8 @@ body{
 .stage{
   margin-top: 14px;
   position: relative;
+  flex: 1 1 auto;
+  min-height: 0;
 }
 
 /* Marco general (el “marco” oscuro) */
@@ -147,11 +154,10 @@ body{
   background: rgba(255,255,255,.05);
   padding: var(--shell-pad);
 
-  /* ALTURA UNIFORME: misma “hoja” para todas las páginas */
-  height: calc(100vh - var(--topbar-h) - 16px - 14px - 24px - 14px); 
-  /* 100vh - topbar - app padding top(16) - margin stage(14) - padding bottom(24) - pequeño ajuste */
+  /* ALTURA UNIFORME: ocupa el espacio disponible sin forzar overflow global */
+  height: 100%;
   max-height: 760px;
-  min-height: 520px;
+  min-height: 0;
 }
 
 /* Hoja blanca */
@@ -327,11 +333,31 @@ li{
   .brand{ min-width: 0; }
   .brand__logo--combo{ height: 62px; max-height:62px; }
   .nav{ right: 14px; bottom: 14px; }
-  .page-shell{ min-height: 520px; }
 }
 
 @media (max-width: 520px){
   .page-inner{ padding: 16px; padding-bottom: calc(16px + var(--nav-h)); }
   .btn{ padding: 10px 12px; font-size: 13px; }
   .pill{ padding: 10px 12px; }
+}
+
+@media (max-width: 360px){
+  :root{ --nav-h: 122px; }
+
+  .nav{
+    left: 14px;
+    right: 14px;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 8px;
+  }
+
+  .btn,
+  .pill{
+    width: 100%;
+    text-align: center;
+  }
+
+  .btn{ padding: 9px 10px; }
 }
