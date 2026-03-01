@@ -41,11 +41,11 @@
   procedimientos formales para la entrega de actividades, trabajos prácticos y evaluaciones finales.
 </p>
 
-<p class="small">
-  Importante: se recomienda revisar periódicamente el Campus Virtual, mantener activas las notificaciones institucionales y consultar
+<div class="callout callout-info" role="note" aria-label="Importante">
+  <strong>Importante:</strong> se recomienda revisar periódicamente el Campus Virtual, mantener activas las notificaciones institucionales y consultar
   este instructivo antes de efectuar reclamos o consultas operativas. El seguimiento de estas pautas contribuye a un desarrollo
   académico ordenado y a una mejor experiencia de cursada.
-</p>
+</div>
     `,
 
     // 2
