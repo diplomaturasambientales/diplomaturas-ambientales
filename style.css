@@ -26,7 +26,7 @@
   /* Control global de alturas */
   --topbar-h: 150px; /* alto del encabezado */
   --shell-pad: 14px; /* padding del marco */
-  --nav-h: 70px;     /* reserva inferior dentro de page-inner */
+  --nav-h: 78px;     /* reserva inferior dentro de page-inner */
 }
 
 *{ box-sizing:border-box; }
@@ -174,7 +174,7 @@ body{
 .page-inner{
   height: 100%;
   padding: 18px 22px;
-  padding-bottom: calc(18px + var(--nav-h)); /* reserva para navegación */
+  padding-bottom: calc(22px + var(--nav-h) + env(safe-area-inset-bottom, 0px)); /* reserva para navegación */
   overflow: auto;
   scroll-behavior: smooth;
 }
@@ -250,6 +250,27 @@ li{
   margin-top: 12px;
 }
 .box strong{ color:#0d1c3b; }
+
+.callout{
+  margin-top: 14px;
+  margin-bottom: 8px;
+  padding: 13px 14px;
+  border-radius: 14px;
+  border: 1px solid var(--line);
+  background: #f4f8ff;
+  color: #102547;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.callout strong{
+  color: var(--brand-blue-2);
+}
+
+.callout-info{
+  border-left: 4px solid var(--brand-blue);
+  box-shadow: 0 8px 20px rgba(31,59,115,.10);
+}
 
 /* ========== NAV (abajo derecha, sin grises feos) ========== */
 
@@ -366,6 +387,17 @@ li{
 
 @media (max-width: 980px){
   :root{ --topbar-h: 170px; }
+  .page-inner{
+    padding-bottom: calc(24px + var(--nav-h) + env(safe-area-inset-bottom, 0px));
+  }
+
+  h1{ margin: 8px 0 9px; }
+  h2{ margin: 11px 0 7px; }
+  p{ margin: 8px 0; }
+  ul,ol{ margin-top: 8px; }
+  li{ margin: 5px 0; }
+  .box{ margin-top: 10px; padding: 12px; }
+
   .topbar__inner{ flex-direction: column; align-items:flex-start; gap: 10px; }
   .dochead{ margin-left:0; text-align:left; }
   .brand{ min-width: 0; }
@@ -374,7 +406,15 @@ li{
 }
 
 @media (max-width: 520px){
-  .page-inner{ padding: 16px; padding-bottom: calc(16px + var(--nav-h)); }
+  .page-inner{
+    padding: 16px;
+    padding-bottom: calc(22px + var(--nav-h) + env(safe-area-inset-bottom, 0px));
+  }
+  h1{ margin: 7px 0 8px; }
+  p{ margin: 7px 0; }
+  li{ margin: 4px 0; }
+  .box{ margin-top: 8px; padding: 10px; }
+  .callout{ margin-top: 10px; padding: 11px 12px; }
   .btn{ padding: 10px 12px; font-size: 13px; }
   .pill{ padding: 10px 12px; }
 }
