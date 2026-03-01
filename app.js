@@ -369,16 +369,67 @@ Seguir las pautas aquí indicadas te permitirá evitar la mayoría de las dificu
     }
   }
 
-  // ======== ANIMACIÓN “PASAR HOJA” ========
-  function animate(direction) {
-    const page = qs(".page");
-    if (!page) return;
+  // ======== TRANSICIÓN ENTRE PÁGINAS ========
+  const TRANSITION_MS = 220;
+  const TRANSITION_BUFFER_MS = 80;
+  const transitionClasses = ["enter-left", "enter-right", "exit-left", "exit-right"];
+  const reduceMotionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
 
-    page.classList.add("page-anim");
-    page.classList.remove("enter-left", "enter-right");
+  function clearTransitionClasses(el) {
+    if (!el) return;
+    el.classList.remove(...transitionClasses);
+  }
 
-    if (direction === "prev") page.classList.add("enter-left");
-    else page.classList.add("enter-right");
+  function waitForTransition(el, timeoutMs) {
+    if (!el || reduceMotionQuery.matches) return Promise.resolve();
+
+    return new Promise((resolve) => {
+      let done = false;
+      const finish = () => {
+        if (done) return;
+        done = true;
+        el.removeEventListener("transitionend", onTransitionEnd);
+        window.clearTimeout(timer);
+        resolve();
+      };
+      const onTransitionEnd = (event) => {
+        if (event.target === el && (event.propertyName === "opacity" || event.propertyName === "transform")) {
+          finish();
+        }
+      };
+      const timer = window.setTimeout(finish, timeoutMs);
+      el.addEventListener("transitionend", onTransitionEnd);
+    });
+  }
+
+  async function runPageTransition(direction, commit) {
+    const inner = qs(".page-inner");
+    if (!inner) return;
+
+    const isPrev = direction === "prev";
+    const exitClass = isPrev ? "exit-right" : "exit-left";
+    const enterClass = isPrev ? "enter-left" : "enter-right";
+
+    clearTransitionClasses(inner);
+
+    if (reduceMotionQuery.matches) {
+      commit();
+      return;
+    }
+
+    inner.classList.add(exitClass);
+    await waitForTransition(inner, TRANSITION_MS + TRANSITION_BUFFER_MS);
+
+    clearTransitionClasses(inner);
+    commit();
+
+    // fuerza reflow para garantizar transición de entrada
+    void inner.offsetWidth;
+
+    inner.classList.add(enterClass);
+    requestAnimationFrame(() => {
+      clearTransitionClasses(inner);
+    });
   }
 
   // ======== UI NAV ========
@@ -394,7 +445,7 @@ Seguir las pautas aquí indicadas te permitirá evitar la mayoría de las dificu
   }
 
   // ======== RENDER ========
-  function render(p, direction = "next") {
+  function render(p) {
     const inner = qs(".page-inner");
     if (!inner) return;
 
@@ -416,19 +467,27 @@ Seguir las pautas aquí indicadas te permitirá evitar la mayoría de las dificu
     // scroll arriba de la hoja para “sensación de página”
     inner.scrollTop = 0;
 
-    // animación y nav
-    animate(direction);
+    // nav
     updateNav(p);
   }
 
   // ======== NAVEGACIÓN ========
   let currentPage = 1;
+  let isTransitioning = false;
 
-  function goTo(p, direction = "next") {
+  async function goTo(p, direction = "next") {
     const next = clamp(Number(p) || 1, 1, TOTAL_PAGES);
+    if (next === currentPage || isTransitioning) return;
+
+    isTransitioning = true;
     currentPage = next;
     setParam("p", String(next));
-    render(next, direction);
+
+    await runPageTransition(direction, () => {
+      render(next);
+    });
+
+    isTransitioning = false;
   }
 
   function wireEvents() {
@@ -461,7 +520,7 @@ Seguir las pautas aquí indicadas te permitirá evitar la mayoría de las dificu
     // asegura v para cache bust
     if (!getParam("v")) setParam("v", BUILD_TAG);
 
-    render(p, "next");
+    render(p);
   }
 
   // DOM ready
